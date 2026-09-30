@@ -22,6 +22,16 @@ tewahedo-ai/
 
 Python service. Dependencies go in `backend/requirements.txt`. Source data moves from `data/raw` through `data/extracted` into `data/processed`.
 
+Document ingestion uses PyMuPDF first and falls back page-by-page to Tesseract
+OCR when direct text is missing or unusable. Tesseract must be installed with
+the Amharic `amh` language model.
+
+From `backend/`, extract a PDF already stored in `data/raw/`:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\extract_pdf.py document.pdf
+```
+
 ## Frontend
 
 Client application lives in `frontend/`.

@@ -12,8 +12,9 @@ Apply this to `backend/` only. Do not install these packages in `frontend/`. Do 
 - Python
 - FastAPI for the HTTP API
 - PyMuPDF for digital PDF text extraction
+- Tesseract with the `amh` model for Amharic OCR fallback
 
-When PDF extraction is requested, use PyMuPDF. Do not add another PDF library. Keep page numbers and do not modify the source PDF. Write extracted UTF-8 JSON to `backend/data/extracted/`.
+Use PyMuPDF first. OCR only pages whose direct text is blank, corrupted, or unusable. PaddleOCR's official models do not support Amharic, so use Tesseract `amh` for this project. Keep page numbers, page-level extraction methods, and raw debugging text. Do not modify the source PDF. Write extracted UTF-8 JSON to `backend/data/extracted/`.
 
 ```python
 import fitz  # PyMuPDF
@@ -30,7 +31,6 @@ def extract_pages(path: str) -> list[dict]:
 
 Do not add dependencies, services, schema, or client code for these until the user requests that stage:
 
-- PaddleOCR for scanned or image-based pages
 - PostgreSQL with pgvector
 - An embedding model
 - An LLM API
