@@ -1,0 +1,44 @@
+---
+description: Backend technology stack and what must wait until requested
+alwaysApply: true
+---
+
+# Backend stack
+
+Apply this to `backend/` only. Do not install these packages in `frontend/`. Do not implement application code until the user asks.
+
+## Use now
+
+- Python
+- FastAPI for the HTTP API
+- PyMuPDF for digital PDF text extraction
+
+When PDF extraction is requested, use PyMuPDF. Do not add another PDF library. Keep page numbers and do not modify the source PDF. Write extracted UTF-8 JSON to `backend/data/extracted/`.
+
+```python
+import fitz  # PyMuPDF
+
+def extract_pages(path: str) -> list[dict]:
+    with fitz.open(path) as document:
+        return [
+            {"page_number": index, "text": page.get_text("text")}
+            for index, page in enumerate(document, start=1)
+        ]
+```
+
+## Add only when asked
+
+Do not add dependencies, services, schema, or client code for these until the user requests that stage:
+
+- PaddleOCR for scanned or image-based pages
+- PostgreSQL with pgvector
+- An embedding model
+- An LLM API
+
+## Layout
+
+- Application code: `backend/app/`
+- Scripts: `backend/scripts/`
+- Tests: `backend/tests/`
+- Data flow: `backend/data/raw/` → `backend/data/extracted/` → `backend/data/processed/`
+- Dependencies: `backend/requirements.txt`
