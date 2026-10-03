@@ -14,6 +14,13 @@ from app.ingestion.extractor import (
     ingest_pdf,
     is_text_usable,
 )
+from app.ingestion.ocr import OcrLine, OcrResult, render_page
+from app.ingestion.processing import (
+    assess_quality,
+    clean_ocr_result,
+    detect_repeated_margin_lines,
+)
+from app.ingestion.similarity import body_text_similarity, compare_documents
 from app.main import app
 from scripts.extract_pdf import run
 
@@ -203,3 +210,113 @@ def test_app_exposes_ingest_route() -> None:
     paths = {getattr(route, "path", None) for route in app.routes}
     assert "/health" in paths
     assert "/ingest" in paths
+
+
+def test_structured_ocr_cleans_noise_and_preserves_raw_text(tmp_path: Path) -> None:
+    raw = tmp_path / "raw"
+    extracted = tmp_path / "extracted"
+    raw.mkdir()
+    source = raw / "scanned.pdf"
+    _write_scanned_amharic_pdf(source, PAGE_ONE, _ethiopic_font())
+
+    lines = (
+        OcrLine("ተደጋጋሚ ርዕስ", 95, 20, 20, 500, 50),
+        OcrLine("www.ethiopianorthodox.org", 90, 20, 70, 600, 95),
+        OcrLine("ይህ ትምህርት በጣም ABC ቅዱ", 88, 20, 300, 900, 330),
+        OcrLine("ስን መጽሐፍ", 92, 10, 340, 500, 370),
+    )
+    result = OcrResult(
+        raw_text="\n".join(line.text for line in lines) + "\n",
+        lines=lines,
+        language="amh",
+        dpi=300,
+        psm=3,
+        preprocessing="grayscale_autocontrast",
+        image_width=1000,
+        image_height=1000,
+        mean_confidence=91.25,
+    )
+
+    document, _ = ingest_pdf(
+        "scanned.pdf",
+        raw,
+        extracted,
+        ocr_engine=lambda _page: result,
+    )
+
+    page = document.pages[0]
+    assert page.raw_text == result.raw_text
+    assert "www.ethiopianorthodox.org" not in page.text
+    assert "ABC" not in page.text
+    assert "ቅዱስን መጽሐፍ" in page.text.replace("\n", " ")
+    assert page.repaired_line_wraps == 1
+    assert page.ocr is not None
+    assert page.ocr.language == "amh"
+    assert page.quality.mean_confidence == 91.25
+    assert "sparse_text" in page.quality.flags
+    assert "ABC" in page.removed_fragments
+
+
+def test_render_page_is_grayscale_and_quality_flags_sparse_text(
+    tmp_path: Path,
+) -> None:
+    source = tmp_path / "sample.pdf"
+    _write_amharic_pdf(source, [PAGE_ONE], _ethiopic_font())
+    with pymupdf.open(source) as document:
+        image = render_page(document[0])
+        try:
+            assert image.mode == "L"
+        finally:
+            image.close()
+
+    quality = assess_quality("ABC", 40.0, 0)
+    assert quality.score < 75
+    assert "sparse_text" in quality.flags
+    assert "low_ocr_confidence" in quality.flags
+    assert "review_recommended" in quality.flags
+
+
+def test_repeated_margin_layout_removes_header_and_footer() -> None:
+    lines = (
+        OcrLine("header one", 90, 10, 20, 500, 45),
+        OcrLine("header two", 90, 10, 55, 500, 80),
+        OcrLine(PAGE_ONE, 90, 10, 250, 800, 280),
+        OcrLine("garbled footer", 70, 10, 920, 500, 950),
+    )
+    result = OcrResult(
+        raw_text="\n".join(line.text for line in lines),
+        lines=lines,
+        language="amh",
+        dpi=300,
+        psm=3,
+        preprocessing="grayscale_autocontrast",
+        image_width=1000,
+        image_height=1000,
+        mean_confidence=85,
+    )
+    patterns = detect_repeated_margin_lines([result, result])
+    cleaned = clean_ocr_result(result, patterns)
+
+    assert cleaned.text == PAGE_ONE
+    assert len(cleaned.removed_fragments) == 3
+
+
+def test_document_similarity_uses_body_content_and_rendered_pages(
+    tmp_path: Path,
+) -> None:
+    first = tmp_path / "first.pdf"
+    second = tmp_path / "second.pdf"
+    font = _ethiopic_font()
+    _write_amharic_pdf(first, [PAGE_ONE], font)
+    _write_amharic_pdf(second, [PAGE_TWO], font)
+
+    exact = compare_documents(first, first, PAGE_ONE, PAGE_ONE)
+    distinct = compare_documents(first, second, PAGE_ONE, PAGE_TWO)
+
+    assert exact.duplicate
+    assert exact.same_pdf_bytes
+    assert not distinct.duplicate
+    assert body_text_similarity(
+        f"www.ethiopianorthodox.org\n{PAGE_ONE}",
+        PAGE_ONE,
+    ) == 1.0

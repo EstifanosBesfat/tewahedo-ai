@@ -1,0 +1,551 @@
+{
+  "generated_at": "2026-09-30T08:15:00.112887+00:00",
+  "pipeline": {
+    "direct_extraction": "PyMuPDF page text when usable",
+    "ocr": "Tesseract amh, OEM 1, PSM 3, 300 DPI",
+    "preprocessing": "grayscale with 1% autocontrast",
+    "cleanup": "repeated positional margins, website boilerplate, isolated Latin artifacts, and geometry-supported line wraps",
+    "raw_ocr_preserved": true
+  },
+  "documents": [
+    {
+      "filename": "10commandments.pdf",
+      "total_pages": 47,
+      "pymupdf_pages": 0,
+      "ocr_pages": 47,
+      "average_quality_score": 82.35,
+      "minimum_quality_score": 68.36,
+      "maximum_quality_score": 85.95,
+      "review_pages": [
+        28
+      ],
+      "flag_counts": {
+        "low_ocr_confidence": 1,
+        "review_recommended": 1
+      },
+      "page_quality": [
+        {
+          "page_number": 1,
+          "score": 82.53,
+          "mean_confidence": 82.53,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1560,
+          "flags": []
+        },
+        {
+          "page_number": 2,
+          "score": 83.36,
+          "mean_confidence": 83.36,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1768,
+          "flags": []
+        },
+        {
+          "page_number": 3,
+          "score": 82.16,
+          "mean_confidence": 82.16,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2002,
+          "flags": []
+        },
+        {
+          "page_number": 4,
+          "score": 84.55,
+          "mean_confidence": 84.55,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1807,
+          "flags": []
+        },
+        {
+          "page_number": 5,
+          "score": 84.57,
+          "mean_confidence": 84.57,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2087,
+          "flags": []
+        },
+        {
+          "page_number": 6,
+          "score": 85.51,
+          "mean_confidence": 85.51,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2047,
+          "flags": []
+        },
+        {
+          "page_number": 7,
+          "score": 84.45,
+          "mean_confidence": 84.45,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1947,
+          "flags": []
+        },
+        {
+          "page_number": 8,
+          "score": 83.0,
+          "mean_confidence": 83.0,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1959,
+          "flags": []
+        },
+        {
+          "page_number": 9,
+          "score": 84.17,
+          "mean_confidence": 84.17,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2065,
+          "flags": []
+        },
+        {
+          "page_number": 10,
+          "score": 84.4,
+          "mean_confidence": 84.4,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2034,
+          "flags": []
+        },
+        {
+          "page_number": 11,
+          "score": 84.38,
+          "mean_confidence": 84.38,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1958,
+          "flags": []
+        },
+        {
+          "page_number": 12,
+          "score": 85.6,
+          "mean_confidence": 85.6,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2767,
+          "flags": []
+        },
+        {
+          "page_number": 13,
+          "score": 80.74,
+          "mean_confidence": 80.74,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1871,
+          "flags": []
+        },
+        {
+          "page_number": 14,
+          "score": 81.65,
+          "mean_confidence": 81.65,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2081,
+          "flags": []
+        },
+        {
+          "page_number": 15,
+          "score": 80.66,
+          "mean_confidence": 80.66,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 973,
+          "flags": []
+        },
+        {
+          "page_number": 16,
+          "score": 82.86,
+          "mean_confidence": 82.86,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1142,
+          "flags": []
+        },
+        {
+          "page_number": 17,
+          "score": 83.8,
+          "mean_confidence": 83.8,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1278,
+          "flags": []
+        },
+        {
+          "page_number": 18,
+          "score": 84.41,
+          "mean_confidence": 84.41,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1257,
+          "flags": []
+        },
+        {
+          "page_number": 19,
+          "score": 82.98,
+          "mean_confidence": 82.98,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1346,
+          "flags": []
+        },
+        {
+          "page_number": 20,
+          "score": 82.65,
+          "mean_confidence": 82.65,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1302,
+          "flags": []
+        },
+        {
+          "page_number": 21,
+          "score": 82.57,
+          "mean_confidence": 82.57,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1220,
+          "flags": []
+        },
+        {
+          "page_number": 22,
+          "score": 82.63,
+          "mean_confidence": 82.63,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1264,
+          "flags": []
+        },
+        {
+          "page_number": 23,
+          "score": 81.28,
+          "mean_confidence": 81.28,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1284,
+          "flags": []
+        },
+        {
+          "page_number": 24,
+          "score": 80.9,
+          "mean_confidence": 80.9,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1290,
+          "flags": []
+        },
+        {
+          "page_number": 25,
+          "score": 79.22,
+          "mean_confidence": 79.22,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1307,
+          "flags": []
+        },
+        {
+          "page_number": 26,
+          "score": 85.95,
+          "mean_confidence": 85.95,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1273,
+          "flags": []
+        },
+        {
+          "page_number": 27,
+          "score": 81.18,
+          "mean_confidence": 81.18,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 979,
+          "flags": []
+        },
+        {
+          "page_number": 28,
+          "score": 68.36,
+          "mean_confidence": 71.31,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 271,
+          "flags": [
+            "low_ocr_confidence",
+            "review_recommended"
+          ]
+        },
+        {
+          "page_number": 29,
+          "score": 81.86,
+          "mean_confidence": 81.86,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1677,
+          "flags": []
+        },
+        {
+          "page_number": 30,
+          "score": 84.24,
+          "mean_confidence": 84.24,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2158,
+          "flags": []
+        },
+        {
+          "page_number": 31,
+          "score": 83.12,
+          "mean_confidence": 83.12,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1609,
+          "flags": []
+        },
+        {
+          "page_number": 32,
+          "score": 83.52,
+          "mean_confidence": 83.52,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1678,
+          "flags": []
+        },
+        {
+          "page_number": 33,
+          "score": 78.38,
+          "mean_confidence": 78.38,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1086,
+          "flags": []
+        },
+        {
+          "page_number": 34,
+          "score": 80.76,
+          "mean_confidence": 80.76,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1133,
+          "flags": []
+        },
+        {
+          "page_number": 35,
+          "score": 80.54,
+          "mean_confidence": 80.54,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1335,
+          "flags": []
+        },
+        {
+          "page_number": 36,
+          "score": 81.01,
+          "mean_confidence": 81.01,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1304,
+          "flags": []
+        },
+        {
+          "page_number": 37,
+          "score": 80.45,
+          "mean_confidence": 80.45,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1217,
+          "flags": []
+        },
+        {
+          "page_number": 38,
+          "score": 83.66,
+          "mean_confidence": 83.66,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1219,
+          "flags": []
+        },
+        {
+          "page_number": 39,
+          "score": 81.36,
+          "mean_confidence": 81.36,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1043,
+          "flags": []
+        },
+        {
+          "page_number": 40,
+          "score": 85.58,
+          "mean_confidence": 85.58,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2427,
+          "flags": []
+        },
+        {
+          "page_number": 41,
+          "score": 85.33,
+          "mean_confidence": 85.33,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 2284,
+          "flags": []
+        },
+        {
+          "page_number": 42,
+          "score": 78.42,
+          "mean_confidence": 78.42,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1138,
+          "flags": []
+        },
+        {
+          "page_number": 43,
+          "score": 80.95,
+          "mean_confidence": 80.95,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1161,
+          "flags": []
+        },
+        {
+          "page_number": 44,
+          "score": 80.7,
+          "mean_confidence": 80.7,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1137,
+          "flags": []
+        },
+        {
+          "page_number": 45,
+          "score": 85.0,
+          "mean_confidence": 85.0,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1378,
+          "flags": []
+        },
+        {
+          "page_number": 46,
+          "score": 83.12,
+          "mean_confidence": 83.12,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1122,
+          "flags": []
+        },
+        {
+          "page_number": 47,
+          "score": 81.83,
+          "mean_confidence": 81.83,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1365,
+          "flags": []
+        }
+      ]
+    },
+    {
+      "filename": "meron.pdf",
+      "total_pages": 2,
+      "pymupdf_pages": 0,
+      "ocr_pages": 2,
+      "average_quality_score": 88.12,
+      "minimum_quality_score": 87.0,
+      "maximum_quality_score": 89.25,
+      "review_pages": [],
+      "flag_counts": {},
+      "page_quality": [
+        {
+          "page_number": 1,
+          "score": 87.0,
+          "mean_confidence": 87.0,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1464,
+          "flags": []
+        },
+        {
+          "page_number": 2,
+          "score": 89.25,
+          "mean_confidence": 89.25,
+          "ethiopic_ratio": 1.0,
+          "latin_ratio": 0.0,
+          "visible_characters": 1211,
+          "flags": []
+        }
+      ]
+    }
+  ],
+  "before_after_examples": [
+    {
+      "page_number": 36,
+      "similarity_to_previous": 0.3554,
+      "before": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ሃይማኖትና ሥርዓት\nChe Ectnopian Orchodox Cewatido Church Parch ልበርፒ ታዚበፎዉ\nwww.ethiopianorthodox.org\nPerk ተግባር በጥንቃቄ ላይ ካልተመሠረተ እውነተኛውንና\n. ጻድቁን ወደመኮነን ሊያደርስ ይችላል፤ በመጽሐፍም «በድፍ\n፡ ረትና በትዕቢት በመናቅም በጻድቅ /በእውነተኛው'፤ ላይ\n፡ የሚናገሩ የሽንገላ ከንፈሮች ድዳ ይሁኑ፡:» የተባለው ሳይረጋ\nገጥ ስለሚነገር ነገር አደገኛነት ለማመልከት ነው:: መዝ.\n30፥18::: ይህም የተባለበት ምክንያት ብዙዎች የአይሁድ\nሊቃነ ካህናት ' እንደአደረጉት ሁሉ' በቅዱሳን ላይ በሐሰት\nስለሚመሰክሩ ነው፡፡ እነዚህ በጌታችን በኢየሱስ ክርስቶስ ላይ .\nየሐሰት ምስክር ይፈልጉ ነበርና» ማቴ.26 ፥59፡፡\n- በቅዱሳን ላይ በሐሰት መመስከር\n.-በመጽሐፍ እንደተመዘገበው",
+      "after": "' ይነቱ ተግባር በጥንቃቄ ላይ ካልተመሠረተ እውነተኛውንና\n. ጻድቁን ወደመኮነን ሊያደርስ ይችላል፤ በመጽሐፍም «በድፍ\n፡ ረትና በትዕቢት በመናቅም በጻድቅ /በእውነተኛው'፤ ላይ\n፡ የሚናገሩ የሽንገላ ከንፈሮች ድዳ ይሁኑ፡:» የተባለው ሳይረጋ\nገጥ ስለሚነገር ነገር አደገኛነት ለማመልከት ነው:: መዝ.\n30፥18::: ይህም የተባለበት ምክንያት ብዙዎች የአይሁድ\nሊቃነ ካህናት ' እንደአደረጉት ሁሉ' በቅዱሳን ላይ በሐሰት\nስለሚመሰክሩ ነው፡፡ እነዚህ በጌታችን በኢየሱስ ክርስቶስ ላይ .\nየሐሰት ምስክር ይፈልጉ ነበርና» ማቴ.26 ፥59፡፡\n- በቅዱሳን ላይ በሐሰት መመስከር\n.-በመጽሐፍ እንደተመዘገበው ቅዱስ እስጢፋኖስን አይ\nሁድ ‹ሊገድሉት በፈለጉ ጊዜ ብዙ ሰዎች በሐሰት መስክ\nረውበት ነበር፡ በሐሰት ቃላቸው «ይህ ሰው በዚህ በተቀ\nደሰው ስፍራ በሕግም ላይ የስድብን ነገር ለመናገር አይ\nተው",
+      "removed_fragments": [
+        "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ሃይማኖትና ሥርዓት",
+        "ከሬ ርሮርተክርቪቪልስ .ፐዜርከርዕ6ዕ 'ዚህ6ፐነ6/6 (..ከክቪርቭክ [-6፲ፍከ ልበርፒ ታዚበፎዉ",
+        "ህህዢህገለ/፣ፎ=ቶከ1፤3፤3፤5313 6)፲ቶክር ር1653ር. ‹3፻፣1",
+        "ጊሎጊህዝያፊፎቲከ፤ርን፻ን[ጩ፤ገ ፤፲ቲ' ርንር]ርንንኗ። ጋ ፪፤"
+      ],
+      "quality_score": 81.01,
+      "flags": []
+    },
+    {
+      "page_number": 34,
+      "similarity_to_previous": 0.3774,
+      "before": "የኢትዮጵያ ኦርቶዶክስ ተኖሕዶ ቤት ክርስቲያን ሃይማኖትና ሥርዓት\nThe Echiopian Orchodox Tewatido Church Larch and’ Order\nwww,ethiopianorthodox.or\nስምንተኛው ትእዛዝ\n«MMA 2ድራያ ሏሪ Aci? APOC\nnA.20+16::\nበሐሰት መመስከር መዋሸት ነው:: በቅዱስ መጽሐ\nፍም ስለሐሰት የተነገሩት ቃላት የመዋሸትን አስከፊ ገጽታ\nየሟያሳዩ SFO: ስለዚህም ነገር ጠቢቡ ሰሎሞን «ውሸተኛ\nከንፈር በእግዚአብሔር ዘንድ አስጸያፊ ነው» በማለት ተና - |\nግሯል: ምሳ.12፥22፡:: መዋሸት በአግዚአብሔር ዘንድ የተጠ - ፤!\nላ በመሆኑም ቀደም ብሎ በዘሌዋውያን «እናንተም እርስ '\nበርሳችሁ ሐሰት አትነጋገሩ»የሚል ትእዛዝ ተሰጥቶ ነበር:\nዘሌ.19፥11፡፡: ይህም በሰዎች ዘንድ ሐሰት መናገር ያለተፈ\nቀደ መሆኑን የሚያስገነዝብ ነው:: ከዚህ በመነሣት ሐሰት",
+      "after": "ስምንተኛው ትእዛዝ\n«/,ል 2ድራያ ሏሪ በፊፀት ለ4ፉመኃዕአዕር›\nዘጸ.20+16፡፡\nበሐሰት መመስከር መዋሸት ነው:: በቅዱስ መጽሐ\nፍም ስለሐሰት የተነገሩት ቃላት የመዋሸትን አስከፊ ገጽታ\nየሟያሳዩ ናቸው፡: ስለዚህም ነገር ጠቢቡ ሰሎሞን «ውሸተኛ\nከንፈር በእግዚአብሔር ዘንድ አስጸያፊ ነው» በማለት ተና - |\nግሯል: ምሳ.12፥22፡:: መዋሸት በአግዚአብሔር ዘንድ የተጠ - ፤!\nላ በመሆኑም ቀደም ብሎ በዘሌዋውያን «እናንተም እርስ '\nበርሳችሁ ሐሰት አትነጋገሩ»የሚል ትእዛዝ ተሰጥቶ ነበር:\nዘሌ.19፥11፡፡: ይህም በሰዎች ዘንድ ሐሰት መናገር ያለተፈ\nቀደ መሆኑን የሚያስገነዝብ ነው:: ከዚህ በመነሣት ሐሰት\nወይም ውሸት ምንድነው? ለሚለው ጥያቄ መልስ መስጠቱ\nአስፈላጊ ነው፡፡ ሐሰት /ውሸት/ የሆነውን አልሆነም፤ ያለሆነ\nውን ሆነ ብሎ 'ለሌላው; ሰው መናገር 'ወይም አሉታዊውን\nአዎንታዊ ",
+      "removed_fragments": [
+        "የኢትዮጵያ ኦርቶዶክስ ተኖሕዶ ቤት ክርስቲያን ሃይማኖትና ሥርዓት",
+        "ሂ.ከሬ “ርክ ጩልበ ክርከዕዐቧፍ 'ፒ.‹ርኒ855/ክ4ር ር ክኒጢርከ ].ል\"5ከ ልከርያር ታጹዐፎዉጁ",
+        "እል ል'ህለዚ:1ሻ፣11።1571:171።18ጣ፻1።3፣ =› 4ዒ።18",
+        "ኣዛህህሃ«ፎቲክ1638)151በ6)፲ቲክ ር.1ር5ንኗ.(3፻1"
+      ],
+      "quality_score": 80.76,
+      "flags": []
+    },
+    {
+      "page_number": 28,
+      "similarity_to_previous": 0.771,
+      "before": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤት ክርስቲያን ሃይማኖትና ሥርዓት\nThe Ectnopian Orchodox Cewatido Church Farch ልከርየፒ ንዜሰፎዉ\nwww,ethiopianorthodox.org\nPEF ሥጋዊ ፍላጎት ተከትሎ ለጊዜያዊና ምድ\nራዊ ለሚያልፍም እርካታ ብሉ ወደዓለም ያጋደለ ፈቃደ\nነፍሱንም የተወ ሰው አምስተኛውን ትእዛዝ በመተላለፍ\nየራ ሱን ነፍስ 'ገድሏልር፡ በወንጌልም\"«ነፍሱን የሚያገኝ\nያጠፋታል»- ቂቲብሎ የተነገረው ለእንደዚህ ዓይነቱ ሰው\nነው:፦-ማቴ.10-፥39፡፡ ለምድራዊ ተድላ ሲሮጥ፤ ለሚያልፍ\nጊዜያዊ እርካታ ሲደክም የዘለዓለም ሞችን ገንዘብ\nአድርጓልና፡፡ ስለዚህ «አትግደል» የሚለውን ሕግ ስፋትና\nጥልቀት ከራሳችን ማንነት ጋር በማገናዘብ ከመግደል\nተጠብቀን AVEC LIGA? |\nwww.ethiopianorthodox.org",
+      "after": "'- የራሱን ሥጋዊ ፍላጎት ተከትሎ ለጊዜያዊና ምድ\nራዊ ለሚያልፍም እርካታ ብሉ ወደዓለም ያጋደለ ፈቃደ\nነፍሱንም የተወ ሰው አምስተኛውን ትእዛዝ በመተላለፍ\nየራ ሱን ነፍስ 'ገድሏልር፡ በወንጌልም\"«ነፍሱን የሚያገኝ\nያጠፋታል»- ቂቲብሎ የተነገረው ለእንደዚህ ዓይነቱ ሰው\nነው:፦-ማቴ.10-፥39፡፡ ለምድራዊ ተድላ ሲሮጥ፤ ለሚያልፍ\nጊዜያዊ እርካታ ሲደክም የዘለዓለም ሞችን ገንዘብ\nአድርጓልና፡፡ ስለዚህ «አትግደል» የሚለውን ሕግ ስፋትና\nጥልቀት ከራሳችን ማንነት ጋር በማገናዘብ ከመግደል\nተጠብቀን .ልንኖር.ይገባናል፡፡ |",
+      "removed_fragments": [
+        "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤት ክርስቲያን ሃይማኖትና ሥርዓት",
+        "ሂሬ ር“ተ።ጩጪጩልከ ‹ጋዜርከዕፀ2፡ 'ዌዌልከነ4ርን ርከህክርክ []-ልገርከ ልከርየፒ ንዜሰፎዉ",
+        "ህህህሆህሆ. =1ከ1(313፤3911 5፲ፒክር 6153. 5፣፤4",
+        "ጊህጊጊላ›ቲ፲ገ1 631 51 ር)?ፔከ ር3 ር1፡52ፈ. ር3፲፻3"
+      ],
+      "quality_score": 68.36,
+      "flags": [
+        "low_ocr_confidence",
+        "review_recommended"
+      ]
+    }
+  ],
+  "duplicate_analysis": {
+    "filenames": [
+      "10commandments.pdf",
+      "meron.pdf"
+    ],
+    "same_pdf_bytes": false,
+    "page_counts": [
+      47,
+      2
+    ],
+    "same_page_count": false,
+    "body_text_similarity": 0.0033,
+    "mean_corresponding_page_image_similarity": 0.6113,
+    "near_identical_rendered_pages": 0,
+    "duplicate": false,
+    "conclusion": "separate documents with distinct body content and/or pages"
+  }
+}

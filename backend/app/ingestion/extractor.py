@@ -10,15 +10,25 @@ from typing import Callable
 
 import pymupdf
 
-from app.ingestion.ocr import OcrError, ocr_page
-from app.ingestion.schemas import ExtractedDocument, PageText
+from app.ingestion.ocr import OcrError, OcrResult, ocr_page
+from app.ingestion.processing import (
+    assess_quality,
+    clean_ocr_result,
+    detect_repeated_margin_lines,
+)
+from app.ingestion.schemas import (
+    ExtractedDocument,
+    OcrMetadata,
+    PageQuality,
+    PageText,
+)
 
 EXTRACTION_METHOD = "pymupdf"
 OUTPUT_ENCODING = "utf-8"
 MIN_VISIBLE_CHARACTERS = 4
 MAX_BAD_CHARACTER_RATIO = 0.01
 
-PageOcr = Callable[[pymupdf.Page], str]
+PageOcr = Callable[[pymupdf.Page], str | OcrResult]
 
 
 class IngestionError(Exception):
@@ -119,6 +129,18 @@ def _document_method(pages: list[PageText]) -> str:
     return "mixed"
 
 
+def _quality_summary(pages: list[PageText]) -> dict[str, int | float]:
+    scores = [page.quality.score for page in pages]
+    return {
+        "average_score": round(sum(scores) / len(scores), 2) if scores else 0.0,
+        "minimum_score": min(scores) if scores else 0.0,
+        "review_pages": sum(
+            "review_recommended" in page.quality.flags for page in pages
+        ),
+        "flagged_pages": sum(bool(page.quality.flags) for page in pages),
+    }
+
+
 def extract_pdf(
     source: Path,
     filename: str,
@@ -133,7 +155,7 @@ def extract_pdf(
                     f"'{filename}' is encrypted and cannot be extracted."
                 )
 
-            pages: list[PageText] = []
+            pending: list[tuple[int, str, str | OcrResult]] = []
             for index, page in enumerate(document, start=1):
                 try:
                     pymupdf_text = page.get_text("text")
@@ -147,11 +169,10 @@ def extract_pdf(
                     )
 
                 if is_text_usable(pymupdf_text):
-                    raw_text = pymupdf_text
-                    method = "pymupdf"
+                    pending.append((index, pymupdf_text, pymupdf_text))
                 else:
                     try:
-                        raw_text = run_ocr(page)
+                        ocr_output = run_ocr(page)
                     except OcrError as exc:
                         raise IngestionError(
                             f"OCR failed on page {index} of '{filename}': {exc}"
@@ -160,20 +181,57 @@ def extract_pdf(
                         raise IngestionError(
                             f"OCR failed on page {index} of '{filename}'."
                         ) from exc
-                    if not isinstance(raw_text, str):
+                    if not isinstance(ocr_output, (str, OcrResult)):
                         raise IngestionError(
                             f"OCR did not return text for page {index} "
                             f"of '{filename}'."
                         )
-                    method = "ocr"
+                    pending.append((index, pymupdf_text, ocr_output))
 
+            structured_results = [
+                output for _, _, output in pending if isinstance(output, OcrResult)
+            ]
+            repeated_patterns = detect_repeated_margin_lines(structured_results)
+            pages: list[PageText] = []
+            for index, pymupdf_text, output in pending:
+                if isinstance(output, OcrResult):
+                    cleaned = clean_ocr_result(output, repeated_patterns)
+                    quality = assess_quality(
+                        cleaned.text,
+                        output.mean_confidence,
+                        len(cleaned.removed_fragments),
+                    )
+                    pages.append(
+                        PageText(
+                            page_number=index,
+                            text=normalize_text(cleaned.text),
+                            extraction_method="ocr",
+                            raw_text=output.raw_text,
+                            pymupdf_text=pymupdf_text,
+                            ocr=OcrMetadata(
+                                language=output.language,
+                                dpi=output.dpi,
+                                psm=output.psm,
+                                preprocessing=output.preprocessing,
+                                mean_confidence=output.mean_confidence,
+                            ),
+                            removed_fragments=list(cleaned.removed_fragments),
+                            repaired_line_wraps=cleaned.repaired_line_wraps,
+                            quality=PageQuality(**quality.__dict__),
+                        )
+                    )
+                    continue
+
+                quality = assess_quality(output, None, 0)
+                method = "pymupdf" if is_text_usable(pymupdf_text) else "ocr"
                 pages.append(
                     PageText(
                         page_number=index,
-                        text=normalize_text(raw_text),
+                        text=normalize_text(output),
                         extraction_method=method,
-                        raw_text=raw_text,
+                        raw_text=output,
                         pymupdf_text=pymupdf_text,
+                        quality=PageQuality(**quality.__dict__),
                     )
                 )
     except IngestionError:
@@ -190,6 +248,7 @@ def extract_pdf(
         extraction_method=_document_method(pages),
         encoding=OUTPUT_ENCODING,
         pages=pages,
+        quality_summary=_quality_summary(pages),
     )
 
 
