@@ -1,0 +1,95 @@
+{
+  "document_id": "10commandments",
+  "questions": [
+    {
+      "question_id": "direct-01",
+      "category": "direct",
+      "question": "የመጀመሪያው ትእዛዝ ምንድን ነው?",
+      "review_focus": "The first commandment: no other gods."
+    },
+    {
+      "question_id": "direct-02",
+      "category": "direct",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "review_focus": "The Sabbath command predates the written Ten Commandments."
+    },
+    {
+      "question_id": "direct-03",
+      "category": "direct",
+      "question": "አባትና እናትን ስለማክበር ትእዛዙ ምን ይላል?",
+      "review_focus": "Honor father and mother and the associated promise."
+    },
+    {
+      "question_id": "direct-04",
+      "category": "direct",
+      "question": "“አትግደል” የሚለው ትእዛዝ ምን ያስተምራል?",
+      "review_focus": "The command against killing and its broader explanation."
+    },
+    {
+      "question_id": "direct-05",
+      "category": "direct",
+      "question": "በባልንጀራ ላይ ሐሰት ምስክር ስለመሆን ትእዛዙ ምን ይላል?",
+      "review_focus": "The command against false witness."
+    },
+    {
+      "question_id": "paraphrased-01",
+      "category": "paraphrased",
+      "question": "ሰው ገንዘብንና እግዚአብሔርን በአንድ ጊዜ ለምን ማገልገል አይችልም?",
+      "review_focus": "Money as an idol competing with worship of God."
+    },
+    {
+      "question_id": "paraphrased-02",
+      "category": "paraphrased",
+      "question": "የዕረፍት ቀን ለሰው የተሰጠ ስጦታ እንጂ ሸክም አለመሆኑ እንዴት ይገለጻል?",
+      "review_focus": "The Sabbath as a gracious gift for human rest."
+    },
+    {
+      "question_id": "paraphrased-03",
+      "category": "paraphrased",
+      "question": "አንድን ሰው ከእግዚአብሔር ማራቅ ነፍሱን ከመግደል ጋር የሚመሳሰለው ለምንድን ነው?",
+      "review_focus": "Spiritual killing by separating a soul from God."
+    },
+    {
+      "question_id": "paraphrased-04",
+      "category": "paraphrased",
+      "question": "ወላጆች የልጆቻቸውን መንፈሳዊ ሕይወት ለማሳደግ ምን ኃላፊነት አለባቸው?",
+      "review_focus": "Parents' responsibility to teach and guide their children."
+    },
+    {
+      "question_id": "paraphrased-05",
+      "category": "paraphrased",
+      "question": "የተመኙትን ነገር ማግኘት ምኞትን ከማጥፋት ይልቅ የሚጨምረው እንዴት ነው?",
+      "review_focus": "Fulfilled desire produces further desire rather than satisfaction."
+    },
+    {
+      "question_id": "conceptual-01",
+      "category": "conceptual",
+      "question": "አሠርቱ ትእዛዛት በእግዚአብሔርና በሰው መካከል ያለ ቃል ኪዳን የሚሆኑት እንዴት ነው?",
+      "review_focus": "The commandments understood as a covenant."
+    },
+    {
+      "question_id": "conceptual-02",
+      "category": "conceptual",
+      "question": "እግዚአብሔርን መውደድና ባልንጀራን መውደድ ከሁለቱ ጽላት ጋር ምን ግንኙነት አላቸው?",
+      "review_focus": "The two tablets as duties toward God and toward neighbors."
+    },
+    {
+      "question_id": "conceptual-03",
+      "category": "conceptual",
+      "question": "ሰንበት የሥጋ ዕረፍትና የነፍስ ዕረፍት ምልክት የሚሆነው እንዴት ነው?",
+      "review_focus": "Physical Sabbath rest as a sign of spiritual and eternal rest."
+    },
+    {
+      "question_id": "conceptual-04",
+      "category": "conceptual",
+      "question": "የሰውን ዝና ለመጠበቅ እውነትን መሥዋዕት ማድረግ ለምን እንደ ጣዖት አምልኮ ይቆጠራል?",
+      "review_focus": "Preferring human reputation over truth and God."
+    },
+    {
+      "question_id": "conceptual-05",
+      "category": "conceptual",
+      "question": "ራስን ማምለክ ከሌሎች ጣዖታት ሁሉ የበለጠ አደገኛ የሆነው ለምንድን ነው?",
+      "review_focus": "Self-worship as the most dangerous form of idolatry."
+    }
+  ]
+}
