@@ -1,0 +1,949 @@
+{
+  "schema_version": "1",
+  "document_id": "10commandments",
+  "labeling_policy": "A chunk is verified only when its own text states the expected answer concept. Nearby chapters and shared religious wording are manual_review and do not count as relevant. documented_sense records a real alternate meaning in the source; it is not a ground-truth label. High-ambiguity questions are excluded from recall.",
+  "recall_definition": "Question-level Recall@k is the number of metric-eligible questions that have at least one verified chunk inside the top k, divided by the number of metric-eligible questions. The full question file has 15 questions. manual_review and documented_sense chunks never count as hits.",
+  "judgments": [
+    {
+      "question_id": "direct-01",
+      "category": "direct",
+      "expected_answer_concept": "No single concept is fixed. The question file's review focus is the commandment against other gods, but the source uses 'first commandment' for three teachings.",
+      "ambiguity": "high",
+      "metric_eligible": false,
+      "exclusion_reason": "Page 4 titles the first commandment as having no other gods. Page 14 calls honor of father and mother the first commandment about relations between people, after three commandments toward God. Pages 2–3 and 46–47 call love of God the first commandment and love of neighbor the second. Choosing one of these as the only relevant result would invent a ground truth.",
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0008",
+          "page_start": 4,
+          "page_end": 4,
+          "status": "documented_sense",
+          "evidence": "Heading አንደኛው ትእዛዝ quotes «ከእኔ በቀር ሌሎች አማልክት አይሁኑልህ»."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "status": "documented_sense",
+          "evidence": "Honor of father and mother is called የመጀመሪያው ትእዛዝ about relations between people, and the first commandment joined to a promise."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "status": "documented_sense",
+          "evidence": "Jesus answers that the great and first commandment is to love God, and the second is to love one's neighbor."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0113",
+          "page_start": 46,
+          "page_end": 47,
+          "status": "documented_sense",
+          "evidence": "Mark 12:29–31 is quoted: the first commandment is love of God and the second is love of neighbor."
+        }
+      ]
+    },
+    {
+      "question_id": "direct-02",
+      "category": "direct",
+      "expected_answer_concept": "The command to keep the Sabbath was given before the Ten Commandments were written.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "status": "verified",
+          "evidence": "The Sabbath command is called the earlier command God gave Israel before the Ten Commandments were written."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "status": "verified",
+          "evidence": "It asks when the Sabbath command was given and answers that keeping Sabbath existed before the Ten Commandments, at the end of creation."
+        }
+      ]
+    },
+    {
+      "question_id": "direct-03",
+      "category": "direct",
+      "expected_answer_concept": "Honor father and mother so that life will be long and good in the land God gives.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "status": "verified",
+          "evidence": "Quotes the command to honor father and mother and the promise of long life and good in the land."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0041",
+          "page_start": 14,
+          "page_end": 14,
+          "status": "verified",
+          "evidence": "Asks how parents are honored and begins the answer with love."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0044",
+          "page_start": 14,
+          "page_end": 14,
+          "status": "manual_review",
+          "evidence": "Discusses remembering what parents have done. It does not quote the commandment, so it is not counted as sufficient evidence."
+        }
+      ]
+    },
+    {
+      "question_id": "direct-04",
+      "category": "direct",
+      "expected_answer_concept": "Do not kill applies beyond murderers and is taught by Christ as well as Exodus.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "status": "verified",
+          "evidence": "Opens the fifth commandment, «አትግደል», and says it is not only for criminals and murderers."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0047",
+          "page_start": 16,
+          "page_end": 16,
+          "status": "verified",
+          "evidence": "Quotes Christ: you have heard that it was said do not kill, and whoever kills is liable to judgment."
+        }
+      ]
+    },
+    {
+      "question_id": "direct-05",
+      "category": "direct",
+      "expected_answer_concept": "The commandment forbids false witness against a neighbor, which the book treats as lying.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0085",
+          "page_start": 34,
+          "page_end": 34,
+          "status": "verified",
+          "evidence": "The eighth-commandment section says በሐሰት መመስከር መዋሸት ነው and defines falsehood as giving someone untrue information."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0089",
+          "page_start": 36,
+          "page_end": 36,
+          "status": "verified",
+          "evidence": "Gives Jezebel's false witnesses against Naboth and states the command «በሐሰት አትመስክር»."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0086",
+          "page_start": 34,
+          "page_end": 35,
+          "status": "manual_review",
+          "evidence": "Continues the discussion of habitual lying. It does not itself state the false-witness command."
+        }
+      ]
+    },
+    {
+      "question_id": "paraphrased-01",
+      "category": "paraphrased",
+      "expected_answer_concept": "Money is an idol, and a person cannot serve both God and money.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0009",
+          "page_start": 4,
+          "page_end": 4,
+          "status": "verified",
+          "evidence": "Calls worship of money an idol that rivals God and quotes Christ that no one can serve God and money."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0010",
+          "page_start": 4,
+          "page_end": 4,
+          "status": "verified",
+          "evidence": "Says a person who claims to worship God while loving money too much deceives himself."
+        }
+      ]
+    },
+    {
+      "question_id": "paraphrased-02",
+      "category": "paraphrased",
+      "expected_answer_concept": "The day of rest was given for human benefit and is not a burden laid on people.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "status": "verified",
+          "evidence": "Says the rest day is not a burden, that the Sabbath was made for people, and that it is a grace given so people can rest from bodily fatigue."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "status": "manual_review",
+          "evidence": "Contains the Sabbath command and says it predates the written Ten Commandments. It does not say the day is a gift rather than a burden."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "status": "manual_review",
+          "evidence": "Says Sabbath rest is not lying in bed. That is a different claim from the day being a gift rather than a burden."
+        }
+      ]
+    },
+    {
+      "question_id": "paraphrased-03",
+      "category": "paraphrased",
+      "expected_answer_concept": "Separating a soul from God is killing that soul.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0058",
+          "page_start": 22,
+          "page_end": 22,
+          "status": "verified",
+          "evidence": "States ነፍስ ከእግዚአብሔር እንድትለይ ማድረግ መግደል ነው."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0059",
+          "page_start": 22,
+          "page_end": 23,
+          "status": "verified",
+          "evidence": "Continues that leading people away from true faith kills the soul and is worse than bodily killing."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "status": "manual_review",
+          "evidence": "Warns parents not to kill their children's spiritual life. It applies the idea but does not state the general teaching."
+        }
+      ]
+    },
+    {
+      "question_id": "paraphrased-04",
+      "category": "paraphrased",
+      "expected_answer_concept": "Parents must teach their children and guard their spiritual life.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0063",
+          "page_start": 24,
+          "page_end": 24,
+          "status": "verified",
+          "evidence": "Quotes the duty to teach children at home and says the head of the family must raise children in the fear of God."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0064",
+          "page_start": 25,
+          "page_end": 25,
+          "status": "verified",
+          "evidence": "Says quarreling parents damage their children's way of life and the hope of their spiritual life."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0044",
+          "page_start": 14,
+          "page_end": 14,
+          "status": "manual_review",
+          "evidence": "Describes what children owe parents, which is the reverse of the parents' duty asked here."
+        }
+      ]
+    },
+    {
+      "question_id": "paraphrased-05",
+      "category": "paraphrased",
+      "expected_answer_concept": "Getting what one desired increases desire instead of ending it.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0102",
+          "page_start": 41,
+          "page_end": 41,
+          "status": "verified",
+          "evidence": "Says fulfilling desire does not free a person from desiring; it increases desire, and illustrates this with someone who gains money and then wants more."
+        }
+      ]
+    },
+    {
+      "question_id": "conceptual-01",
+      "category": "conceptual",
+      "expected_answer_concept": "The Ten Commandments are covenants made between God and human beings.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "status": "verified",
+          "evidence": "Opens by saying the Ten Commandments are covenants made between God and human beings, for this age as well as earlier ones."
+        }
+      ]
+    },
+    {
+      "question_id": "conceptual-02",
+      "category": "conceptual",
+      "expected_answer_concept": "The two tablets divide love of God from love of neighbor.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "status": "verified",
+          "evidence": "Says the first tablet contains the commandments about God and the second contains those that teach love of neighbor."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "status": "verified",
+          "evidence": "Says church teachers divide the Ten Commandments into love of God and love of neighbor."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0114",
+          "page_start": 47,
+          "page_end": 47,
+          "status": "manual_review",
+          "evidence": "Discusses love of neighbor under the tenth commandment without relating it to the two tablets."
+        }
+      ]
+    },
+    {
+      "question_id": "conceptual-03",
+      "category": "conceptual",
+      "expected_answer_concept": "Sabbath rest of the body is a sign of rest for the soul.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0035",
+          "page_start": 12,
+          "page_end": 12,
+          "status": "verified",
+          "evidence": "Says the Sabbath is a sign of eternal spiritual rest, and that bodily rest under the old law is fulfilled as rest of the soul in Christ."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "status": "verified",
+          "evidence": "Says the day lets people rest from bodily fatigue and that keeping it benefits both body and spirit, then calls Sabbath a figure of eternal rest."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "status": "manual_review",
+          "evidence": "Quotes the command to do no work on the seventh day. It does not call that rest a sign of rest for the soul."
+        }
+      ]
+    },
+    {
+      "question_id": "conceptual-04",
+      "category": "conceptual",
+      "expected_answer_concept": "Hiding or changing the truth to protect human reputation is idolatry.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0012",
+          "page_start": 5,
+          "page_end": 5,
+          "status": "verified",
+          "evidence": "Under ዝናን ማምለክ, says people hide the truth to protect earthly reputation and that this is worship of reputation."
+        },
+        {
+          "chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "status": "verified",
+          "evidence": "Says truth must not be sacrificed for human reputation, and that exchanging truth for fame is abandoning God, who is truth, to worship a famous person."
+        }
+      ]
+    },
+    {
+      "question_id": "conceptual-05",
+      "category": "conceptual",
+      "expected_answer_concept": "Worship of the self is more dangerous than the other idols.",
+      "ambiguity": "low",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "chunks": [
+        {
+          "chunk_id": "10commandments:chunk-0019",
+          "page_start": 7,
+          "page_end": 7,
+          "status": "verified",
+          "evidence": "Says self-worship is greater and more dangerous than all other idols, and explains it through the desire to be honored as more than one is."
+        }
+      ]
+    }
+  ],
+  "model_scores": [
+    {
+      "model_name": "intfloat/multilingual-e5-small",
+      "results_file": "multilingual-e5-small.results.json",
+      "question_count": 15,
+      "metric_eligible_count": 14,
+      "excluded_question_ids": [
+        "direct-01"
+      ],
+      "recall_at_1": {
+        "hits": 5,
+        "eligible": 14
+      },
+      "recall_at_3": {
+        "hits": 9,
+        "eligible": 14
+      },
+      "recall_at_5": {
+        "hits": 12,
+        "eligible": 14
+      },
+      "questions": {
+        "direct-01": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": false,
+          "matched_verified_chunk_ids": [],
+          "documented_sense_chunk_ids_in_top_5": [
+            "10commandments:chunk-0040",
+            "10commandments:chunk-0005",
+            "10commandments:chunk-0113"
+          ]
+        },
+        "direct-02": {
+          "top_1": true,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0031",
+            "10commandments:chunk-0032"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "direct-03": {
+          "top_1": false,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0040",
+            "10commandments:chunk-0041"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "direct-04": {
+          "top_1": true,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0045",
+            "10commandments:chunk-0047"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "direct-05": {
+          "top_1": false,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0089",
+            "10commandments:chunk-0085"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "paraphrased-01": {
+          "top_1": true,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0009",
+            "10commandments:chunk-0010"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "paraphrased-02": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": false,
+          "matched_verified_chunk_ids": [],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "paraphrased-03": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": false,
+          "matched_verified_chunk_ids": [],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "paraphrased-04": {
+          "top_1": false,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0063",
+            "10commandments:chunk-0064"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "paraphrased-05": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0102"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "conceptual-01": {
+          "top_1": true,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0002"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "conceptual-02": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0005"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "conceptual-03": {
+          "top_1": false,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0035",
+            "10commandments:chunk-0034"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "conceptual-04": {
+          "top_1": false,
+          "top_3": false,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0013"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        },
+        "conceptual-05": {
+          "top_1": true,
+          "top_3": true,
+          "top_5": true,
+          "matched_verified_chunk_ids": [
+            "10commandments:chunk-0019"
+          ],
+          "documented_sense_chunk_ids_in_top_5": []
+        }
+      }
+    }
+  ],
+  "over_limit_window_audit": {
+    "model_name": "intfloat/multilingual-e5-small",
+    "max_model_tokens": 512,
+    "over_limit_chunk_count": 30,
+    "window_counts": [
+      2
+    ],
+    "second_window_token_minimum": 38,
+    "second_window_token_maximum": 135,
+    "cross_page_count": 6,
+    "provenance_mismatches": 0,
+    "chunks": [
+      {
+        "chunk_id": "10commandments:chunk-0002",
+        "page_start": 1,
+        "page_end": 1,
+        "cross_page": false,
+        "token_length": 543,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          68
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0003",
+        "page_start": 2,
+        "page_end": 2,
+        "cross_page": false,
+        "token_length": 573,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          97
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0005",
+        "page_start": 2,
+        "page_end": 3,
+        "cross_page": true,
+        "token_length": 584,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          109
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0006",
+        "page_start": 3,
+        "page_end": 3,
+        "cross_page": false,
+        "token_length": 587,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          111
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0020",
+        "page_start": 7,
+        "page_end": 7,
+        "cross_page": false,
+        "token_length": 526,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          50
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0023",
+        "page_start": 8,
+        "page_end": 8,
+        "cross_page": false,
+        "token_length": 577,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          101
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0026",
+        "page_start": 9,
+        "page_end": 9,
+        "cross_page": false,
+        "token_length": 545,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          70
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0028",
+        "page_start": 10,
+        "page_end": 10,
+        "cross_page": false,
+        "token_length": 535,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          59
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0031",
+        "page_start": 11,
+        "page_end": 11,
+        "cross_page": false,
+        "token_length": 514,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          38
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0039",
+        "page_start": 13,
+        "page_end": 13,
+        "cross_page": false,
+        "token_length": 531,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          55
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0045",
+        "page_start": 15,
+        "page_end": 15,
+        "cross_page": false,
+        "token_length": 595,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          119
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0049",
+        "page_start": 17,
+        "page_end": 17,
+        "cross_page": false,
+        "token_length": 546,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          71
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0050",
+        "page_start": 18,
+        "page_end": 18,
+        "cross_page": false,
+        "token_length": 529,
+        "window_count": 2,
+        "window_token_lengths": [
+          510,
+          54
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0054",
+        "page_start": 20,
+        "page_end": 20,
+        "cross_page": false,
+        "token_length": 518,
+        "window_count": 2,
+        "window_token_lengths": [
+          510,
+          42
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0065",
+        "page_start": 25,
+        "page_end": 25,
+        "cross_page": false,
+        "token_length": 588,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          112
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0068",
+        "page_start": 27,
+        "page_end": 27,
+        "cross_page": false,
+        "token_length": 616,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          133
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0074",
+        "page_start": 30,
+        "page_end": 30,
+        "cross_page": false,
+        "token_length": 523,
+        "window_count": 2,
+        "window_token_lengths": [
+          507,
+          47
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0080",
+        "page_start": 31,
+        "page_end": 32,
+        "cross_page": true,
+        "token_length": 525,
+        "window_count": 2,
+        "window_token_lengths": [
+          509,
+          50
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0085",
+        "page_start": 34,
+        "page_end": 34,
+        "cross_page": false,
+        "token_length": 612,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          135
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0086",
+        "page_start": 34,
+        "page_end": 35,
+        "cross_page": true,
+        "token_length": 595,
+        "window_count": 2,
+        "window_token_lengths": [
+          507,
+          116
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0089",
+        "page_start": 36,
+        "page_end": 36,
+        "cross_page": false,
+        "token_length": 518,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          42
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0091",
+        "page_start": 37,
+        "page_end": 37,
+        "cross_page": false,
+        "token_length": 538,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          61
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0094",
+        "page_start": 39,
+        "page_end": 39,
+        "cross_page": false,
+        "token_length": 526,
+        "window_count": 2,
+        "window_token_lengths": [
+          511,
+          47
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0096",
+        "page_start": 40,
+        "page_end": 40,
+        "cross_page": false,
+        "token_length": 579,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          103
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0098",
+        "page_start": 40,
+        "page_end": 40,
+        "cross_page": false,
+        "token_length": 574,
+        "window_count": 2,
+        "window_token_lengths": [
+          510,
+          98
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0102",
+        "page_start": 41,
+        "page_end": 41,
+        "cross_page": false,
+        "token_length": 540,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          63
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0104",
+        "page_start": 41,
+        "page_end": 42,
+        "cross_page": true,
+        "token_length": 564,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          88
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0107",
+        "page_start": 43,
+        "page_end": 44,
+        "cross_page": true,
+        "token_length": 609,
+        "window_count": 2,
+        "window_token_lengths": [
+          507,
+          133
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0109",
+        "page_start": 44,
+        "page_end": 45,
+        "cross_page": true,
+        "token_length": 535,
+        "window_count": 2,
+        "window_token_lengths": [
+          512,
+          60
+        ]
+      },
+      {
+        "chunk_id": "10commandments:chunk-0114",
+        "page_start": 47,
+        "page_end": 47,
+        "cross_page": false,
+        "token_length": 598,
+        "window_count": 2,
+        "window_token_lengths": [
+          508,
+          122
+        ]
+      }
+    ]
+  }
+}

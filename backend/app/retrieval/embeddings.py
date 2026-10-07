@@ -133,14 +133,22 @@ class MultilingualE5SmallProvider(EmbeddingProvider):
         encoded = self._tokenizer(
             text,
             add_special_tokens=False,
-            truncation=True,
-            max_length=body_capacity,
-            stride=stride,
-            return_overflowing_tokens=True,
+            truncation=False,
         )
-        token_windows = encoded["input_ids"]
-        if token_windows and isinstance(token_windows[0], int):
-            token_windows = [token_windows]
+        body_ids = encoded["input_ids"]
+        if body_ids and isinstance(body_ids[0], list):
+            body_ids = body_ids[0]
+        if len(body_ids) <= body_capacity:
+            token_windows = [body_ids]
+        else:
+            step = body_capacity - stride
+            token_windows = []
+            start = 0
+            while start < len(body_ids):
+                token_windows.append(body_ids[start : start + body_capacity])
+                if start + body_capacity >= len(body_ids):
+                    break
+                start += step
 
         windows = [
             f"{self.DOCUMENT_PREFIX}"

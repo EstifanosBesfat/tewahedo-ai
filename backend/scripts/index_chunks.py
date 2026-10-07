@@ -46,10 +46,16 @@ def main(argv: list[str] | None = None) -> int:
         default="cpu",
         help="Sentence Transformers device, for example cpu or cuda",
     )
+    parser.add_argument(
+        "--model-dir",
+        type=Path,
+        default=None,
+        help="Local model directory. Omit to load from the model hub.",
+    )
     args = parser.parse_args(argv)
 
     try:
-        service = create_e5_service(args.store, args.device)
+        service = create_e5_service(args.store, args.device, args.model_dir)
         report = service.index_document(args.chunks)
     except (OSError, TypeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)

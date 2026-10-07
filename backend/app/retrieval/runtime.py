@@ -17,8 +17,18 @@ DEFAULT_VECTOR_STORE_PATH = (
 def create_e5_service(
     persist_path: Path = DEFAULT_VECTOR_STORE_PATH,
     device: str = "cpu",
+    model_path: Path | None = None,
 ) -> RetrievalService:
-    provider = MultilingualE5SmallProvider(device=device)
+    local_model = None
+    if model_path is not None:
+        from sentence_transformers import SentenceTransformer
+
+        local_model = SentenceTransformer(
+            str(model_path),
+            device=device,
+            local_files_only=True,
+        )
+    provider = MultilingualE5SmallProvider(device=device, model=local_model)
     store = ChromaVectorStore(
         persist_path=persist_path,
         collection_name=E5_COLLECTION_NAME,

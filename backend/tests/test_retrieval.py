@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import math
 from pathlib import Path
 from typing import Sequence
@@ -18,7 +19,13 @@ from app.retrieval.embeddings import (
     MultilingualE5SmallProvider,
     TokenLimitError,
 )
-from app.retrieval.schemas import EmbeddingBatch, EvaluationQuestionSet
+from app.retrieval.evaluation import score_relevance_audit
+from app.retrieval.schemas import (
+    EmbeddingBatch,
+    EvaluationQuestionSet,
+    EvaluationRun,
+    RetrievalAudit,
+)
 from app.retrieval.service import RetrievalService
 from app.retrieval.store import ChromaVectorStore
 
@@ -288,3 +295,77 @@ def test_evaluation_question_file_has_five_questions_per_category() -> None:
         )
         for category in ("direct", "paraphrased", "conceptual")
     } == {"direct": 5, "paraphrased": 5, "conceptual": 5}
+
+
+def test_retrieval_audit_recall_uses_only_verified_chunks() -> None:
+    evaluation_dir = (
+        Path(__file__).resolve().parents[1] / "data" / "evaluation"
+    )
+    chunks_path = (
+        Path(__file__).resolve().parents[1]
+        / "data"
+        / "processed"
+        / "10commandments.chunks.json"
+    )
+    audit = RetrievalAudit.model_validate_json(
+        (evaluation_dir / "retrieval-audit.json").read_text(encoding="utf-8")
+    )
+    run = EvaluationRun.model_validate_json(
+        (evaluation_dir / "multilingual-e5-small.results.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    chunks = {
+        chunk["chunk_id"]: chunk
+        for chunk in json.loads(chunks_path.read_text(encoding="utf-8"))["chunks"]
+    }
+
+    assert len(audit.judgments) == 15
+    assert audit.model_scores[0].metric_eligible_count == 14
+    assert audit.model_scores[0].excluded_question_ids == ["direct-01"]
+    assert audit.model_scores[0].recall_at_3.hits == 9
+    assert audit.model_scores[0].recall_at_5.hits == 12
+    assert audit.model_scores[0].recall_at_3.eligible == 14
+    recomputed = score_relevance_audit(
+        audit.judgments,
+        run,
+        "multilingual-e5-small.results.json",
+    )
+    assert recomputed.model_dump(mode="json") == audit.model_scores[0].model_dump(
+        mode="json"
+    )
+
+    first = next(
+        judgment
+        for judgment in audit.judgments
+        if judgment.question_id == "direct-01"
+    )
+    assert first.metric_eligible is False
+    assert not any(chunk.status == "verified" for chunk in first.chunks)
+    assert "10commandments:chunk-0008" not in (
+        audit.model_scores[0]
+        .questions["direct-01"]
+        .documented_sense_chunk_ids_in_top_5
+    )
+
+    for judgment in audit.judgments:
+        for item in judgment.chunks:
+            source = chunks[item.chunk_id]
+            assert item.page_start == source["page_start"]
+            assert item.page_end == source["page_end"]
+
+    for result in run.results:
+        for hit in result.top_5:
+            source = chunks[hit.chunk_id]
+            assert hit.document_id == source["document_id"]
+            assert hit.page_start == source["page_start"]
+            assert hit.page_end == source["page_end"]
+            assert hit.text == source["text"]
+            assert hit.extraction_method == source["extraction_method"]
+            assert hit.source_quality_score == source["source_quality_score"]
+
+    windows = audit.over_limit_window_audit
+    assert windows.over_limit_chunk_count == 30
+    assert windows.window_counts == [2]
+    assert all(chunk.window_count == 2 for chunk in windows.chunks)
+    assert windows.provenance_mismatches == 0

@@ -54,10 +54,16 @@ def main(argv: list[str] | None = None) -> int:
         default=DEFAULT_VECTOR_STORE_PATH,
     )
     parser.add_argument("--device", default="cpu")
+    parser.add_argument(
+        "--model-dir",
+        type=Path,
+        default=None,
+        help="Local model directory. Omit to load from the model hub.",
+    )
     args = parser.parse_args(argv)
 
     try:
-        service = create_e5_service(args.store, args.device)
+        service = create_e5_service(args.store, args.device, args.model_dir)
         evaluation = run_evaluation(service, args.questions)
         write_evaluation(evaluation, args.output)
     except (OSError, TypeError, ValueError) as exc:
