@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping, Sequence
 from pathlib import Path
 
+from app.preparation.retrieval_units import parent_chunk_id
 from app.retrieval.schemas import (
     EvaluationQuestionSet,
     EvaluationResult,
@@ -125,3 +127,86 @@ def write_evaluation(run: EvaluationRun, output_path: Path) -> None:
         + "\n",
         encoding="utf-8",
     )
+
+
+def collapse_units_to_parents(unit_ids: Sequence[str], width: int = 5) -> list[str]:
+    """Keep the first unique parent of each ranked retrieval unit."""
+    parents: list[str] = []
+    seen: set[str] = set()
+    for unit_id in unit_ids:
+        parent_id = parent_chunk_id(unit_id)
+        if parent_id in seen:
+            continue
+        seen.add(parent_id)
+        parents.append(parent_id)
+        if len(parents) == width:
+            break
+    return parents
+
+
+def parent_recall_flags(
+    parent_ids: Sequence[str],
+    relevant_parent_ids: Sequence[str],
+) -> dict[str, bool | int | None]:
+    """Score one question with the frozen parent-collapse rule.
+
+    A cutoff is a hit when any approved relevant parent appears inside it.
+    The first relevant rank is the 1-based position in the collapsed parent
+    list, or null when none of those parents were retrieved.
+    """
+    relevant = set(relevant_parent_ids)
+    first_rank = next(
+        (index for index, parent_id in enumerate(parent_ids, start=1) if parent_id in relevant),
+        None,
+    )
+    return {
+        "first_relevant_parent_rank": first_rank,
+        "top_1": first_rank is not None and first_rank <= 1,
+        "top_3": first_rank is not None and first_rank <= 3,
+        "top_5": first_rank is not None and first_rank <= 5,
+    }
+
+
+def score_parent_recall(
+    questions: Sequence[Mapping[str, object]],
+    parents_by_question: Mapping[str, Sequence[str]],
+) -> dict[str, object]:
+    """Apply the frozen 14-question Recall@K rule to collapsed parent lists."""
+    rows: list[dict[str, object]] = []
+    hits = {1: 0, 3: 0, 5: 0}
+    eligible = 0
+    for question in questions:
+        question_id = str(question["question_id"])
+        metric_eligible = bool(question["metric_eligible"])
+        raw_relevant = question["relevant_chunk_ids"]
+        if not isinstance(raw_relevant, list):
+            raise TypeError("relevant_chunk_ids must be a list")
+        relevant = [str(chunk_id) for chunk_id in raw_relevant]
+        parents = list(parents_by_question[question_id])
+        flags = parent_recall_flags(parents, relevant)
+        if metric_eligible:
+            eligible += 1
+            for cutoff in hits:
+                if flags[f"top_{cutoff}"]:
+                    hits[cutoff] += 1
+        rows.append(
+            {
+                "question_id": question_id,
+                "category": question.get("category", question.get("question_type")),
+                "metric_eligible": metric_eligible,
+                "exclusion_reason": question.get("exclusion_reason"),
+                "relevant_chunk_ids": relevant,
+                "parent_ids": parents,
+                **flags,
+            }
+        )
+    return {
+        "eligible": eligible,
+        "hits": hits,
+        "questions": rows,
+        "misses_at_5": [
+            row["question_id"]
+            for row in rows
+            if row["metric_eligible"] and not row["top_5"]
+        ],
+    }

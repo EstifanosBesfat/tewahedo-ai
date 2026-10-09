@@ -9,6 +9,7 @@ from app.preparation.schemas import PreparedChunk
 from app.retrieval.schemas import SearchResult
 
 E5_COLLECTION_NAME = "tewahedo_multilingual_e5_small_v1"
+BGE_M3_COLLECTION_NAME = "tewahedo_bge_m3_dense_v1"
 
 
 class ChromaVectorStore:
@@ -57,6 +58,10 @@ class ChromaVectorStore:
     @property
     def count(self) -> int:
         return int(self._collection.count())
+
+    def stored_ids(self) -> set[str]:
+        result = self._collection.get(include=[])
+        return set(result.get("ids") or [])
 
     def upsert(
         self,
