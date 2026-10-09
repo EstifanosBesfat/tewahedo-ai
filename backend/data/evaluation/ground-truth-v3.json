@@ -1,0 +1,570 @@
+{
+  "benchmark_version": "ground-truth-v3",
+  "status": "official",
+  "approved_from": "backend/data/evaluation/ground-truth-v2.json",
+  "source_of_truth": "original Amharic corpus",
+  "source_document": "10commandments.pdf",
+  "corpus_file_read": "backend/data/processed/10commandments.chunks.json",
+  "question_file": "backend/data/evaluation/amharic_retrieval_questions.json",
+  "question_count": 15,
+  "metric_eligible_count": 14,
+  "excluded_question_ids": [
+    "direct-01"
+  ],
+  "recall_definition": "Question-level Recall@k is the number of metric-eligible questions with at least one relevant parent chunk inside the top k, divided by 14. direct-01 is excluded. Documented senses and neighboring chunks that were not cited as source evidence do not count.",
+  "notes": "Copied from the approved ground-truth-v2. The only ground-truth change is the added relevant parent for paraphrased-05. OCR, extracted JSON, preparation chunks, retrieval units, and the question text were not modified.",
+  "questions": [
+    {
+      "question_id": "direct-01",
+      "question": "የመጀመሪያው ትእዛዝ ምንድን ነው?",
+      "question_type": "direct",
+      "validation_status": "AMBIGUOUS",
+      "metric_eligible": false,
+      "exclusion_reason": "The Amharic uses 'the first commandment' for three teachings. No one of them is the only concept the source states.",
+      "previous_review_focus": "The first commandment: no other gods.",
+      "expected_concept": null,
+      "documented_senses": [
+        {
+          "sense": "No other gods. The section is titled አንደኛው ትእዛዝ and quotes the command to have no other gods besides God. The same page says the command concerns every person, not only idols named from the sun, the sea, or fire.",
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0008",
+          "pages": [
+            4
+          ],
+          "decisive_amharic": "አንደኛው ትእዛዝ «ከእፄ በቀር ሌሎች አማልክት አይሁኑልህ» … «ከእኔ በቀር ሌሎች አማልክት አይሁኑልህ»"
+        },
+        {
+          "sense": "Honor of father and mother as the first commandment about relations between people, after three commandments toward God, and the first commandment joined to a promise of long life and well-being.",
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0040",
+          "pages": [
+            14
+          ],
+          "decisive_amharic": "ይህ ትአዛዝ በሰዎች መካከል ስላለው ግንኙነት የተሰጠ የመጀመሪያው ትእዛዝ ነው፡፡ … ክሚገኘው የበረከት ዋጋ ጋር አብሮ የተሰጠ የመጀመሪያ ትእዛዝ … የተስፋ ቃል ያላት ፊተኛይቱ ትእዛዝ ናት"
+        },
+        {
+          "sense": "Love of God as the great and first commandment, with love of neighbor as the second. Page 2 states this in Christ's answer to the lawyer. Pages 46–47 quote the same pair from Mark 12:29–31.",
+          "document": "10commandments.pdf",
+          "chunk_ids": [
+            "10commandments:chunk-0005",
+            "10commandments:chunk-0112",
+            "10commandments:chunk-0113"
+          ],
+          "pages": [
+            2,
+            3,
+            46,
+            47
+          ],
+          "decisive_amharic": "ታላቂቱና ፊተኛይቱ ትአዛዝ ይህችን ትመስላለች … ባልንጀራህን እአንደነፍስህ ውደድ … ከትእዛዛቱ ሁሉ ፊተኛይቱ … ጌታ አምላክህን ውደድ … ሁለተኛይቱም ባልንጀራሀን እንደራስህ ውደድ"
+        }
+      ],
+      "qualifications_preserved": [
+        "The page 4 sense matches the old English review focus, and the other two senses are also stated.",
+        "The first quotation on page 4 is OCR-damaged («ከእፄ በቀር»). The same page later prints «ከእኔ በቀር ሌሎች አማልክት አይሁኑልህ».",
+        "Page 14 is a different use of 'first.' It is not a second wording of the no-other-gods command."
+      ],
+      "english_explanation": "The book calls three teachings the first commandment: having no other gods (page 4), honor of father and mother as the first command between people and the first joined to a promise (page 14), and love of God, with love of neighbor as the second (pages 2–3 and 46–47).",
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "direct-02",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "question_type": "direct",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "The Sabbath command predates the written Ten Commandments.",
+      "expected_concept": "The command to keep the Sabbath was given at the end of creation, before the Ten Commandments were written as law. God himself rested as the pattern. The book says Israel already knew and kept the Sabbath before that written law.",
+      "qualifications_preserved": [
+        "The older English timing claim is in the Amharic, and the book's own answer to 'when' is the end of creation.",
+        "God's rest is the pattern, not only an earlier date.",
+        "Exodus 16:23–30 is the book's evidence that Israel already knew the command. The place name Sinai is not added."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0031",
+          "pages": [
+            11
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0032",
+          "pages": [
+            11
+          ]
+        }
+      ],
+      "decisive_amharic": [
+        "ይህ ትአዛዝ አሥርቱ ትእዛዛት ከመጻፋቸው በፊት እግዚአብሔር ራሱ አብነት በመሆን … የሰጠው ቀዳማዊ ትእዛዝ ነው",
+        "ሰንበትን የማክበር ትእዛዝ ከሕግ አስቀድሞ በሥነ ፍጥረት መጨረሻ ላይ የተሰጠ መሆኑን አረጋግጠናል"
+      ],
+      "english_explanation": "Page 11 dates the command to the end of creation, before the Ten were written as law, with God's own rest as the pattern, and says Israel already kept it.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0031",
+        "10commandments:chunk-0032"
+      ]
+    },
+    {
+      "question_id": "direct-03",
+      "question": "አባትና እናትን ስለማክበር ትእዛዙ ምን ይላል?",
+      "question_type": "direct",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "Honor father and mother and the associated promise.",
+      "expected_concept": "Honor father and mother and the associated promise.",
+      "qualifications_preserved": [
+        "The promise is long life and well-being in the land God gives.",
+        "The same page also calls this the first commandment of relations between people. That is a separate use of 'first,' not a different honor-parents command."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0040",
+          "pages": [
+            14
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 14 quotes the command to honor father and mother so that life will be long and it will be well in the land God gives.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0040"
+      ]
+    },
+    {
+      "question_id": "direct-04",
+      "question": "“አትግደል” የሚለው ትእዛዝ ምን ያስተምራል?",
+      "question_type": "direct",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "The command against killing and its broader explanation.",
+      "expected_concept": "«አትግደል» is the book's fifth commandment. The passage says some people think it concerns only criminals and murderers. It asks whether God forbade every killing or whether some killing was permitted, and it records killing that the old law required. That old-law killing is not treated as breaking the command. Christ quotes the command and teaches that anger and insult against a brother are also liable to judgment.",
+      "qualifications_preserved": [
+        "The broadening is specific: old-law killing that was required, and Christ's extension from killing to anger and insult.",
+        "The passage does not teach that every killing is forbidden.",
+        "Later chapters about killing the soul are not part of this concept."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0045",
+          "pages": [
+            15
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0047",
+          "pages": [
+            16
+          ]
+        }
+      ],
+      "decisive_amharic": [
+        "አምስተኛው ትእዛዝ «አትግደል»",
+        "እግዚአብሔር መግደል ፈጽሞ ከልክሎ ይሆን ወይም … የተፈቀደ መግደል ይኖር ይሆን?",
+        "ኃጢአት የሠራ ሰው እንዲገደል ሕግ ተሠርቷል",
+        "«አትግደል» የሚለውን ትእዛዝ እንደመሻር ተወስዶ የሚያስቀጣ አይደለም",
+        "መግደል ብቻ ሳይሆን በወንድሙ ላይ የሚቆጣ ወንድ ሙንም የሚሰድብ የሸንጎ፤ የገሃነምም ፍርድ የሚገባው"
+      ],
+      "english_explanation": "Pages 15–16 number «አትግደል» as the fifth commandment, record killing required by the old law, and quote Christ extending judgment to anger and insult.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0045",
+        "10commandments:chunk-0047"
+      ]
+    },
+    {
+      "question_id": "direct-05",
+      "question": "በባልንጀራ ላይ ሐሰት ምስክር ስለመሆን ትእዛዙ ምን ይላል?",
+      "question_type": "direct",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "The command against false witness.",
+      "expected_concept": "The command against false witness.",
+      "qualifications_preserved": [
+        "The readable Amharic says bearing false witness is lying.",
+        "The command applies to the speaker and to the person who listens to a false report.",
+        "The Exodus quotation line is OCR-corrupted and is not a readable quotation. The readable command is «በሐሰት አትመስክር»."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0085",
+          "pages": [
+            34
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0089",
+          "pages": [
+            36
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Pages 34 and 36 call false witness lying. The Exodus quotation line on page 34 is OCR-corrupted.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0085",
+        "10commandments:chunk-0089"
+      ]
+    },
+    {
+      "question_id": "paraphrased-01",
+      "question": "ሰው ገንዘብንና እግዚአብሔርን በአንድ ጊዜ ለምን ማገልገል አይችልም?",
+      "question_type": "paraphrased",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "Money as an idol competing with worship of God.",
+      "expected_concept": "Money as an idol competing with worship of God.",
+      "qualifications_preserved": [
+        "Christ is quoted that no one can serve God and money.",
+        "Ordinary use of money is explicitly not condemned."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0009",
+          "pages": [
+            4
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0010",
+          "pages": [
+            4
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 4 calls money a rival idol and quotes Christ that no one can serve God and money. Ordinary use of money is not condemned.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0009",
+        "10commandments:chunk-0010"
+      ]
+    },
+    {
+      "question_id": "paraphrased-02",
+      "question": "የዕረፍት ቀን ለሰው የተሰጠ ስጦታ እንጂ ሸክም አለመሆኑ እንዴት ይገለጻል?",
+      "question_type": "paraphrased",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "The Sabbath as a gracious gift for human rest.",
+      "expected_concept": "The Sabbath as a gracious gift for human rest.",
+      "qualifications_preserved": [
+        "The Amharic uses both ስጦታ and ጸጋ and says the day is not a burden placed on people.",
+        "The decisive sentence begins at the end of chunk-0033 and continues in chunk-0034."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0033",
+          "pages": [
+            12
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0034",
+          "pages": [
+            12
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 12 says the Sabbath is God's gift and a grace, not a burden, and quotes Christ that the Sabbath was made for people.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0033",
+        "10commandments:chunk-0034"
+      ]
+    },
+    {
+      "question_id": "paraphrased-03",
+      "question": "አንድን ሰው ከእግዚአብሔር ማራቅ ነፍሱን ከመግደል ጋር የሚመሳሰለው ለምንድን ነው?",
+      "question_type": "paraphrased",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "Spiritual killing by separating a soul from God.",
+      "expected_concept": "Causing a soul to leave the worship of God and remain in sinful deeds is killing that soul. A soul subjected to sin is dead. Leading people away from true faith is worse than bodily killing, because a person dead in the body may still be saved, while a person dead in the soul faces eternal suffering.",
+      "qualifications_preserved": [
+        "Separation from God's worship is identified with killing the soul.",
+        "The passage also says this is worse than bodily killing, because only bodily death can still leave hope of salvation."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0058",
+          "pages": [
+            22
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0059",
+          "pages": [
+            22,
+            23
+          ]
+        }
+      ],
+      "decisive_amharic": [
+        "ነፍስ ከእግዚአብሔር እንድትለይ ማድረግ መግደል ነው፡፡ ይኽውም ነፍስ ከአምልኮተ እግዚአብሔር ተለይታ በገቢረ ኃጢአት ጸንታ እንድትኖር ማድረግ ነው",
+        "ከመግደል የከፋ ነው:: በሥጋው የሞተ በነፍሱ የመዳን ዕድል ሊኖረው ይችላል፤ በነፍሱ የሞተ ግን የሚጠብቀው የዘለዓለም መከራ ነው"
+      ],
+      "english_explanation": "Pages 22–23 call separation from God's worship killing of the soul, and call leading people away from true faith worse than bodily killing.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0058",
+        "10commandments:chunk-0059"
+      ]
+    },
+    {
+      "question_id": "paraphrased-04",
+      "question": "ወላጆች የልጆቻቸውን መንፈሳዊ ሕይወት ለማሳደግ ምን ኃላፊነት አለባቸው?",
+      "question_type": "paraphrased",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "Parents' responsibility to teach and guide their children.",
+      "expected_concept": "Parents are responsible to teach their children and to raise them in the fear of God, leading their spiritual life rather than only their social life. The book says that failing to lead that spiritual life kills them in the soul, and that parents who constantly quarrel at home have killed the hope of their children's spiritual life.",
+      "qualifications_preserved": [
+        "The duty is spiritual. Teaching at home is the form the passage gives, from its quotation of Deuteronomy 6.",
+        "Neglect of that spiritual leadership, and constant quarreling, are both called killing the children's spiritual life."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0063",
+          "pages": [
+            24
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0064",
+          "pages": [
+            25
+          ]
+        }
+      ],
+      "decisive_amharic": [
+        "ለልጆችህም አስተምረው … የወላጆችን ኃላፊነት የሚያሳይ",
+        "የቤተሰብ ኃላፊ እግዚአብሔርን በመፍራትና በጥንቃቄ ልጆቹን ማሳደግ አለበት … መንፈሳዊ ሕይወት በሚገባ ካልመራ … በነፍስ ገድሏቸዋል",
+        "ዘወትር የሚጨቃጨቱቁ … ወላጆች … ልጆቻችንን አልገደልንም ለማለት አይችሌም … የልጆቻቸውን የመንፈሳዊ ሕይወት ተስፋ ገድለውቃል"
+      ],
+      "english_explanation": "Pages 24–25 assign parents the duty to teach their children and lead their spiritual life, and call neglect and constant quarreling the killing of that life.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0063",
+        "10commandments:chunk-0064"
+      ]
+    },
+    {
+      "question_id": "paraphrased-05",
+      "question": "የተመኙትን ነገር ማግኘት ምኞትን ከማጥፋት ይልቅ የሚጨምረው እንዴት ነው?",
+      "question_type": "paraphrased",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "Fulfilled desire produces further desire rather than satisfaction.",
+      "expected_concept": "Fulfilling a desire does not free a person from desiring; it increases desire. The person who gained the money he wanted wants still more and does not say that what he gathered is enough. Any satisfaction is only temporary and does not stop further desire.",
+      "qualifications_preserved": [
+        "Desire increases when it is fulfilled.",
+        "Satisfaction is described as temporary. The passage does not say that satisfaction never occurs."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0101",
+          "pages": [
+            41
+          ],
+          "relevance_basis": "Human review of this chunk's own Amharic confirmed that it independently supports the expected concept. The chunk itself says one satisfaction does not remove desire from the heart, the person who fulfilled what he desired desires again and desire has no end, fulfilling desire increases desire, and the person who gained the money he wanted wants more and does not say that what he gathered is enough. This parent is relevant for that reason, not because its ending also appears in chunk-0102."
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0102",
+          "pages": [
+            41
+          ],
+          "relevance_basis": "Retained from ground-truth-v2. Page 41 says fulfilling desire increases it, illustrates this with money, and says satisfaction is only temporary."
+        }
+      ],
+      "decisive_amharic": [
+        "ምኞትን መፈጸም ሰውን ከመመኘት አያድነውም የበለጠ የምኞትን ፆር ይጨምርበታል",
+        "ገንዘብን ያገኘ ሰው ተጨማሪ ገንዘብ ለመሰብሰብ ይመኛል እንጂ የሰበሰብኩት ይበቃኛል አይልም",
+        "እርካታ ማግኘት ጊዜያዊ ብቻ እንጂ ዳግመኛ ከመመኘት የሚገላግል መፍትሔ አለመሆኑን"
+      ],
+      "english_explanation": "Page 41 supports the concept in two parent chunks. chunk-0101 independently says fulfillment does not remove desire and increases it, including the money illustration. chunk-0102 remains relevant and also says satisfaction is only temporary.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0101",
+        "10commandments:chunk-0102"
+      ],
+      "either_relevant_parent_counts": true
+    },
+    {
+      "question_id": "conceptual-01",
+      "question": "አሠርቱ ትእዛዛት በእግዚአብሔርና በሰው መካከል ያለ ቃል ኪዳን የሚሆኑት እንዴት ነው?",
+      "question_type": "conceptual",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "The commandments understood as a covenant.",
+      "expected_concept": "The commandments understood as a covenant.",
+      "qualifications_preserved": [
+        "The Amharic says ኪዳናት, covenants, between God and human beings, binding this age as well as earlier ones.",
+        "The tablets are called the tablets of the covenant."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0002",
+          "pages": [
+            1
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 1 says the Ten Commandments are covenants between God and human beings, including people living now.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0002"
+      ]
+    },
+    {
+      "question_id": "conceptual-02",
+      "question": "እግዚአብሔርን መውደድና ባልንጀራን መውደድ ከሁለቱ ጽላት ጋር ምን ግንኙነት አላቸው?",
+      "question_type": "conceptual",
+      "validation_status": "PARTIALLY_SUPPORTED",
+      "metric_eligible": true,
+      "previous_review_focus": "The two tablets as duties toward God and toward neighbors.",
+      "expected_concept": "The book divides the commandments into two parts connected with the two tablets. It says the first part contains three commandments about the worship relationship with God, and the second contains six about relations among people. The first tablet contains what concerns God, and the second teaches love of neighbor. Following Christ, church teachers call the first part love of God and the second love of neighbor.",
+      "qualifications_preserved": [
+        "The relation is love of God and love of neighbor, not a generic word for duties.",
+        "The book's own count is three commandments toward God and six toward people. That count is kept as the book states it.",
+        "Page 43 gives the two loves as the names of the two parts. Page 2 assigns matters of God to the first tablet and love of neighbor to the second."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0005",
+          "pages": [
+            2,
+            3
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0106",
+          "pages": [
+            43
+          ]
+        }
+      ],
+      "decisive_amharic": [
+        "የመጀመሪያው … ሶስት ትዕዛዛትን የቀፈ … ሁለተኛው … ስድስት ትእዛዛት የያዘ ነው",
+        "በመጀመሪያው ነገረ አምላክን የሚያወሱት ትአዛዛት የተጻፍ ሲሆን በሁለተኛው የተጻፋት ደግሞ ፍቅረ ቢጽን የሚያስተምሩት ተጽፈዋል",
+        "የመጀመሪያውን … ፍቅረ እግዚአብሔርን … ሁለተኛውን … ፍቅረ ቢጽን"
+      ],
+      "english_explanation": "Pages 2–3 count three commandments toward God and six toward people, assign the tablets to matters of God and love of neighbor, and page 43 names the two parts love of God and love of neighbor.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0005",
+        "10commandments:chunk-0106"
+      ]
+    },
+    {
+      "question_id": "conceptual-03",
+      "question": "ሰንበት የሥጋ ዕረፍትና የነፍስ ዕረፍት ምልክት የሚሆነው እንዴት ነው?",
+      "question_type": "conceptual",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "Physical Sabbath rest as a sign of spiritual and eternal rest.",
+      "expected_concept": "Physical Sabbath rest as a sign of spiritual and eternal rest.",
+      "qualifications_preserved": [
+        "Bodily rest is the old-law practice. Eternal spiritual rest is what it signifies, fulfilled as rest of the soul.",
+        "The passage says this does not mean Christ abolished the Sabbath."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0034",
+          "pages": [
+            12
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0035",
+          "pages": [
+            12
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 12 calls the Sabbath a sign of eternal spiritual rest and says old-law bodily rest is fulfilled as rest of the soul.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0034",
+        "10commandments:chunk-0035"
+      ]
+    },
+    {
+      "question_id": "conceptual-04",
+      "question": "የሰውን ዝና ለመጠበቅ እውነትን መሥዋዕት ማድረግ ለምን እንደ ጣዖት አምልኮ ይቆጠራል?",
+      "question_type": "conceptual",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "Preferring human reputation over truth and God.",
+      "expected_concept": "Preferring human reputation over truth and God.",
+      "qualifications_preserved": [
+        "Hiding the truth and changing the truth to protect reputation are both called worship of reputation."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0012",
+          "pages": [
+            5
+          ]
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0013",
+          "pages": [
+            5
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 5 calls hiding or changing the truth to protect reputation worship of reputation and a denial of God, who is truth.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0012",
+        "10commandments:chunk-0013"
+      ]
+    },
+    {
+      "question_id": "conceptual-05",
+      "question": "ራስን ማምለክ ከሌሎች ጣዖታት ሁሉ የበለጠ አደገኛ የሆነው ለምንድን ነው?",
+      "question_type": "conceptual",
+      "validation_status": "VERIFIED",
+      "metric_eligible": true,
+      "previous_review_focus": "Self-worship as the most dangerous form of idolatry.",
+      "expected_concept": "Self-worship as the most dangerous form of idolatry.",
+      "qualifications_preserved": [
+        "The section's opening sentence calls self-worship greater and more dangerous than all other idols.",
+        "The stated reason is the desire to exalt oneself and to be honored, feared, and worshipped by others."
+      ],
+      "source_references": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0019",
+          "pages": [
+            7
+          ]
+        }
+      ],
+      "decisive_amharic": [],
+      "english_explanation": "Page 7 says self-worship is greater and more dangerous than all other idols.",
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0019"
+      ]
+    }
+  ],
+  "correction": "Only paraphrased-05 changed. Human review of the Amharic confirmed that chunk-0101 independently supports the expected concept, so it is now relevant alongside chunk-0102. It is not included merely because the chunks overlap. No other question changed. direct-01 stays excluded."
+}

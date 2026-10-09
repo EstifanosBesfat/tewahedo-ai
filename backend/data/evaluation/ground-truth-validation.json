@@ -1,0 +1,380 @@
+{
+  "evaluation_version": "ground-truth-validation-1",
+  "source_of_truth": "original Amharic corpus",
+  "source_document": "10commandments.pdf",
+  "corpus_files_read": [
+    "backend/data/processed/10commandments.chunks.json"
+  ],
+  "notes": "The current English concept is the question file's review_focus. Judgments in retrieval-audit.json were not changed. OCR is quoted as extracted.",
+  "questions": [
+    {
+      "question_id": "direct-01",
+      "question": "የመጀመሪያው ትእዛዝ ምንድን ነው?",
+      "question_type": "direct",
+      "current_expected_answer": "The first commandment: no other gods.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0008",
+          "page": 4,
+          "amharic_text": "አንደኛው ትእዛዝ\n\n«ከእፄ በቀር ሌሎች አማልክት አይሁኑልህ»\n\nስዎች ይህን ትእዛዝ በሚያነቡበት ወይም በሚሰሙበት ጊዜ «ይህ ከእኔ ጋር ምን ግንኙነት አለው? ይህ ሊነገር የሚገባወ ለከሐድያንና ለመናፍቃን ወይም ከሥጋዌ ዕውቀታቸው የተነሣ አሊያም ከፍልስፍና በመነጨ ሁኔታ ከፃይማኖት ያፈነግጡትን ነው፡፡፣ እኔ ግን በሳምንት ይኸን ያህል ቀን እጾማለሁ አሥራት አወጣለሁ በየሰዓቱ እጸልያለሁ ከልቤ እዘምራለሁ የቤተ ክርስቲያን መርሐ ግብሮችን ያለማቋረጥ እከታተላለሁ ስለሆነመ ይህ ትእዛዝ አይመለከተኝም» ይሉ ይሆናል፡፡\n\nነገር ግን ይህ ትእዛዝ ማንንም ሳይለይ ሁሉንም ሰው የሚመለክት ነው: «ከእኔ በቀር ሌሎች አማልክት አይሁኑልህ»"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0040",
+          "page": 14,
+          "amharic_text": "ፅራፖኛው #ት5ሃ# አባትና እናትህን አክብ \"አባት እና አናትህን አክብር እግዚአብሔር አምላክህ በሚሰጥህ ምድር ዕድሜህ እንዲረዝም መልካምም እንዲሆንልህ የሚል\" ነው ዝጸ 20ዐ:፲2 ይህ ትአዛዝ በሰዎች መካከል ስላለው ግንኙነት የተሰጠ የመጀመሪያው ትእዛዝ ነው፡፡ እስክ አሁን የተነገሩትና ከላይ ያሉትን ሦስቱን ትእዛዛት የሰው ልጅ ለእግዚአብሔር ሊያደርጋቸው የሚገባውን ሲያመለክቱ ይህኛው ትእዛዝ ደግሞ የሰው ልጅ ለሰው ልጅ ሊያደርግ የሚገባውን ያመለክታል፡፡\n\nይህ ትእዛዝ ከሌሎች ትአዛዛት የሚለየው ክሚገኘው የበረከት ዋጋ ጋር አብሮ የተሰጠ የመጀመሪያ ትእዛዝ በመሆኑ ነው፡፡ አባትና እናቱን የሚያከብር ልጅ አግዚአብሔር በሰጠው ምድር ዕድሜው ይረዝማል መልካምም ይሆንለታል ትብሏል፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0005",
+          "page": 2,
+          "amharic_text": "ጌታችን የአሱስ ክርስቶስን አንድ ሕግ ዐዋቂ ሊፈትነው ሽቶ «መምህር ሆይ ከሕግ ማንኛይቱ ትእዛዝ ታላቅናት› ብሎ በጠየቀው ጊዜ መድኃኒታችንም መልሶ «ጌታ አምላክህን በፍጹመ ልብህ በፍጹም ነፍስህም በፍጹም አሳብህም ውደድ፡: ታላቂቱና ፊተኛይቱ ትአዛዝ ይህችን ትመስላለች እርሷም «ባልንጀራህን እአንደነፍስህ ውደድዕ የምትለው ናት ኦሪት እና ነቢያትም በእነዚህ በሁለቱ ትእዛዛት ጸንተዋል፡::› ማለቱ ለዚህ ነው፡፥ ማቴ, 22-35:40፡: በአነዚህ ጽላት ላይ በመጀመሪያው ነገረ አምላክን የሚያወሱት ትአዛዛት የተጻፍ ሲሆን በሁለተኛው የተጻፋት ደግሞ ፍቅረ ቢጽን የሚያስተምሩት ተጽፈዋል፡፡ ጌታችን ኢየሱስ ክርስቶስ ለደቀ መዛመሙርቱ ባስተማረው ጸሎትም በመጀመሪያ የተቀመጠው ነገረ ፃይማኖትን የሚያወሳው ነው፡። «አባታችን ሆይ በሰማያት የምትኖር ስምህ ይቀደስ መንግሥትህ ትምጣ ፈቃድህ በምድር ይሁን..›, ካለ በኃላ ነው ስለ ፍቅረቢጽ የሚያወሱት ቃላት የተከተሉት፡፡ ማቴ. 6-9 ሕገ ናን ውሱናል፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0112",
+          "page": 46,
+          "amharic_text": "«ከትእዛዛቱ ሁሉ ፊተኛይቱ፦ እሥራ ኤል ሆይ+ ስማ፤ ጌታ አምላካችን አንድ ጌታ ነው+፥ አን ተም በፍጹም 'ልብህ በፍጹምም ነፍስህ፣ በፍጹምም ሃሳብሀ፣ በፍጹምም ኃይልህ ጌታ አምላክህን ውደድ የምትል ናት።"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0113",
+          "page": 46,
+          "amharic_text": "ፊተኛይቱ ትእዛዝ ይህች ናት: ሁለተኛይቱም ባልንጀራሀን እንደራስህ ውደድ የምትል እርሷን የምትመስል ይህች ናት» ብሏል፡፡ ማር.12፥29-31"
+        }
+      ],
+      "english_explanation": "Page 4 titles አንደኛው ትእዛዝ and quotes the command to have no other gods besides God. The first quotation is OCR-damaged («ከእፄ በቀር»), and the same page later prints «ከእኔ በቀር ሌሎች አማልክት አይሁኑልህ». Page 14 calls honor of father and mother the first commandment about relations between people, after three commandments toward God, and the first commandment joined to a promise. Pages 2 and 46–47 quote Christ: the great and first commandment is to love God, and the second is to love one's neighbor.",
+      "status": "AMBIGUOUS",
+      "explanation": "The Amharic uses 'the first commandment' for three different teachings. The page 4 sense matches the English review focus. The other two senses are also stated in the source. Selecting only 'no other gods' would drop teachings the book itself calls first.",
+      "translation_or_context_loss": "The English selects one organizational scheme and drops the human-relation 'first commandment' and Christ's 'first commandment' of loving God.",
+      "recommended_ground_truth": "Do not fix one concept. Record three source senses: no other gods (page 4); honor of father and mother as the first commandment about relations between people and the first joined to a promise (page 14); love of God as the great and first commandment, with love of neighbor as the second (pages 2 and 46–47)."
+    },
+    {
+      "question_id": "direct-02",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "question_type": "direct",
+      "current_expected_answer": "The Sabbath command predates the written Ten Commandments.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0031",
+          "page": 11,
+          "amharic_text": "የሰንበትን ቀን ትቀድሰ ዘንድ አስብ ይህ ትአዛዝ አሥርቱ ትእዛዛት ከመጻፋቸው በፊት እግዚአብሔር ራሱ አብነት በመሆን ሕዝቡ እንዲጠቀሙበት ለእሥራኤል የሰጠው ቀዳማዊ ትእዛዝ ነው::- በመጽሐፍ ቅዱስ እግዚአብሔርም ሰባተኛውን ቀን ባረከው ቀደሰውም እግዚአብሔር ሊያደርገው ከፈጠረው ሥራ ሁሉ በእርሱ አርፏልና"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0032",
+          "page": 11,
+          "amharic_text": "ሰንበትን ማክበር ከአሥርቱ ትእዛዛት በፊት የነበረ ነው፡፡ ይህም ይታወቅ ዘንድ እግዚአብሔር የሰንበትን ቀን ትቀድሰው ዘንድ አስበው ብሏል። በዚህም እሥራኤል ቀድሞ የሚያወቁትን ትአዛዝ እንዲያስታውሱት አድርጓል፡፡ እግዚአብሔር አሥርቱን ትአዛዛት በሕግ መልክ ከመስጠቱ አስቀድሞ በነቢዩ በሙሴ አማካኝነት እግዚአብሔር የተናገረው ነገር ይህ ነው ነገ ፅረፍት ለእግዚአብሔርም የተቀደሰ ሰንበት ነው የምትናጋግሩትን ጋግሩ የምትቀቅሉትም ቀቅሉ የተረፈውንም ሁሉ ለነገ እንዲጠበቅ አኑሩት በሰባተኛው ቀን ማንም ከሥራው አይሂድ ... ሕዝቡም ሰባተኛው ቀን ዐረፉ:: በማለት ለሕዝበ እሥራኤል የነገራቸው ቃል ይህ ተእዛዝ ቀደም ብሎ የሚታወቅ መሆኑን ያስረዳል፡፡ ዘጸ 16:23-30፡፥- እንግዲህ ከፍ ብለን እንደተመለከትነው ሰንበትን የማክበር ትእዛዝ ከሕግ አስቀድሞ በሥነ ፍጥረት መጨረሻ ላይ የተሰጠ መሆኑን አረጋግጠናል፡፡"
+        }
+      ],
+      "english_explanation": "The book says this command was given before the Ten Commandments were written, with God himself resting as the pattern. It then answers its own question: keeping the Sabbath existed before the Ten, and the command was given at the end of creation, before the law. Exodus 16 is cited to say Israel already knew it.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "The English timing claim is stated in the Amharic. The source's answer to 'when' is more specific: at the end of creation, before the law was given, with God's own rest as the pattern.",
+      "translation_or_context_loss": "'Predates the written Ten' leaves out the creation-week timing and God's own rest, which is the book's direct answer.",
+      "recommended_ground_truth": "The Sabbath command was given at the end of creation, before the Ten were written as law. God himself rested as the pattern, and Israel already kept the Sabbath before Sinai."
+    },
+    {
+      "question_id": "direct-03",
+      "question": "አባትና እናትን ስለማክበር ትእዛዙ ምን ይላል?",
+      "question_type": "direct",
+      "current_expected_answer": "Honor father and mother and the associated promise.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0040",
+          "page": 14,
+          "amharic_text": "ፅራፖኛው #ት5ሃ# አባትና እናትህን አክብ \"አባት እና አናትህን አክብር እግዚአብሔር አምላክህ በሚሰጥህ ምድር ዕድሜህ እንዲረዝም መልካምም እንዲሆንልህ የሚል\" ነው ዝጸ 20ዐ:፲2 ይህ ትአዛዝ በሰዎች መካከል ስላለው ግንኙነት የተሰጠ የመጀመሪያው ትእዛዝ ነው፡፡ እስክ አሁን የተነገሩትና ከላይ ያሉትን ሦስቱን ትእዛዛት የሰው ልጅ ለእግዚአብሔር ሊያደርጋቸው የሚገባውን ሲያመለክቱ ይህኛው ትእዛዝ ደግሞ የሰው ልጅ ለሰው ልጅ ሊያደርግ የሚገባውን ያመለክታል፡፡"
+        }
+      ],
+      "english_explanation": "The command is to honor father and mother so that one's life will be long in the land God gives and so that it will be well. The same page repeats that promise. OCR writes አናትህን where እናትህን is intended; the promise is still readable.",
+      "status": "VERIFIED",
+      "explanation": "The Amharic states both the command and the promise of long life and well-being in the land God gives. The same page also calls this the first commandment of relations between people. That is a separate use of 'first,' not a different honor-parents command.",
+      "translation_or_context_loss": "The short English does not name long life and well-being, but it does not replace the promise with a different idea.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "direct-04",
+      "question": "“አትግደል” የሚለው ትእዛዝ ምን ያስተምራል?",
+      "question_type": "direct",
+      "current_expected_answer": "The command against killing and its broader explanation.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0045",
+          "page": 15,
+          "amharic_text": "አምስተኛው ትእዛዝ\n\n«አትግደል» ዘጸ.20፥13፡\n\n«አትግደል» የሚለው ትእዛዝ ወንጀለኞችንና ነፍሰ ገዳዮችን ብቻ የሚመለከትና ለክርስቲያኖች አስፈላጊ ያልሆነ የሚመስላቸው አንዳንድ ሰዎች ሊኖሩ ይችላሉ፡፡\n\nይሁን እንጂ በዚህ ርእስ ሥር የዚህን ትእዛዝ አስፈላጊነ ትና ጠቀሜታ በማሳየት በሕይወታችን ላይ ያለውን ተጽ እኖ፤ ምን ያህል እየተላለፍነው ወይም እያከበርነው መሆኑን ለመዳሰስ እንሞክራለን፡፡ ከሁሉ አስቀድሞ አንድ ጥያቄ እናነሣለን፤ እግዚአብሔር መግደል ፈጽሞ ከልክሎ ይሆን ወይም እንደኃጢአት ወይም እንደወንጀል የማይቆጠር የተፈቀደ መግደል ይኖር ይሆን?\n\nየተፈቀደ መግደል እግዚአብሔር አምላክ አትግደል የሚለውን ትእ ዛዝ ሕግ አድርጎ የሰጠ ሲሆን በአንዳንድ ሥፍራዎች ደገሞ መግደል የፈቀደበት ሁኔታ መኖሩን እናስተውላለን፡:፡ መፍ ቀድ ብቻ ሳይሆን መግደልን አስፈላጊ ያደረገባቸው አን ዳንድ ሥፍራዎችም አሉ፡: በብሉይ ኪዳን መጻሕፍት እንደ ምናገኘው ኃጢአት የሠራ ሰው እንዲገደል ሕግ ተሠርቷል፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0047",
+          "page": 16,
+          "amharic_text": "ለም፡።- በሐዲስ ኪዳንም መድኃኒታችን ኢየሱስ ክርስቶስ «ለቀደሙት አትግደል እንደተባለ ሰምታችኋል የገደለም ሁሉ ፍርድ ይገባዋል» በማለት ሲናገር የጠቀሰው ሕግ በዘ ጸአት «አትግደል» የተባለውንና በዘሌዋውያን ደግሞ «ሰውን እስኪሞት ድረስ የሚመታ ፈጽሞ ይገደል» የሚ ለውን ነው: ዘጸ.29+13፡፡ ዘሌ.24+17፡፡፤ ከዚህም በላይ መግ ደል ብቻ ሳይሆን በወንድሙ ላይ የሚቆጣ ወንድ ሙንም የሚሰድብ የሸንጎ፤ የገሃነምም ፍርድ የሚገባው መሆኑን በመግለጥ ይህን ሕግ እንደአጠበቀው እንመለከታለን፡፡ ማቴ,.5፥21--23፡፡"
+        }
+      ],
+      "english_explanation": "The book numbers «አትግደል» as the fifth commandment and cites Exodus 20:13. It says some people think the command concerns only criminals and murderers. It then asks whether God forbade all killing or whether some killing was permitted, and it records old-law death penalties. On the next page Christ quotes the command and extends judgment to anger and insult.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "'Broader explanation' does not say what the broadening is. The source both raises permitted killing under the old law and has Christ extend the command to anger and insult. An English concept that says only 'beyond murderers' would omit the permitted-killing discussion.",
+      "translation_or_context_loss": "The English does not preserve the book's question about permitted killing or Christ's extension from killing to anger and insult.",
+      "recommended_ground_truth": "«አትግደል» is the book's fifth commandment. The text asks whether every killing is forbidden and records killing that the old law required. Christ quotes the command and extends judgment to anger and insult against a brother."
+    },
+    {
+      "question_id": "direct-05",
+      "question": "በባልንጀራ ላይ ሐሰት ምስክር ስለመሆን ትእዛዙ ምን ይላል?",
+      "question_type": "direct",
+      "current_expected_answer": "The command against false witness.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0085",
+          "page": 34,
+          "amharic_text": "ስምንተኛው ትእዛዝ\n\n«/,ል 2ድራያ ሏሪ በፊፀት ለ4ፉመኃዕአዕር› ዘጸ.20+16፡፡\n\nበሐሰት መመስከር መዋሸት ነው:: በቅዱስ መጽሐ ፍም ስለሐሰት የተነገሩት ቃላት የመዋሸትን አስከፊ ገጽታ የሟያሳዩ ናቸው፡: ስለዚህም ነገር ጠቢቡ ሰሎሞን «ውሸተኛ ከንፈር በእግዚአብሔር ዘንድ አስጸያፊ ነው» በማለት ተና - | ግሯል: ምሳ.12፥22፡:: መዋሸት በአግዚአብሔር ዘንድ የተጠ - ፤!"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0089",
+          "page": 36,
+          "amharic_text": "«በሐሰት አትመስክር» የሚለው ትእዛዝ ዋሽቶ የሚናገረውንና ሐሰተኛ ወሬን የሚሰማውንም ሰው ሁሉ የሚመለከት ነው::"
+        }
+      ],
+      "english_explanation": "The section is the eighth commandment. The Exodus quotation line is OCR-corrupted, while the citation ዘጸ.20+16 remains. The readable prose says bearing false witness is lying, defines falsehood as giving untrue information, and later states «በሐሰት አትመስክር». That command is applied to the speaker and to the person who listens to a false report. Jezebel's witnesses against Naboth are the narrative example.",
+      "status": "VERIFIED",
+      "explanation": "The readable Amharic states the prohibition and identifies false witness with lying. The neighbor wording is in the question and in the section's appeal to speak truth with one's neighbor; the short command line itself is «በሐሰት አትመስክር».",
+      "translation_or_context_loss": "The English does not say that the book equates false witness with lying, or that listening to a false report is included. The corrupted Exodus line should not be treated as a readable quotation.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "paraphrased-01",
+      "question": "ሰው ገንዘብንና እግዚአብሔርን በአንድ ጊዜ ለምን ማገልገል አይችልም?",
+      "question_type": "paraphrased",
+      "current_expected_answer": "Money as an idol competing with worship of God.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0009",
+          "page": 4,
+          "amharic_text": "ገንዘብ ብዙ ሰዎች የሚያመልኩትና የአግዚአብሔርን አምላክንት የሚቀናቀን ጣዖት ነው፡ ስለዚህም መድኃሂታችን ኢየሱስ ክርስቶስ በተራራው ስብከቱ ሰሁለት ጌቶች መገዛት የሚቻለው ማንም የለም ወይም አንዱን ይጠላል ሁለተኛውን ይወዳል ወይም አንዱ ይጠጋል ሁለተኛውንም ይንቃል፡፡ ለእግዚአብሔርና ለገንዘብ መገዛት አትችሉም»"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0010",
+          "page": 4,
+          "amharic_text": "ማንም እግዚአብሔርን አመልካለሁ እያለ ገንዘብን ከመጠን በላይ የሚያፈቅር ከሆነ ራሱን ያሞኛል፡፡ ይህም የገንዘብን መገልገያነት መቃወም አይደለም፡፡"
+        }
+      ],
+      "english_explanation": "Money is called an idol that many people worship and that rivals God's lordship. Christ is quoted: no one can serve two masters, and you cannot serve God and money. The next paragraph says a person who claims to worship God while loving money too much deceives himself, and that this is not a rejection of money's ordinary use.",
+      "status": "VERIFIED",
+      "explanation": "The Amharic gives the reason the question asks: money is a rival idol and a second master. The qualification that ordinary use is not condemned is present and is not denied by the English concept.",
+      "translation_or_context_loss": "The English does not carry the qualification that useful money is not itself the idol. That qualification limits the claim; it does not replace it.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "paraphrased-02",
+      "question": "የዕረፍት ቀን ለሰው የተሰጠ ስጦታ እንጂ ሸክም አለመሆኑ እንዴት ይገለጻል?",
+      "question_type": "paraphrased",
+      "current_expected_answer": "The Sabbath as a gracious gift for human rest.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0033",
+          "page": 12,
+          "amharic_text": "ስለ ሰው ደካማ ባሕርይ እግዚአብሔር ሰንበትን ሠራልን:፡: ነቢዩ መሴ አግዚአብሔር ሰንበትን አንደሰጣችሁ አዩ ሲል የተናገረው ሰንበት የእግዚአብሔር ስጦታ እንጂ በሰው ላይ የተጫነ ሸክም አለመሆኑን የሚጠቁም ነው፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0034",
+          "page": 12,
+          "amharic_text": "መድኃኒታችን ኢየሱስ ክርስቶስ ሰንበት ለሰው ተፈጥሯል እንጂ ሰው ለሰንበት አልተፈጠረም በማለት ያስተማረው ትምህርት ይኽንኑ የሚያረጋግጥ ነው፡፥ ማር 2፡27 የአግዚአብሔር ሕግ ለሁሉም እኩል ነው፡-፡ ጌታው ዐርፎ ሎሌው ቢሠራ አግባብ አይደለም፡፡ አእሩግ አርፈው ወራዙት መሥራታቸውም ትክክል አይሆንም፡፡ ሰንበት ለሁሉም የሰው ዘር የተፈጠረች በመሆኗሁሉ የዐርፋ ዘንድ ይገባቸዋል፡ በአርሱ ምንም ሥራ አትሥሩ አንተ ልጅህም ሎሌህም በሬህም አህያህም ክብትህም አንተም በግብጽ ባሪያ እንደነበርህ አስብ ተብሏል፡፡ ዘዳ 5፡14-15: እንስሳትም ድካም የሚስማማው አካል አላቸውና ማረፍ አለባቸው ፡፡ ክ8ጸ 23:12 ፡ እግዚአብሔር በሰንበት አማካይነት ፅረፍት የሰጠው ለግዑዙ መሬትም ጭምር ነው፡: ሕርሱ ስድሰት ዓመት ምድርህን ዝራ ፍሬዋንም አግባ ሰባተኛው ዓመት ግን ተዋት አሳረፋትም ብሏልና፡፡ ዘጸ 23:፲ዐ፡\n\nአንግዲህ ሰንበት በእግዚአብሔር ቸርነት ከሥጋ ድካማችን አናርፍበት ዝንድ የተስጠች ጸጋ መሆኗን አውቆ በሚገባ ማክበር ይገባል፡-- ሰንበትን ብናከብር በአካልም በመንፈስም እአንጠቀማለን:፡፡ ከሁሉም በላይ በእግዚአብሔር ቃል መሠረት አንባረካለን፡፡ አርሱ ፈጣሪያችን አዳያረክሱት ሰንበቴን የሚጠብቁትን ቃል ኪዳኔንም የሚይዙትን ሁሉ ወደ ተቀደሰው ተራራዬ አመጣቸዋለሁ... የማይጠፋ የዘለዓለም ስም አሰጣቸዋለሁ በማለት ተናግሯልና፡፡ ኢሳ 56:2-7፡፤ ስለዚህ ለበረከት የተሰጠንን ሰንበት በማክበር ትእዛዙን ለመፈጸም መትጋት ያስፈልጋል፡፡"
+        }
+      ],
+      "english_explanation": "Moses' words, 'see that the Lord has given you the Sabbath,' are read as showing that the Sabbath is God's gift and not a burden imposed on people. The reason given is human weakness and the need to rest. Christ is quoted: the Sabbath was made for man, not man for the Sabbath. It is also called a grace given by God's kindness so people can rest from bodily fatigue.",
+      "status": "VERIFIED",
+      "explanation": "The Amharic uses both ስጦታ and ጸጋ, and it explicitly denies that the day is a burden placed on people. The decisive sentence begins at the end of the preceding page-12 paragraph and continues in the next paragraph.",
+      "translation_or_context_loss": "The English does not add a claim beyond the source. It does not mention that the same page also calls the Sabbath a figure of eternal rest.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "paraphrased-03",
+      "question": "አንድን ሰው ከእግዚአብሔር ማራቅ ነፍሱን ከመግደል ጋር የሚመሳሰለው ለምንድን ነው?",
+      "question_type": "paraphrased",
+      "current_expected_answer": "Spiritual killing by separating a soul from God.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0058",
+          "page": 22,
+          "amharic_text": "ነፍስ ከእግዚአብሔር እንድትለይ ማድረግ መግደል ነው፡፡ ይኽውም ነፍስ ከአምልኮተ እግዚአብሔር ተለይታ በገቢረ ኃጢአት ጸንታ እንድትኖር ማድረግ ነው፡: ስለዚህም ለኃጢአት የተገዛች ነፍስ ምዉት ናት፡::"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0059",
+          "page": 23,
+          "amharic_text": "ከመግደል የከፋ. ነው:: በሥጋው የሞተ በነፍሱ የመዳን ዕድል ሊኖረው ይችላል፤ በነፍሱ የሞተ ግን የሚጠብቀው የዘለዓለም መከራ ነው:: በዚህ አንፃር በብዙ ሺዎች የሚቆጠሩችን ምእመናን.. ከእውነተኛው የሃይማኖት መንገድ በማስወጣት ለመናፍቅነት የዳረጉአቸው እነአርዮስ፣ መቅዶንዬስ፤ ንስጥ ሮስ፣ , ሉተር፤- የይሆዋ ምስክሮች መሥራች. ቻርልስ ራስል ወዘተ እና የእነዚህ ሁሉ ኑፋቄ የወለዳቸው መናፍቃንና ሌሎችም ሁሉ በነፍሰ ገዳይነት ከሚጠየቁት መካከል ዋና ብሽ ናቸው፤ ' 'የግድያውን መንገድ 'የከፈቱት እነርሱ “ው:"
+        }
+      ],
+      "english_explanation": "Causing a soul to be separated from God is called killing. The explanation is causing that soul to live away from the worship of God and settled in sinful deeds; a soul subjected to sin is dead. Leading people away from true faith is then called worse than bodily killing, because the bodily dead may still be saved, while the one dead in the soul faces eternal suffering.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "The identification of separation from God with killing the soul is stated directly. The question asks why they are alike. The Amharic reason includes that this is worse than bodily killing, which the English concept does not carry.",
+      "translation_or_context_loss": "The English stops at the comparison and omits the claim that soul-killing is worse than bodily killing because only the latter can still leave hope of salvation.",
+      "recommended_ground_truth": "Causing a soul to leave God's worship and remain in sinful deeds is killing that soul. Leading people away from true faith is worse than bodily killing, because the bodily dead may still be saved, while the one dead in the soul faces eternal suffering."
+    },
+    {
+      "question_id": "paraphrased-04",
+      "question": "ወላጆች የልጆቻቸውን መንፈሳዊ ሕይወት ለማሳደግ ምን ኃላፊነት አለባቸው?",
+      "question_type": "paraphrased",
+      "current_expected_answer": "Parents' responsibility to teach and guide their children.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0063",
+          "page": 24,
+          "amharic_text": "ለልጆችህም አስተምረው፥ በቤትህም ስትቀመጥ፥ በመን ገድም ሰትሄድ፥+ ስትተኛም፥ ስትነሣም ተጫወተው /ተነጋ ገረው» በማለት መነገሩ የወላጆችን . ኃላፊነት የሚያሳይ “ዓው:: ዘዳ.6+6-7፡ .\n\nማንም የቤተሰብ ኃላፊ እግዚአብሔርን በመፍራትና በጥንቃቄ ልጆቹን ማሳደግ አለበት።3 እርሱ የቤተሰቡ ራስ ነውና ስለሚስቱም፣ በቤቱ ስለሚኖሩ ሁሉ ኃላፊነት አለ በት:: የሁሉንም መንፈሳዊ ሕይወት በሚገባ ካልመራና ማኅበራዊ ኑሮውን ብቻ የሚመለከት ከሆነ እንደ ኢያሱ «እኔና ቤቴ እግዚአብሔርን እናመልካለን» ለማለት አይች ልም፡፡ ኢያ.24፥15፡፡- ስለእነዚህ በግድየለሽነት ስለሚ ያስተዳድራቸው የቤተሰቡ ነፍሳትም እግዚአብሔር ይጠ ይቀዋል፥ በነፍስ ገድሏቸዋልና፡፡ እንዲህ ዓይነቱ ሰው ጋብ ቻና ትዳር መንፈሳዊና ሰማያዊ መሆኑን ዘንግቶ ቤቱን «አነስተኛ ሲኦል» አድርጓታል፡፡ ከልጆቹ አንድ እንኳን የእግዚአብሔርን መንገድ መከተል ቢፈልግ ብዙ መከራ \"መቀበል - አለበት፡፡ ይህን የመሰለው አባት በፍርድ ዝብዝ።)። ንትን ን ከመጠየቅ አይድንም፡ ከሁሉ ነገር በፊት ጋብቻ መን ፈሳዊና - ለእግዚአብሔርና ለቤተክርስቲያን የሚያገለግሉ ፍሬዎች የሚገኙበት መሆኑን መረዳት ተገቢ ነው፡፡ ይህን በመገንዘብ ‹.ልጆቻቸውን በቀና ሃይማኖት አጽንተው. ብሥነ | ምግባር አሳድገው በመንፈሳዊ. የሕይወት ጎዳና የሚመሩትን አባቶች ሁሉ -በአድፍቆትና በታላቅ ክብር እንመለከታቸ ዋለን:፥ እነርሱ ሬቂቁንና ከእነርሱ የሚጠበቀውን መንፈሳዊ ግዴታ የተረዱና የጋብቻቸውን4 ዋና ዓላማም: ጠንቅቀው ያውቁ ናቸው፡፡ ' | ]"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0064",
+          "page": 25,
+          "amharic_text": "የሚሆኑ፤ በቤት ውስጥም ዘወትር የሚጨቃጨቱቁና\"-ክፉ ቃላ ትን ‹በመመላለስ የሚነጋገሩ፤-በቤታቸውም ፡ሰላም: የሌላቸው ወላጆች - የልጆቻቸውን የኑሮ አቅጣጫ በማበላሸት.. ለውድ ቀታቸው ከፍተኛ , የሆነ ተጽእኖ ያደርጋሉ፡ እነዚህ ወላጆ ችም. ልጆቻችንን,,,አልገደልንም.. ለማለት አይችሌም፡፡. እነር ሱም::የልጆቻቸውን 'የመንፈሳዊ) ሕይወት..ተስፋ ገድለውቃል፤ አጨልመውታል፤፡ለልጆቻቸወ:፡. ያሳዩአቸዉና- በአእምሮአቸው ወ'/ስጥ የቀረፁት. እግዚአብሔር የማይወደው ንና የትእዛዛቱም-"
+        }
+      ],
+      "english_explanation": "Teaching children at home is presented as the parents' responsibility. The head of the family must raise the children in the fear of God. If he does not lead their spiritual life, the text says he has killed them in the soul. Parents who constantly quarrel are told they have killed the hope of their children's spiritual life.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "Teaching and guiding are in the passage. The question and the Amharic are specifically about spiritual life, and failure is described as killing that life. 'Teach and guide' can be read as ordinary upbringing and loses that consequence.",
+      "translation_or_context_loss": "The English drops both the spiritual object of the duty and the book's claim that neglect or constant quarreling kills the children's spiritual life.",
+      "recommended_ground_truth": "Parents must teach their children and raise them in the fear of God, leading their spiritual life. The book says neglect, and constant quarreling at home, kills that spiritual life."
+    },
+    {
+      "question_id": "paraphrased-05",
+      "question": "የተመኙትን ነገር ማግኘት ምኞትን ከማጥፋት ይልቅ የሚጨምረው እንዴት ነው?",
+      "question_type": "paraphrased",
+      "current_expected_answer": "Fulfilled desire produces further desire rather than satisfaction.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0102",
+          "page": 41,
+          "amharic_text": "ምኞትን መፈጸም ሰውን ከመመኘት አያድነውም የበለጠ የምኞትን ፆር ይጨምርበታል አእንጂ፡: በዓለማችን እንደምናየው ገንዘብ ለማግኘት ተመኝቶ ገንዝብን ያገኘሰው ተጨማሪ ገንዘብ ለመሰብሰብ ይመኛል እንጂ የሰበሰብኩት ይበቃኛል አይልም፡፡\n\nአባታችን አዳም በገነት ያሉትን ዛፎች ሁሉ ከአንዲቱ በቀር አንዲያዝዝባቸው ሥልጣን ተሰጥቶት ነበር፡። በዚህ ባለመርካቱም ያቺን አንዲቱን ደግሞ ተመኛት ከፍሬዋ ለመብላትም ጓ5:፡ሪ፥ ሁሉ ያለው ንጉሠ አክዓብ የኢይዝራኤላዊውን የናቡቴን ትንሽ መሬት ተመኘ፡: ሰባት ሚስቶች የነበረው ዳዊት የወታደሩን /የባለሟሉን/ የኦርዮን ሚስት ተመኘ፡፡ ንጉሥ ሰሎሞንም ምኞቱን ለማርካት አስከ መጨረሻው ተዓዝ \"ዓይኖቼንም ከፈለጉት ሁሉ አልከለክልኳቸውም በማለት መጨረሻ የሌለው ምኞቱን ገልጣል፡፡ መክ 2፡10: በዚህ ወጤትም በመቶዎች የሚቆሩ ሚስቶች ለእርሱ አደረገ በማይሞተው ቃሉም \"ዓይን ከማየት አይጠግብም ጆሮም ከመስማት አይሞላም፡፥ ፈሳሾች ሁሉ ወደ ባሕር ይሄዳሉ፡፡ ባሕሩ ግን አይሞላም\" በማለት ሊረካ የማይችል የምኞቱን ነገር ተናግሯል፡፡ መክ፲፡7ሀ8፡፣ በዚህም ምኞት ፈጽሞ እርካታ ማግኘት ጊዜያዊ ብቻ እንጂ ዳግመኛ ከመመኘት የሚገላግል መፍትሔ አለመሆኑን አስተምሮናል ለዚህ መፍትሔ የሚመኝ ሥጋን ራስን በመግዛት ልጓም መቆጣጠር ነው የሚሻለው ግን ፈጽሞ ከምኞት መሸሽ ነው፡፡ ያገባው ብዙም ሚስቶች የነበሩት ዳዊት እርካታን በፈለገና ራሱን መግዛት ባልተቻለው መጠን በምኞት ድል እንደተመታ ያላገባው ዮሴፍ በንጽሕና ሆኖ ራሱን በመግዛቱና ምኞትን ያሸነፋት የሸሹት ሰው እንጂ የተጋፈጡት አይደሉምና በጥበብ ሆኖ ከክፋ የሥጋ ምኞት መሸሽ መድኃኒት መሆኑን አውቀን ገንዘብ ልናደርገው ይገባናል፡፡ ] የምኞት ዓይነቶች፡- ሐዋርያው ቅዱስ ጳውሎስም \"ሥጋ በመንፈስ ላይ ይመኛል\" በማለት ምኞት ከሥጋ ፈቃድ የሚመነጭ መሆኑን ተናግሯል፡፣ ገላ 5፡17፡፡ . ስለዚህ ምኞትን የሚያስከትል የሥጋ ፈቃድ ተዘርዝሮ የሚያበቃ አይደለም፡፡"
+        }
+      ],
+      "english_explanation": "Fulfilling desire does not free a person from desiring; it increases the load of desire. The person who gained the money he wanted wants more and does not say that what he gathered is enough. Later the same page says finding satisfaction is only temporary and is not a solution that keeps a person from desiring again.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "The increase of desire is stated directly, with the money example. 'Rather than satisfaction' is stronger than the later sentence, which allows temporary satisfaction and denies that it ends desire.",
+      "translation_or_context_loss": "The English can be read as denying satisfaction altogether. The Amharic says satisfaction is only temporary.",
+      "recommended_ground_truth": "Fulfilling a desire does not free a person from desiring; it increases desire. Any satisfaction is only temporary and does not stop further desire."
+    },
+    {
+      "question_id": "conceptual-01",
+      "question": "አሠርቱ ትእዛዛት በእግዚአብሔርና በሰው መካከል ያለ ቃል ኪዳን የሚሆኑት እንዴት ነው?",
+      "question_type": "conceptual",
+      "current_expected_answer": "The commandments understood as a covenant.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0002",
+          "page": 1,
+          "amharic_text": "በእግዚአብሔርና በሰው መካከል የተደረጉ ኪዳናት ናቸው:፡: አሠርቱ ትእዛዛት የተሰጡት ለአለፋት በቀደምት ዘመናት ለነበሩት ሰዎች ብቻ ሳይሆን እኛም የዚህ ዘመን ሰዎች ክርስቶስና ደቀ መዛሙርቱ በኃላም ሊቃውንተ ቤተ ክርስቲያን ካስተማሩት ርቱዕና ምሉዕ የክርስትና ሕግና ትምህርት ጋር በማዋሐድ እንድንመራባቸው ነው፡፡ ስለዚህ ከሁሉ አስቀድሞ እነዚህ አሠርቱ ትእዛዛት በእግዚአብሔርና በሰው ልጆች መካከል የተደረጉ ኪዳናት መሆናቸውን መረዳት ይገባል፡፡ ነቢየ እዚአብሔር ሙሴም ይህንኑ ለማስረዳት « አምሳካችን አግዚአብሔር በኮሪብ ከእኛ ጋር ቃለ ኪዳን አደረገ፡፡ እግዚአብሔር ዛሬ በዚህ በሕይወት ካለነው ከእኛ ጋር ቃል ኪዳን አደረገ እግዚአብሔር ዛሬ በዚህ በሕይወት ካለነው ከእኛ ከሁላችን ጋር እንጂ ከአባቶቻችን ጋር ብቻ ይህችን ቃል ኪዳን አላደረገም፡:› በማለት አስገንዝቧል።፡ ዘዱ 5-23 ከዚህ በመነሣት ነው አሠርቱ ትእዛዛት የተጻፋባቸውን ጽላት «የቃል ኪዳኑ ጽላት» ብለን የምንጠራው፡፡ ዘዳ. 9-1፲፡: እነዚህ አሠርቱ ትእዛዛት የተጻፋበት መጽሐፍ» ተብሏሷል፡፡ ዘዲ 2ፋ7፡: እንግዲህ እነዚህ ትእዛዛት አኛ እግዚአብሔርን ባመለክንበት ወይም አርሱም ባመንበት ጊዜ በእኛና በእርሱ መካከል የተመሠረቱ ኪዳናት ናቸው፡። ልዑል አግዚአብሔርም እነዚህን ኪዳንና ከሰዎች ልጆች ጋር ባደረገ ጊዜ በሚያስፈራና በሚያስደነግጥ ሁኔታ እንደነበር ቅድስ መጽሐፍ ያስረዳናል፡፡ በዚያን ጊዜ ተራራው ይናወጥ ነበር፡፡ የሲና ተራራ ሁሉ ይጤስ ነበር፡፡ ከእርሱም እንደ እቶን ያለ ጢስ ይወጣ ነበር፡፡፥ ዘዳ. ፲9-16:-19፡፡ ሐዋርያው ቅዱስ ጳውሎስም ይህንኑ ሁኔታ ሲገለጥ ‹ሙሴ እጅግ አፈራለሁ ሕንቀጠቀጣለሁ እስኪል ድረስ የሚታየው እጅግ የሚያስፈራ ነበረ» ብሏል፡፡ ዕብ. ፲2-21፡::"
+        }
+      ],
+      "english_explanation": "The opening says the Ten Commandments are covenants made between God and human beings, not only for people of earlier ages. Moses is quoted that God made this covenant at Horeb with the living people, not only with their fathers. The tablets are therefore called the tablets of the covenant.",
+      "status": "VERIFIED",
+      "explanation": "The covenant claim is the book's own opening statement, repeated in the same passage. The English 'understood as a covenant' matches ኪዳናት ናቸው.",
+      "translation_or_context_loss": "The English uses the singular 'a covenant.' The Amharic says ኪዳናት, covenants, and also says they bind this age as well as earlier ones.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "conceptual-02",
+      "question": "እግዚአብሔርን መውደድና ባልንጀራን መውደድ ከሁለቱ ጽላት ጋር ምን ግንኙነት አላቸው?",
+      "question_type": "conceptual",
+      "current_expected_answer": "The two tablets as duties toward God and toward neighbors.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0005",
+          "page": 2,
+          "amharic_text": "አሠርቱ ትአዛዛት ሁለት ዋና ዋና ክፍሎች የያዘ ነው፡ የመጀመሪያው ከአግዚአብሔር ጋር የሚኖረውን አምልኮታዊ ግንኙነት የሚመለከቱ ሶስት ትዕዛዛትን የቀፈ ሲሆን ሁለተኛው ደግሞ ሰዎች እርስ በርሳቸው ስለሚኖራቸው ግንኙነት የሚያወሱትን ስድስት ትእዛዛት የያዘ ነው፡:\n\nጌታችን የአሱስ ክርስቶስን አንድ ሕግ ዐዋቂ ሊፈትነው ሽቶ «መምህር ሆይ ከሕግ ማንኛይቱ ትእዛዝ ታላቅናት› ብሎ በጠየቀው ጊዜ መድኃኒታችንም መልሶ «ጌታ አምላክህን በፍጹመ ልብህ በፍጹም ነፍስህም በፍጹም አሳብህም ውደድ፡: ታላቂቱና ፊተኛይቱ ትአዛዝ ይህችን ትመስላለች እርሷም «ባልንጀራህን እአንደነፍስህ ውደድዕ የምትለው ናት ኦሪት እና ነቢያትም በእነዚህ በሁለቱ ትእዛዛት ጸንተዋል፡::› ማለቱ ለዚህ ነው፡፥ ማቴ, 22-35:40፡: በአነዚህ ጽላት ላይ በመጀመሪያው ነገረ አምላክን የሚያወሱት ትአዛዛት የተጻፍ ሲሆን በሁለተኛው የተጻፋት ደግሞ ፍቅረ ቢጽን የሚያስተምሩት ተጽፈዋል፡፡ ጌታችን ኢየሱስ ክርስቶስ ለደቀ መዛመሙርቱ ባስተማረው ጸሎትም በመጀመሪያ የተቀመጠው ነገረ ፃይማኖትን የሚያወሳው ነው፡። «አባታችን ሆይ በሰማያት የምትኖር ስምህ ይቀደስ መንግሥትህ ትምጣ ፈቃድህ በምድር ይሁን..›, ካለ በኃላ ነው ስለ ፍቅረቢጽ የሚያወሱት ቃላት የተከተሉት፡፡ ማቴ. 6-9 ሕገ ናን ውሱናል፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0106",
+          "page": 43,
+          "amharic_text": "ይህንን ‹የጌታችንን ትምህርት ‹መሠረት በማድረግም ሊቃውንቲ .-ቤተ ክርስቲያን አሠርቱን ትእዛዛት በሁለት ዋና ዋና ክፍሎች በመፈረጅ የመጀመሪያውን በእግዚአብሔርና በሰው መካከል ያለውን ግንኙነት /ፍቅረ እግዚአብሔርን/ የሚመለከት፤ ሁለተኛውን ደግሞ በሰዎች- መካከል ያለውን የእርስ በርስ ግንኙነት /ፍቅረ ቢጽን/ የሚመለከት ነው ብለውታል: ይህም የሆነበት ምክንያት የትእዛዛት አሥ ረኛው «ባልንጀራህን እንደራስህ ውደድ»፤' የሚለው በመሆኑ ነው:፡ ስለሆነም ከዚህ. በመቀጠል የዚህን ትእዛዝ አተ ረጓጐጉምና ተግባራዊ አፈጻጸም እንመለከታለን፡፡"
+        }
+      ],
+      "english_explanation": "Page 2 says the commandments have two parts: three about the worship relationship with God, and six about relations among people. It then says the first tablet contains matters of God and the second teaches love of neighbor. Page 43 says church teachers, following Christ, divide them into love of God and love of neighbor. Three plus six does not equal ten; the book states those counts anyway.",
+      "status": "PARTIALLY_SUPPORTED",
+      "explanation": "The two-part relation to God and to other people is in the source, and page 43 names the two loves. 'Duties' is broader than ፍቅር, and the English drops the book's own count of three and six.",
+      "translation_or_context_loss": "The English replaces love of God and love of neighbor with 'duties' and hides the 3-and-6 division, which is an internal numbering problem in the source.",
+      "recommended_ground_truth": "The book divides the commandments into two parts. Page 2 says three concern worship toward God and six concern relations among people, then identifies the second tablet with love of neighbor. Page 43 says church teachers call the two parts love of God and love of neighbor."
+    },
+    {
+      "question_id": "conceptual-03",
+      "question": "ሰንበት የሥጋ ዕረፍትና የነፍስ ዕረፍት ምልክት የሚሆነው እንዴት ነው?",
+      "question_type": "conceptual",
+      "current_expected_answer": "Physical Sabbath rest as a sign of spiritual and eternal rest.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0034",
+          "page": 12,
+          "amharic_text": "ሰንበት የዘለዓለማዊው ዕረፍት ምሳሌ ነው፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0035",
+          "page": 12,
+          "amharic_text": "ኣምላካችን አግዚአብሔር እንደተናገረው ሁሉ ዕለተ ሰንበት የዘለዓለማዊው መንፈሳዊ ዕፅረፍት ምልክት እንዲሆን የተሰጠ ጸጋ ነው:፡- ይህንኑ ለማመልከት አኔ የምቀድሳችሁ አግዚአብሐር እንደሆንኩ ታውቁ ዘንድ በአሕጌና በእናንተ መካከል ለልጅ ልጅ ምልክት ነውና ሰንበቶቼን ፈጽማችሁ ጠብቁ በማለት ተናግሮአል፡ ከጸ 3፲፡:፲3:: በብሉይ ኪዳን ሕግ መሠረት በሰንበት ዕረፍተ ሥጋ ይደረጋል ይኽውም በኋለኛው ዘመን በሐዲስ ኪዳን በክርስቶስ ቤዛነት በተገኘው ድኅነት በክርስቶስ ትንሣኤ በተሰጠው ዕረፍተ ነፍስ ተፈጽሟል፡፡ የብሉይ ሰንበትም በሐዲስ ኪዳን ሰንበት፤ በሰንበተ ክርስቲያን ተተርጉሟል፡፡"
+        }
+      ],
+      "english_explanation": "The Sabbath is called a figure of eternal rest and a grace given to be a sign of eternal spiritual rest. Under the old law, rest of the body is kept on the Sabbath; that bodily rest is fulfilled as rest of the soul given in Christ's redemption and resurrection. The text says this does not mean Christ abolished the Sabbath.",
+      "status": "VERIFIED",
+      "explanation": "The review focus matches the direction in the Amharic: bodily rest points to spiritual and eternal rest. The question's phrase 'a sign of bodily rest and of soul rest' is looser than the source, which makes bodily rest the old-law practice and eternal spiritual rest the thing signified.",
+      "translation_or_context_loss": "The question wording can be read as if the Sabbath signifies bodily rest. The review focus, which is the recorded English concept, follows the source.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "conceptual-04",
+      "question": "የሰውን ዝና ለመጠበቅ እውነትን መሥዋዕት ማድረግ ለምን እንደ ጣዖት አምልኮ ይቆጠራል?",
+      "question_type": "conceptual",
+      "current_expected_answer": "Preferring human reputation over truth and God.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0012",
+          "page": 5,
+          "amharic_text": "5. ዝናን ማምለክ\n\nአንዳንድ ሰዎች በሚገባ ወይም በማይገባ ነገር ለዝናቸው ወይም ለሚያውቁት ሰው ዝና ሲሟገቱ ይታያሉ፡፡\n\nየራሳቸውን ወይም የሚሟገቱለትን ሰው ስህተት በመሸፈን ጥፋቱን ከቤተ ክርስቲያን ከሕዝብ ወይም ከመንግሥት በላይ አድርገው ዝናውን ለመጠበቅ ይጥራሉ፡ፎ መሳሳታቸውን ወይም የሚሟገቱለት ሰወ ስህተት መፈጸሙን ቢያውቁም ስለምድራዊ ዝና ሲሉ እውነትን ይደብቋታል፡፡ ይህ ደግሞ ለዝና መዛትና ዝናን ማምለክ ነው፡ ጸሐፊው ስሰዝና የሚሟገቱትን አስመልክቶ «የባልንጀራ ዓይን ለስህተት የተደፈነች ናት፡ፁ፡: የጠሳት ዓይን ግን አያንዳንዱን ጥፋት ትገልጣለች» ብሎአል፡፡ የዚህ ዓይነቱ ባልንጀራ ጠቃሚ አይደለም፡፡ ጥፋቴን ዓይቶ ካልነገረኝ እንድስተካከልም ካልመክረኝ ለባዶነቴ ቢሟገትልኝ በመጨረሻ ከውድቀቴ ሊያነሣኝ አይችልምና አይረባኝም፡፡ «እውነተኛ ባልንጀራ መስተዋት ነው» ይባል የለ፡፡"
+        },
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0013",
+          "page": 5,
+          "amharic_text": "ሰሰው ዝና ተብሎ «እውነት» መሥዋዕት መሆን የለባትም፡: ለጥቅም ተብሎም የሰው ዝና መጠበቅና የሐሰት ተሟጋች መሆን አይገባም፡፤ ስለዚህ ነገርም መጽሐፍ «ኃጥኡን የሚያጸድቅና በጻድቁ ላይ የሚፈርድ ሁለቱ በእግዚአብሔር ዘንድ አስጠያፊዎች ናቸው» ብሏል፡፡ ምሳ 1፲7-15፡፥ አውነትን ስለዝና መለወጥ የእውነት አምላክና እውነት የሆነውን እግዚአብሔርን ክዶ ባለዝና የሆነውን ሰው ማምለክ ነው፡፡ ጌታችን ኢየሱስ ክርስቶስ «እፄ መንገድም አውነት ሕይወትም ነኝነ› ብሏልና እውነትን ሰዝና መለወጥን ጣዖትን ከእግዚአብሔር መጣላት ነው፡፡ ዩሕ. 146: ለአግዚአብሔር የሚገባውን ክብር ለሰው የሚሰጥ ከእግዚአብሔር ይልቅ ሰውን ያመልካል፡፡ እግዚአብሔርን ከቋስደሰት ይልቅ ሰውን በማይገባ ነገር የሚያስደስት የሚያስደስተውን ያመልካል፡፡ ለእግዚአብሔርም ከመታዘዝ ይልቅ ለሰው የሚታቨዝ ሰው የታዘዘለትን ያመልካል፡፡ ቅዱስ ጳውለሮስም «ስውን ወይስ እግዚአብሔርን አሁን አሺ አሰኛለሁን? ወይም ሰውን ደስ ሳሰኝ አፈልጋለሁን? አሁን ሰውን ደስ ባሰኝ የክርስቶስ ባሪያ ባልሆንኩም፡፡› በማለት መናረሩ ለዚሁ ነው፡፡ ገላ, 1-10: | ማንም ሰው ቢሆን የሚያደርገውን ነገር ሁሉ በንጹሕ አአምሮ አግዚአብሔርን ብቻ ለማስደሰት ማድረግ አለበት፡፡"
+        }
+      ],
+      "english_explanation": "The section is titled worship of reputation. Hiding the truth to protect earthly reputation is called worship of reputation. Truth must not be sacrificed for a person's fame. Changing the truth for reputation is described as denying God, who is truth, and worshipping the famous person.",
+      "status": "VERIFIED",
+      "explanation": "The Amharic supports both the hiding and the changing of truth, and it calls that worship. The English 'preferring human reputation over truth and God' follows that argument. Some nearby lines are OCR-rough; the two quoted sentences are readable.",
+      "translation_or_context_loss": "The English does not distinguish hiding the truth from changing it. Both are in the source, and both are treated as worship of reputation.",
+      "recommended_ground_truth": null
+    },
+    {
+      "question_id": "conceptual-05",
+      "question": "ራስን ማምለክ ከሌሎች ጣዖታት ሁሉ የበለጠ አደገኛ የሆነው ለምንድን ነው?",
+      "question_type": "conceptual",
+      "current_expected_answer": "Self-worship as the most dangerous form of idolatry.",
+      "source_evidence": [
+        {
+          "document": "10commandments.pdf",
+          "chunk_id": "10commandments:chunk-0019",
+          "page": 7,
+          "amharic_text": "6. ራስን ማምለክ\n\nከጣዖታት ሁሉ የበለጠውና አደገኛው ራስን ማምለክ ነው፡: ሰው ከሥጋዊ ፍላጎቱ ማየል የተነሣ ሁልጊዜ ራሱን ከፍከፍ ለማድረግ ይፈልጋል፡፡ በዚህ ደግሞ ራሱን ማምለክ ብቻ ሳይሆን ሌሎችም እንዲያመልኩት እርሱነቱ በሁሉም ዘንድ እንዲገን እንደከብርና እንዲፈራ ይሻል፡ ሰዎች መልካምና ያማረ ነው የሚሉት ሁሉ በአርሱ ማንነት ውስጥ እንዲገኝና ሰዎችምሁሉ እንዲያደንቁት ይፈልጋል፡፡"
+        }
+      ],
+      "english_explanation": "Self-worship is called greater and more dangerous than all other idols. The reason in the passage is the desire to exalt oneself and to be honored, feared, and worshipped by others. People who overcome the other idols and still fail here are compared to Herod, who accepted honor that belonged to God.",
+      "status": "VERIFIED",
+      "explanation": "The comparative claim is the section's opening sentence. The following lines supply the reason the question asks, without adding a different idol.",
+      "translation_or_context_loss": "The English states the danger and does not spell out the Herod comparison. That comparison illustrates the claim; it does not change it.",
+      "recommended_ground_truth": null
+    }
+  ]
+}
