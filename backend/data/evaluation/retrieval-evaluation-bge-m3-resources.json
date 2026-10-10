@@ -1,478 +1,506 @@
 {
-  "started_at_epoch": 1791572380.0285723,
+  "started_at_epoch": 1791650513.3936546,
   "system_memory_start": {
     "total_physical_gb": 7.804,
-    "available_physical_gb": 1.347,
-    "memory_load_percent": 82,
-    "available_pagefile_gb": 7.561
+    "available_physical_gb": 0.318,
+    "memory_load_percent": 95,
+    "available_pagefile_gb": 4.174
   },
   "process_memory_start": {
-    "working_set_gb": 0.038,
-    "peak_working_set_gb": 0.038,
-    "pagefile_gb": 0.121,
-    "peak_pagefile_gb": 0.121
+    "working_set_gb": 0.037,
+    "peak_working_set_gb": 0.037,
+    "pagefile_gb": 0.12,
+    "peak_pagefile_gb": 0.12
   },
   "samples": [
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.945,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.305
+        "available_physical_gb": 0.61,
+        "memory_load_percent": 92,
+        "available_pagefile_gb": 0.928
       },
       "process": {
-        "working_set_gb": 0.024,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.147,
-        "peak_pagefile_gb": 0.148
+        "working_set_gb": 1.177,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.098,
+        "peak_pagefile_gb": 3.141
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 1.349,
-        "memory_load_percent": 82,
-        "available_pagefile_gb": 2.723
-      },
-      "process": {
-        "working_set_gb": 0.024,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.147,
-        "peak_pagefile_gb": 0.148
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.384,
-        "memory_load_percent": 82,
-        "available_pagefile_gb": 2.763
-      },
-      "process": {
-        "working_set_gb": 0.024,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.147,
-        "peak_pagefile_gb": 0.148
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.237,
-        "memory_load_percent": 84,
-        "available_pagefile_gb": 2.572
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.091,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.384
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.089,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.408
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.097,
-        "memory_load_percent": 85,
-        "available_pagefile_gb": 2.423
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.428,
-        "memory_load_percent": 81,
-        "available_pagefile_gb": 2.781
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.404,
-        "memory_load_percent": 82,
-        "available_pagefile_gb": 2.759
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.404,
-        "memory_load_percent": 82,
-        "available_pagefile_gb": 2.761
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.249,
-        "memory_load_percent": 83,
-        "available_pagefile_gb": 2.621
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.267,
-        "memory_load_percent": 83,
-        "available_pagefile_gb": 2.625
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.225,
-        "memory_load_percent": 84,
-        "available_pagefile_gb": 2.589
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.163,
-        "memory_load_percent": 85,
-        "available_pagefile_gb": 2.529
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.125,
-        "memory_load_percent": 85,
-        "available_pagefile_gb": 2.465
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.1,
-        "memory_load_percent": 85,
-        "available_pagefile_gb": 2.459
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.07,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.41
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.009,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.362
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.981,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.355
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.901,
-        "memory_load_percent": 88,
-        "available_pagefile_gb": 2.292
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.902,
-        "memory_load_percent": 88,
-        "available_pagefile_gb": 2.275
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.077,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.483
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.038,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.449
-      },
-      "process": {
-        "working_set_gb": 0.032,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.003,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.434
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.01,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.428
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.21,
-        "memory_load_percent": 84,
-        "available_pagefile_gb": 2.689
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 1.019,
-        "memory_load_percent": 86,
-        "available_pagefile_gb": 2.587
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.979,
-        "memory_load_percent": 87,
-        "available_pagefile_gb": 2.562
-      },
-      "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.751,
+        "available_physical_gb": 0.76,
         "memory_load_percent": 90,
-        "available_pagefile_gb": 2.382
+        "available_pagefile_gb": 1.29
       },
       "process": {
-        "working_set_gb": 0.031,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.165,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.095,
+        "peak_pagefile_gb": 3.141
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.785,
+        "available_physical_gb": 0.431,
+        "memory_load_percent": 94,
+        "available_pagefile_gb": 1.143
+      },
+      "process": {
+        "working_set_gb": 1.215,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.107,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.502,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 0.671
+      },
+      "process": {
+        "working_set_gb": 1.184,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.114,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.5,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 0.761
+      },
+      "process": {
+        "working_set_gb": 1.18,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.107,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.499,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 0.911
+      },
+      "process": {
+        "working_set_gb": 1.189,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.106,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.578,
+        "memory_load_percent": 92,
+        "available_pagefile_gb": 1.011
+      },
+      "process": {
+        "working_set_gb": 1.191,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.108,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.45,
+        "memory_load_percent": 94,
+        "available_pagefile_gb": 0.982
+      },
+      "process": {
+        "working_set_gb": 1.192,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.109,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.506,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 1.013
+      },
+      "process": {
+        "working_set_gb": 1.197,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.11,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.564,
+        "memory_load_percent": 92,
+        "available_pagefile_gb": 1.111
+      },
+      "process": {
+        "working_set_gb": 1.199,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.111,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.65,
+        "memory_load_percent": 91,
+        "available_pagefile_gb": 0.851
+      },
+      "process": {
+        "working_set_gb": 1.192,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.105,
+        "peak_pagefile_gb": 3.141
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.797,
         "memory_load_percent": 89,
-        "available_pagefile_gb": 2.325
+        "available_pagefile_gb": 1.057
       },
       "process": {
-        "working_set_gb": 0.028,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.186,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.106,
+        "peak_pagefile_gb": 3.141
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.77,
+        "available_physical_gb": 0.776,
         "memory_load_percent": 90,
-        "available_pagefile_gb": 2.199
+        "available_pagefile_gb": 1.175
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.224,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.117,
+        "peak_pagefile_gb": 3.141
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.848,
-        "memory_load_percent": 89,
-        "available_pagefile_gb": 2.295
+        "available_physical_gb": 0.731,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.125
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.217,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.112,
+        "peak_pagefile_gb": 3.15
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.831,
-        "memory_load_percent": 89,
-        "available_pagefile_gb": 2.306
+        "available_physical_gb": 0.683,
+        "memory_load_percent": 91,
+        "available_pagefile_gb": 1.189
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.202,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.119,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.778,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.107
+      },
+      "process": {
+        "working_set_gb": 1.191,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.107,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.932,
+        "memory_load_percent": 88,
+        "available_pagefile_gb": 1.183
+      },
+      "process": {
+        "working_set_gb": 1.225,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.115,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.947,
+        "memory_load_percent": 87,
+        "available_pagefile_gb": 1.157
+      },
+      "process": {
+        "working_set_gb": 1.225,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.115,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.774,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.155
+      },
+      "process": {
+        "working_set_gb": 1.226,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.116,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.734,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.09
+      },
+      "process": {
+        "working_set_gb": 1.223,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.108,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.449,
+        "memory_load_percent": 94,
+        "available_pagefile_gb": 1.155
+      },
+      "process": {
+        "working_set_gb": 1.221,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.112,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.492,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 0.949
+      },
+      "process": {
+        "working_set_gb": 1.192,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.11,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.865,
+        "memory_load_percent": 88,
+        "available_pagefile_gb": 1.173
+      },
+      "process": {
+        "working_set_gb": 1.2,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.117,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.763,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.105
+      },
+      "process": {
+        "working_set_gb": 1.195,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.109,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.735,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.174
+      },
+      "process": {
+        "working_set_gb": 1.231,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.125,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.746,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.119
+      },
+      "process": {
+        "working_set_gb": 1.231,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.123,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.726,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.19
+      },
+      "process": {
+        "working_set_gb": 1.228,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.12,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.626,
+        "memory_load_percent": 91,
+        "available_pagefile_gb": 1.131
+      },
+      "process": {
+        "working_set_gb": 1.215,
+        "peak_working_set_gb": 1.237,
+        "pagefile_gb": 3.108,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.805,
+        "memory_load_percent": 89,
+        "available_pagefile_gb": 1.184
+      },
+      "process": {
+        "working_set_gb": 1.232,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.121,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.731,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.053
+      },
+      "process": {
+        "working_set_gb": 1.218,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.11,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.534,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 1.132
+      },
+      "process": {
+        "working_set_gb": 1.219,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.111,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.778,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.022
+      },
+      "process": {
+        "working_set_gb": 1.185,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.12,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.883,
+        "memory_load_percent": 88,
+        "available_pagefile_gb": 1.129
+      },
+      "process": {
+        "working_set_gb": 1.187,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.115,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.909,
+        "memory_load_percent": 88,
+        "available_pagefile_gb": 1.056
+      },
+      "process": {
+        "working_set_gb": 1.203,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.116,
+        "peak_pagefile_gb": 3.152
+      }
+    },
+    {
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.723,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.214
+      },
+      "process": {
+        "working_set_gb": 1.217,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.119,
+        "peak_pagefile_gb": 3.152
       }
     },
     {
@@ -480,107 +508,79 @@
         "total_physical_gb": 7.804,
         "available_physical_gb": 0.775,
         "memory_load_percent": 90,
-        "available_pagefile_gb": 2.186
+        "available_pagefile_gb": 1.166
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.214,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.115,
+        "peak_pagefile_gb": 3.152
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.83,
+        "available_physical_gb": 0.791,
         "memory_load_percent": 89,
-        "available_pagefile_gb": 2.291
+        "available_pagefile_gb": 1.249
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.214,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.115,
+        "peak_pagefile_gb": 3.152
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.829,
+        "available_physical_gb": 0.793,
         "memory_load_percent": 89,
-        "available_pagefile_gb": 2.308
+        "available_pagefile_gb": 1.157
       },
       "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.208,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.105,
+        "peak_pagefile_gb": 3.152
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.682,
-        "memory_load_percent": 91,
-        "available_pagefile_gb": 2.144
-      },
-      "process": {
-        "working_set_gb": 0.022,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.729,
+        "available_physical_gb": 0.758,
         "memory_load_percent": 90,
-        "available_pagefile_gb": 2.068
+        "available_pagefile_gb": 1.186
       },
       "process": {
-        "working_set_gb": 0.021,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.209,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.106,
+        "peak_pagefile_gb": 3.152
       }
     },
     {
       "system": {
         "total_physical_gb": 7.804,
-        "available_physical_gb": 0.518,
-        "memory_load_percent": 93,
-        "available_pagefile_gb": 1.803
+        "available_physical_gb": 0.81,
+        "memory_load_percent": 89,
+        "available_pagefile_gb": 1.142
       },
       "process": {
-        "working_set_gb": 0.021,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
-      }
-    },
-    {
-      "system": {
-        "total_physical_gb": 7.804,
-        "available_physical_gb": 0.633,
-        "memory_load_percent": 91,
-        "available_pagefile_gb": 1.804
-      },
-      "process": {
-        "working_set_gb": 0.021,
-        "peak_working_set_gb": 0.054,
-        "pagefile_gb": 0.149,
-        "peak_pagefile_gb": 0.149
+        "working_set_gb": 1.199,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.108,
+        "peak_pagefile_gb": 3.152
       }
     }
   ],
   "before_download": {
-    "elapsed_seconds": 0.039,
+    "elapsed_seconds": 0.021,
     "system": {
       "total_physical_gb": 7.804,
-      "available_physical_gb": 1.344,
-      "memory_load_percent": 82,
-      "available_pagefile_gb": 7.631
+      "available_physical_gb": 0.319,
+      "memory_load_percent": 95,
+      "available_pagefile_gb": 4.175
     },
     "process": {
       "working_set_gb": 0.039,
@@ -588,5 +588,86 @@
       "pagefile_gb": 0.123,
       "peak_pagefile_gb": 0.123
     }
+  },
+  "after_download": {
+    "elapsed_seconds": 724.92,
+    "system": {
+      "total_physical_gb": 7.804,
+      "available_physical_gb": 0.447,
+      "memory_load_percent": 94,
+      "available_pagefile_gb": 1.332
+    },
+    "process": {
+      "working_set_gb": 0.017,
+      "peak_working_set_gb": 0.053,
+      "pagefile_gb": 0.138,
+      "peak_pagefile_gb": 0.14
+    }
+  },
+  "before_model_load": {
+    "elapsed_seconds": 724.937,
+    "system": {
+      "total_physical_gb": 7.804,
+      "available_physical_gb": 0.448,
+      "memory_load_percent": 94,
+      "available_pagefile_gb": 1.366
+    },
+    "process": {
+      "working_set_gb": 0.017,
+      "peak_working_set_gb": 0.053,
+      "pagefile_gb": 0.138,
+      "peak_pagefile_gb": 0.14
+    }
+  },
+  "after_model_load": {
+    "elapsed_seconds": 835.141,
+    "system": {
+      "total_physical_gb": 7.804,
+      "available_physical_gb": 0.5,
+      "memory_load_percent": 93,
+      "available_pagefile_gb": 0.719
+    },
+    "process": {
+      "working_set_gb": 0.626,
+      "peak_working_set_gb": 0.673,
+      "pagefile_gb": 3.023,
+      "peak_pagefile_gb": 3.068
+    }
+  },
+  "after_embedding": {
+    "elapsed_seconds": 1801.935,
+    "system": {
+      "total_physical_gb": 7.804,
+      "available_physical_gb": 0.762,
+      "memory_load_percent": 90,
+      "available_pagefile_gb": 1.239
+    },
+    "process": {
+      "working_set_gb": 1.216,
+      "peak_working_set_gb": 1.239,
+      "pagefile_gb": 3.116,
+      "peak_pagefile_gb": 3.152
+    }
+  },
+  "after_queries": {
+    "elapsed_seconds": 1818.891,
+    "system": {
+      "total_physical_gb": 7.804,
+      "available_physical_gb": 0.845,
+      "memory_load_percent": 89,
+      "available_pagefile_gb": 1.177
+    },
+    "process": {
+      "working_set_gb": 1.199,
+      "peak_working_set_gb": 1.239,
+      "pagefile_gb": 3.107,
+      "peak_pagefile_gb": 3.152
+    }
+  },
+  "process_memory_end": {
+    "working_set_gb": 1.205,
+    "peak_working_set_gb": 1.239,
+    "pagefile_gb": 3.108,
+    "peak_pagefile_gb": 3.152
   }
 }

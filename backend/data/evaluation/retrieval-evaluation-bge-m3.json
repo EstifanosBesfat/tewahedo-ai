@@ -1,41 +1,3422 @@
 {
-  "status": "failed",
+  "status": "completed",
+  "benchmark": "ground-truth-v3",
   "model_name": "BAAI/bge-m3",
-  "failure": {
-    "stage": "download",
-    "error_type": "RuntimeError",
-    "error": "could not download pytorch_model.bin",
-    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\estifanos besfat\\Desktop\\real developer\\ai integrated apps\\tewahedo-ai\\backend\\scripts\\evaluate_bge_m3.py\", line 835, in main\n    manifest = download_models(log)\n  File \"C:\\Users\\estifanos besfat\\Desktop\\real developer\\ai integrated apps\\tewahedo-ai\\backend\\scripts\\evaluate_bge_m3.py\", line 250, in download_models\n    size = download_file(session, url, destination, item.get(\"size\"))\n  File \"C:\\Users\\estifanos besfat\\Desktop\\real developer\\ai integrated apps\\tewahedo-ai\\backend\\scripts\\evaluate_bge_m3.py\", line 324, in download_file\n    raise RuntimeError(f\"could not download {destination.name}\")\nRuntimeError: could not download pytorch_model.bin\n"
+  "collection_name": "tewahedo_bge_m3_dense_v1",
+  "vector_store": "backend/data/vectorstore/bge-m3-units",
+  "unit_count": 182,
+  "unit_file_sha256": "a19600ed5f58f998b7c26caa84f104a7ec65114c5de73376c20fea5cfab21f32",
+  "ground_truth_file_sha256": "bda6d33207865c63120ade41297742573d1b0401271a03e4dad9df5d45d7bf9f",
+  "retrieval_settings": {
+    "search_top_k_before_parent_collapse": 20,
+    "parent_width": 5,
+    "denominator": 14,
+    "hit_rule": "A metric-eligible question hits at k when any approved relevant parent is inside the top k parents."
   },
+  "configuration": {
+    "model_name": "BAAI/bge-m3",
+    "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "local_model_directory": "C:\\Users\\estifanos besfat\\.cache\\huggingface\\tewahedo-bge-m3",
+    "embedding_dimension": 1024,
+    "hidden_size": 1024,
+    "model_max_position_embeddings": 8194,
+    "loaded_max_seq_length": 8192,
+    "dense_only": true,
+    "sparse_retrieval": false,
+    "multi_vector_retrieval": false,
+    "query_prefix": "",
+    "document_prefix": "",
+    "query_instruction": null,
+    "encode_prompt": "",
+    "instruction_policy": "BGE-M3 model card: dense retrieval uses the same approach as BGE, except queries do not get an instruction prefix.",
+    "library_prompts": {
+      "query": "",
+      "document": ""
+    },
+    "library_default_prompt_name": null,
+    "normalize_embeddings": true,
+    "similarity": "Chroma cosine distance on L2-normalized vectors; score = 1 - distance",
+    "pooling": {
+      "word_embedding_dimension": 1024,
+      "pooling_mode_cls_token": true,
+      "pooling_mode_mean_tokens": false,
+      "pooling_mode_max_tokens": false,
+      "pooling_mode_mean_sqrt_len_tokens": false
+    },
+    "precision": "float32",
+    "device": "cpu",
+    "sentence_transformers": "6.1.0",
+    "torch": "2.14.1+cpu",
+    "cuda": false,
+    "encode_batch_size": 1
+  },
+  "recall_at_1": "12/14 (85.7%)",
+  "recall_at_3": "14/14 (100.0%)",
+  "recall_at_5": "14/14 (100.0%)",
+  "excluded_question_ids": [
+    "direct-01"
+  ],
+  "denominator": 14,
+  "misses_at_5": [],
+  "frozen_e5_baseline": {
+    "model_name": "intfloat/multilingual-e5-small",
+    "recall_at_1": "9/14",
+    "recall_at_3": "12/14",
+    "recall_at_5": "13/14",
+    "misses_at_5": [
+      "direct-05"
+    ]
+  },
+  "comparison": [
+    {
+      "question_id": "direct-01",
+      "change_versus_e5": "excluded",
+      "e5_top_1": false,
+      "e5_top_3": false,
+      "e5_top_5": false,
+      "bge_top_1": false,
+      "bge_top_3": false,
+      "bge_top_5": false
+    },
+    {
+      "question_id": "direct-02",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "direct-03",
+      "change_versus_e5": "improved",
+      "e5_top_1": false,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "direct-04",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "direct-05",
+      "change_versus_e5": "improved",
+      "e5_top_1": false,
+      "e5_top_3": false,
+      "e5_top_5": false,
+      "bge_top_1": false,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "paraphrased-01",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "paraphrased-02",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "paraphrased-03",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": false,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": false,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "paraphrased-04",
+      "change_versus_e5": "improved",
+      "e5_top_1": false,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "paraphrased-05",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "conceptual-01",
+      "change_versus_e5": "improved",
+      "e5_top_1": false,
+      "e5_top_3": false,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "conceptual-02",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "conceptual-03",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "conceptual-04",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    },
+    {
+      "question_id": "conceptual-05",
+      "change_versus_e5": "unchanged",
+      "e5_top_1": true,
+      "e5_top_3": true,
+      "e5_top_5": true,
+      "bge_top_1": true,
+      "bge_top_3": true,
+      "bge_top_5": true
+    }
+  ],
+  "direct_05": {
+    "relevant_chunk_ids": [
+      "10commandments:chunk-0085",
+      "10commandments:chunk-0089"
+    ],
+    "first_relevant_parent_rank": 2,
+    "top_1": false,
+    "top_3": true,
+    "top_5": true
+  },
+  "questions": [
+    {
+      "question_id": "direct-01",
+      "question": "የመጀመሪያው ትእዛዝ ምንድን ነው?",
+      "embed_seconds": 0.469667,
+      "search_seconds": 0.065784,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0007:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0007",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.625933051109314
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.6066720485687256
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0008:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0008",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.5815545320510864
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0005:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "similarity_score": 0.5811600685119629
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.5583657026290894
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0002:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.546785295009613
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0005:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.5351235866546631
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5344856977462769
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.5314857363700867
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5311304926872253
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5307371616363525
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0076:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0076",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5264994502067566
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0002:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.5210676789283752
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0045:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5184041261672974
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0113:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0113",
+          "page_start": 46,
+          "page_end": 47,
+          "similarity_score": 0.5132527351379395
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0112:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0112",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.4972384572029114
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0051:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0051",
+          "page_start": 18,
+          "page_end": 18,
+          "similarity_score": 0.496160089969635
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0074:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0074",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.492712140083313
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0045:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.4925227761268616
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0105:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0105",
+          "page_start": 42,
+          "page_end": 43,
+          "similarity_score": 0.49116480350494385
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0007"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0040"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0008"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0005"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0001"
+        }
+      ],
+      "category": "direct",
+      "metric_eligible": false,
+      "exclusion_reason": "The Amharic uses 'the first commandment' for three teachings. No one of them is the only concept the source states.",
+      "relevant_chunk_ids": [],
+      "parent_ids": [
+        "10commandments:chunk-0007",
+        "10commandments:chunk-0040",
+        "10commandments:chunk-0008",
+        "10commandments:chunk-0005",
+        "10commandments:chunk-0001"
+      ],
+      "first_relevant_parent_rank": null,
+      "top_1": false,
+      "top_3": false,
+      "top_5": false
+    },
+    {
+      "question_id": "direct-02",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "embed_seconds": 0.531399,
+      "search_seconds": 0.012959,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.7376027703285217
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0031:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.6742511987686157
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0037:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0037",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.6403961181640625
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0035:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0035",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6287981271743774
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0033:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0033",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6238512992858887
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0034:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5929558277130127
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0034:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5911028981208801
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0038:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0038",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5724390745162964
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0032:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.569079577922821
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0036:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5561185479164124
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0039:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5491495132446289
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0006:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0006",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.5446664094924927
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0036:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5279885530471802
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0045:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5151451826095581
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5060957670211792
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.4882972836494446
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0039:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.4869842529296875
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0004:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0004",
+          "page_start": 2,
+          "page_end": 2,
+          "similarity_score": 0.4861791729927063
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.48602795600891113
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0076:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0076",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.4804650545120239
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0032"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0031"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0037"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0035"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0033"
+        }
+      ],
+      "category": "direct",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0031",
+        "10commandments:chunk-0032"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0032",
+        "10commandments:chunk-0031",
+        "10commandments:chunk-0037",
+        "10commandments:chunk-0035",
+        "10commandments:chunk-0033"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "direct-03",
+      "question": "አባትና እናትን ስለማክበር ትእዛዙ ምን ይላል?",
+      "embed_seconds": 0.843617,
+      "search_seconds": 0.124348,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.7150086760520935
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0044:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0044",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.6819077134132385
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0041:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0041",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.6500546932220459
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5748815536499023
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.574801504611969
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0063:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0063",
+          "page_start": 24,
+          "page_end": 24,
+          "similarity_score": 0.5634767413139343
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0005:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "similarity_score": 0.5554346442222595
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.5541634559631348
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0015:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0015",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.5463119149208069
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0043:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0043",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5452245473861694
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0031:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5402477979660034
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0042:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0042",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5397099852561951
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0014:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0014",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5357377529144287
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0112:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0112",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.535536527633667
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0045:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5352212190628052
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.534934401512146
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0113:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0113",
+          "page_start": 46,
+          "page_end": 47,
+          "similarity_score": 0.5336632132530212
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0043:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0043",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5328453183174133
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5207218527793884
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0002:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.5127401351928711
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0040"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0044"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0041"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0013"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0032"
+        }
+      ],
+      "category": "direct",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0040"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0040",
+        "10commandments:chunk-0044",
+        "10commandments:chunk-0041",
+        "10commandments:chunk-0013",
+        "10commandments:chunk-0032"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "direct-04",
+      "question": "“አትግደል” የሚለው ትእዛዝ ምን ያስተምራል?",
+      "embed_seconds": 0.55471,
+      "search_seconds": 0.024487,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0045:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.7154715657234192
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0047:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0047",
+          "page_start": 16,
+          "page_end": 16,
+          "similarity_score": 0.6658677458763123
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0055:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0055",
+          "page_start": 20,
+          "page_end": 21,
+          "similarity_score": 0.6471997499465942
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0051:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0051",
+          "page_start": 18,
+          "page_end": 18,
+          "similarity_score": 0.6330087780952454
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0054:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0054",
+          "page_start": 20,
+          "page_end": 20,
+          "similarity_score": 0.6072022914886475
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5925813913345337
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0052:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0052",
+          "page_start": 19,
+          "page_end": 19,
+          "similarity_score": 0.5910685062408447
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0076:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0076",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5853861570358276
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0058:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0058",
+          "page_start": 22,
+          "page_end": 22,
+          "similarity_score": 0.5775462985038757
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0047:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0047",
+          "page_start": 16,
+          "page_end": 16,
+          "similarity_score": 0.5712427496910095
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0054:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0054",
+          "page_start": 20,
+          "page_end": 20,
+          "similarity_score": 0.5696412920951843
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0067:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0067",
+          "page_start": 26,
+          "page_end": 26,
+          "similarity_score": 0.5651645660400391
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0069:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0069",
+          "page_start": 28,
+          "page_end": 28,
+          "similarity_score": 0.5613745450973511
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5594810843467712
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.5553268790245056
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0057:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0057",
+          "page_start": 21,
+          "page_end": 21,
+          "similarity_score": 0.5539667010307312
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0046:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0046",
+          "page_start": 16,
+          "page_end": 16,
+          "similarity_score": 0.5513606071472168
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0050:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0050",
+          "page_start": 18,
+          "page_end": 18,
+          "similarity_score": 0.5509141087532043
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0045:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5502281785011292
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5472334027290344
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0045"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0047"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0055"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0051"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0054"
+        }
+      ],
+      "category": "direct",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0045",
+        "10commandments:chunk-0047"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0045",
+        "10commandments:chunk-0047",
+        "10commandments:chunk-0055",
+        "10commandments:chunk-0051",
+        "10commandments:chunk-0054"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "direct-05",
+      "question": "በባልንጀራ ላይ ሐሰት ምስክር ስለመሆን ትእዛዙ ምን ይላል?",
+      "embed_seconds": 0.44255,
+      "search_seconds": 0.302745,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5304986238479614
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0089:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0089",
+          "page_start": 36,
+          "page_end": 36,
+          "similarity_score": 0.5300325155258179
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0089:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0089",
+          "page_start": 36,
+          "page_end": 36,
+          "similarity_score": 0.5239508748054504
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0088:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0088",
+          "page_start": 36,
+          "page_end": 36,
+          "similarity_score": 0.5235434174537659
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0045:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5224589109420776
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0107:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0107",
+          "page_start": 43,
+          "page_end": 44,
+          "similarity_score": 0.5166193842887878
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0085:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0085",
+          "page_start": 34,
+          "page_end": 34,
+          "similarity_score": 0.5106790065765381
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0109:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0109",
+          "page_start": 45,
+          "page_end": 45,
+          "similarity_score": 0.5102342367172241
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0076:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0076",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5083432197570801
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0087:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0087",
+          "page_start": 35,
+          "page_end": 35,
+          "similarity_score": 0.5059615969657898
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5037968754768372
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0045:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0045",
+          "page_start": 15,
+          "page_end": 15,
+          "similarity_score": 0.5007935762405396
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.5002613067626953
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0085:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0085",
+          "page_start": 34,
+          "page_end": 34,
+          "similarity_score": 0.4926949739456177
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0046:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0046",
+          "page_start": 16,
+          "page_end": 16,
+          "similarity_score": 0.487995445728302
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0110:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0110",
+          "page_start": 45,
+          "page_end": 45,
+          "similarity_score": 0.4833158254623413
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0087:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0087",
+          "page_start": 35,
+          "page_end": 35,
+          "similarity_score": 0.4811667203903198
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0078:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0078",
+          "page_start": 31,
+          "page_end": 31,
+          "similarity_score": 0.4797924757003784
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0004:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0004",
+          "page_start": 2,
+          "page_end": 2,
+          "similarity_score": 0.4797790050506592
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0096:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0096",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.47466254234313965
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0013"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0089"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0088"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0045"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0107"
+        }
+      ],
+      "category": "direct",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0085",
+        "10commandments:chunk-0089"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0013",
+        "10commandments:chunk-0089",
+        "10commandments:chunk-0088",
+        "10commandments:chunk-0045",
+        "10commandments:chunk-0107"
+      ],
+      "first_relevant_parent_rank": 2,
+      "top_1": false,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "paraphrased-01",
+      "question": "ሰው ገንዘብንና እግዚአብሔርን በአንድ ጊዜ ለምን ማገልገል አይችልም?",
+      "embed_seconds": 0.905773,
+      "search_seconds": 0.017816,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0009:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0009",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.654832124710083
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0010:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0010",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.6195027828216553
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5462746024131775
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.544342577457428
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0018:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0018",
+          "page_start": 6,
+          "page_end": 7,
+          "similarity_score": 0.5433638691902161
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0066:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 25,
+          "page_end": 26,
+          "similarity_score": 0.5408260822296143
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5384931564331055
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0034:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5220929980278015
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0084:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0084",
+          "page_start": 33,
+          "page_end": 33,
+          "similarity_score": 0.5213374495506287
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5204111337661743
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0020:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0020",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5187921524047852
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0030:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0030",
+          "page_start": 10,
+          "page_end": 11,
+          "similarity_score": 0.5172092914581299
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0083:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0083",
+          "page_start": 33,
+          "page_end": 33,
+          "similarity_score": 0.5156776905059814
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0017:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0017",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.5143683552742004
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0097:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0097",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5098099112510681
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0082:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0082",
+          "page_start": 32,
+          "page_end": 33,
+          "similarity_score": 0.5090564489364624
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0047:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0047",
+          "page_start": 16,
+          "page_end": 16,
+          "similarity_score": 0.5086103677749634
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0016:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0016",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.5061299800872803
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0110:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0110",
+          "page_start": 45,
+          "page_end": 45,
+          "similarity_score": 0.505506157875061
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0068:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.5048033595085144
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0009"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0010"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0013"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0111"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0018"
+        }
+      ],
+      "category": "paraphrased",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0009",
+        "10commandments:chunk-0010"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0009",
+        "10commandments:chunk-0010",
+        "10commandments:chunk-0013",
+        "10commandments:chunk-0111",
+        "10commandments:chunk-0018"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "paraphrased-02",
+      "question": "የዕረፍት ቀን ለሰው የተሰጠ ስጦታ እንጂ ሸክም አለመሆኑ እንዴት ይገለጻል?",
+      "embed_seconds": 0.356008,
+      "search_seconds": 0.004411,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0034:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.7043626308441162
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0036:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6086161136627197
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0035:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0035",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6038522124290466
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0033:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0033",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5897077918052673
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0034:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5751888155937195
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0031:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5593281984329224
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0038:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0038",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5542693734169006
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5467066764831543
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0039:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5463025569915771
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0039:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5420889854431152
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0037:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0037",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5405452847480774
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0018:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0018",
+          "page_start": 6,
+          "page_end": 7,
+          "similarity_score": 0.53653883934021
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0036:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5277774930000305
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0065:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.5209717154502869
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0068:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.5183868408203125
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.5149228572845459
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0032:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5050212144851685
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0074:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0074",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5017504096031189
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.4964752793312073
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.49587905406951904
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0034"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0036"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0035"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0033"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0031"
+        }
+      ],
+      "category": "paraphrased",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0033",
+        "10commandments:chunk-0034"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0034",
+        "10commandments:chunk-0036",
+        "10commandments:chunk-0035",
+        "10commandments:chunk-0033",
+        "10commandments:chunk-0031"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "paraphrased-03",
+      "question": "አንድን ሰው ከእግዚአብሔር ማራቅ ነፍሱን ከመግደል ጋር የሚመሳሰለው ለምንድን ነው?",
+      "embed_seconds": 0.647528,
+      "search_seconds": 0.043657,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0057:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0057",
+          "page_start": 22,
+          "page_end": 22,
+          "similarity_score": 0.6879796981811523
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0066:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 25,
+          "page_end": 26,
+          "similarity_score": 0.6723878383636475
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0058:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0058",
+          "page_start": 22,
+          "page_end": 22,
+          "similarity_score": 0.6515061855316162
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0065:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.6446987390518188
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0058:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0058",
+          "page_start": 22,
+          "page_end": 22,
+          "similarity_score": 0.6430672407150269
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0068:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.6372494101524353
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0052:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0052",
+          "page_start": 19,
+          "page_end": 19,
+          "similarity_score": 0.6129871010780334
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0050:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0050",
+          "page_start": 18,
+          "page_end": 18,
+          "similarity_score": 0.6103995442390442
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0049:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0049",
+          "page_start": 17,
+          "page_end": 17,
+          "similarity_score": 0.6098334193229675
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0105:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0105",
+          "page_start": 42,
+          "page_end": 43,
+          "similarity_score": 0.6094403266906738
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0048:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0048",
+          "page_start": 17,
+          "page_end": 17,
+          "similarity_score": 0.6094168424606323
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0069:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0069",
+          "page_start": 28,
+          "page_end": 28,
+          "similarity_score": 0.6072781085968018
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0065:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.605469822883606
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0068:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.595245897769928
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0067:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0067",
+          "page_start": 26,
+          "page_end": 26,
+          "similarity_score": 0.5876320004463196
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0066:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 26,
+          "page_end": 26,
+          "similarity_score": 0.5835374593734741
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0104:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0104",
+          "page_start": 42,
+          "page_end": 42,
+          "similarity_score": 0.5833889245986938
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0077:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0077",
+          "page_start": 31,
+          "page_end": 31,
+          "similarity_score": 0.5789246559143066
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.5751843452453613
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0059:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0059",
+          "page_start": 22,
+          "page_end": 23,
+          "similarity_score": 0.5713381171226501
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0057"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0066"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0058"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0065"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0068"
+        }
+      ],
+      "category": "paraphrased",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0058",
+        "10commandments:chunk-0059"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0057",
+        "10commandments:chunk-0066",
+        "10commandments:chunk-0058",
+        "10commandments:chunk-0065",
+        "10commandments:chunk-0068"
+      ],
+      "first_relevant_parent_rank": 3,
+      "top_1": false,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "paraphrased-04",
+      "question": "ወላጆች የልጆቻቸውን መንፈሳዊ ሕይወት ለማሳደግ ምን ኃላፊነት አለባቸው?",
+      "embed_seconds": 0.686623,
+      "search_seconds": 0.00624,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0063:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0063",
+          "page_start": 24,
+          "page_end": 24,
+          "similarity_score": 0.7034410238265991
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0015:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0015",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.620205283164978
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0044:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0044",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5907317399978638
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0064:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0064",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.5844389796257019
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0065:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.5794311761856079
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0062:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0062",
+          "page_start": 24,
+          "page_end": 24,
+          "similarity_score": 0.573184609413147
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0043:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0043",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5529505014419556
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5492095351219177
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0043:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0043",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5341950058937073
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0060:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0060",
+          "page_start": 23,
+          "page_end": 23,
+          "similarity_score": 0.5276392698287964
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0014:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0014",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5239046812057495
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0042:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0042",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5228121876716614
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0061:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0061",
+          "page_start": 23,
+          "page_end": 23,
+          "similarity_score": 0.5174238085746765
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0041:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0041",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.5123953819274902
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0065:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.5056612491607666
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0059:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0059",
+          "page_start": 22,
+          "page_end": 23,
+          "similarity_score": 0.5053071975708008
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0114:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0114",
+          "page_start": 47,
+          "page_end": 47,
+          "similarity_score": 0.5041351914405823
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0036:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5025479197502136
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0112:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0112",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.4974668025970459
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.4961407780647278
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0063"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0015"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0044"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0064"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0065"
+        }
+      ],
+      "category": "paraphrased",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0063",
+        "10commandments:chunk-0064"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0063",
+        "10commandments:chunk-0015",
+        "10commandments:chunk-0044",
+        "10commandments:chunk-0064",
+        "10commandments:chunk-0065"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "paraphrased-05",
+      "question": "የተመኙትን ነገር ማግኘት ምኞትን ከማጥፋት ይልቅ የሚጨምረው እንዴት ነው?",
+      "embed_seconds": 0.361275,
+      "search_seconds": 0.009008,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0102:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0102",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.7017426490783691
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0099:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0099",
+          "page_start": 40,
+          "page_end": 41,
+          "similarity_score": 0.6451492309570312
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0098:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.6178141236305237
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0105:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0105",
+          "page_start": 42,
+          "page_end": 43,
+          "similarity_score": 0.6000586748123169
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0096:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0096",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5995299816131592
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0097:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0097",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5949931740760803
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0101:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0101",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.5899697542190552
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0103:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0103",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.5822356343269348
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0104:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0104",
+          "page_start": 42,
+          "page_end": 42,
+          "similarity_score": 0.5792603492736816
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0073:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0073",
+          "page_start": 29,
+          "page_end": 30,
+          "similarity_score": 0.5654810667037964
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.563186526298523
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0102:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0102",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.556822657585144
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0096:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0096",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.5558480024337769
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0018:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0018",
+          "page_start": 6,
+          "page_end": 7,
+          "similarity_score": 0.5481956601142883
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.5438180565834045
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0104:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0104",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.5387120246887207
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5325675010681152
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0016:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0016",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.5293387174606323
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0100:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0100",
+          "page_start": 41,
+          "page_end": 41,
+          "similarity_score": 0.5265675187110901
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5254277586936951
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0102"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0099"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0098"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0105"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0096"
+        }
+      ],
+      "category": "paraphrased",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0101",
+        "10commandments:chunk-0102"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0102",
+        "10commandments:chunk-0099",
+        "10commandments:chunk-0098",
+        "10commandments:chunk-0105",
+        "10commandments:chunk-0096"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "conceptual-01",
+      "question": "አሠርቱ ትእዛዛት በእግዚአብሔርና በሰው መካከል ያለ ቃል ኪዳን የሚሆኑት እንዴት ነው?",
+      "embed_seconds": 0.66527,
+      "search_seconds": 0.006532,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0002:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.7714937925338745
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0001:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0001",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.666363537311554
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0005:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "similarity_score": 0.6537038087844849
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0007:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0007",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.6474224328994751
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.6355577707290649
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0005:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.6259868144989014
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0040:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0040",
+          "page_start": 14,
+          "page_end": 14,
+          "similarity_score": 0.6077744960784912
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0002:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0002",
+          "page_start": 1,
+          "page_end": 1,
+          "similarity_score": 0.6073945760726929
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0003:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0003",
+          "page_start": 2,
+          "page_end": 2,
+          "similarity_score": 0.5795634984970093
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0112:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0112",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.5649011731147766
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0113:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0113",
+          "page_start": 46,
+          "page_end": 47,
+          "similarity_score": 0.5620425343513489
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0006:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0006",
+          "page_start": 3,
+          "page_end": 3,
+          "similarity_score": 0.5576428771018982
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5572134256362915
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0004:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0004",
+          "page_start": 2,
+          "page_end": 2,
+          "similarity_score": 0.5564846992492676
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0076:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0076",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5403957366943359
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0008:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0008",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.5397014021873474
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5380440950393677
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0098:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0098",
+          "page_start": 40,
+          "page_end": 40,
+          "similarity_score": 0.537743330001831
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0115:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0115",
+          "page_start": 47,
+          "page_end": 47,
+          "similarity_score": 0.5362843871116638
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.533527135848999
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0002"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0001"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0005"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0007"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0106"
+        }
+      ],
+      "category": "conceptual",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0002"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0002",
+        "10commandments:chunk-0001",
+        "10commandments:chunk-0005",
+        "10commandments:chunk-0007",
+        "10commandments:chunk-0106"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "conceptual-02",
+      "question": "እግዚአብሔርን መውደድና ባልንጀራን መውደድ ከሁለቱ ጽላት ጋር ምን ግንኙነት አላቸው?",
+      "embed_seconds": 0.621288,
+      "search_seconds": 0.007785,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0106:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.6578916311264038
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0113:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0113",
+          "page_start": 46,
+          "page_end": 47,
+          "similarity_score": 0.6089027523994446
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.6070826053619385
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0114:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0114",
+          "page_start": 47,
+          "page_end": 47,
+          "similarity_score": 0.5964897274971008
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0110:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0110",
+          "page_start": 45,
+          "page_end": 45,
+          "similarity_score": 0.5925766229629517
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0107:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0107",
+          "page_start": 44,
+          "page_end": 44,
+          "similarity_score": 0.5923045873641968
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0106:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0106",
+          "page_start": 43,
+          "page_end": 43,
+          "similarity_score": 0.5902357697486877
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0108:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0108",
+          "page_start": 44,
+          "page_end": 44,
+          "similarity_score": 0.5803616046905518
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0107:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0107",
+          "page_start": 43,
+          "page_end": 44,
+          "similarity_score": 0.5680959820747375
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0109:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0109",
+          "page_start": 45,
+          "page_end": 45,
+          "similarity_score": 0.5649369955062866
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0114:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0114",
+          "page_start": 47,
+          "page_end": 47,
+          "similarity_score": 0.5574331879615784
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0112:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0112",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.55422043800354
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0005:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0005",
+          "page_start": 2,
+          "page_end": 3,
+          "similarity_score": 0.5537197589874268
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5506165623664856
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0115:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0115",
+          "page_start": 47,
+          "page_end": 47,
+          "similarity_score": 0.5349205136299133
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0109:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0109",
+          "page_start": 44,
+          "page_end": 45,
+          "similarity_score": 0.5324404239654541
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0009:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0009",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.4887263774871826
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0075:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0075",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.4841381907463074
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0105:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0105",
+          "page_start": 42,
+          "page_end": 43,
+          "similarity_score": 0.48346149921417236
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.48223817348480225
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0106"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0113"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0111"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0114"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0110"
+        }
+      ],
+      "category": "conceptual",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0005",
+        "10commandments:chunk-0106"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0106",
+        "10commandments:chunk-0113",
+        "10commandments:chunk-0111",
+        "10commandments:chunk-0114",
+        "10commandments:chunk-0110"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "conceptual-03",
+      "question": "ሰንበት የሥጋ ዕረፍትና የነፍስ ዕረፍት ምልክት የሚሆነው እንዴት ነው?",
+      "embed_seconds": 0.613075,
+      "search_seconds": 0.006094,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0035:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0035",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.7703850269317627
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0037:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0037",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.662265419960022
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0034:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6559402942657471
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0034:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0034",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6199580430984497
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0033:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0033",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.6097802519798279
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0038:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0038",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.600719153881073
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0031:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0031",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5957058668136597
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0032:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.582758903503418
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0039:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5821129083633423
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0036:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.564585268497467
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5614748001098633
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0039:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0039",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5541390776634216
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0036:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0036",
+          "page_start": 12,
+          "page_end": 12,
+          "similarity_score": 0.5410653352737427
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0068:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.538764476776123
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0032:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0032",
+          "page_start": 11,
+          "page_end": 11,
+          "similarity_score": 0.5314375758171082
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0058:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0058",
+          "page_start": 22,
+          "page_end": 22,
+          "similarity_score": 0.49893027544021606
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0077:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0077",
+          "page_start": 31,
+          "page_end": 31,
+          "similarity_score": 0.4984264373779297
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0004:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0004",
+          "page_start": 2,
+          "page_end": 2,
+          "similarity_score": 0.49614351987838745
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0107:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0107",
+          "page_start": 43,
+          "page_end": 44,
+          "similarity_score": 0.48982834815979004
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0075:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0075",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.4866687059402466
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0035"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0037"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0034"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0033"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0038"
+        }
+      ],
+      "category": "conceptual",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0034",
+        "10commandments:chunk-0035"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0035",
+        "10commandments:chunk-0037",
+        "10commandments:chunk-0034",
+        "10commandments:chunk-0033",
+        "10commandments:chunk-0038"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "conceptual-04",
+      "question": "የሰውን ዝና ለመጠበቅ እውነትን መሥዋዕት ማድረግ ለምን እንደ ጣዖት አምልኮ ይቆጠራል?",
+      "embed_seconds": 0.606813,
+      "search_seconds": 0.107699,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0013:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.6330466866493225
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0018:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0018",
+          "page_start": 6,
+          "page_end": 7,
+          "similarity_score": 0.5803214907646179
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0019:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0019",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5750625133514404
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5719793438911438
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0012:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0012",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5705128908157349
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0010:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0010",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.5632994174957275
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.5544683933258057
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0091:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0091",
+          "page_start": 37,
+          "page_end": 37,
+          "similarity_score": 0.5446593761444092
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0107:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0107",
+          "page_start": 43,
+          "page_end": 44,
+          "similarity_score": 0.5414184927940369
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0092:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0092",
+          "page_start": 38,
+          "page_end": 38,
+          "similarity_score": 0.522297203540802
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0094:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0094",
+          "page_start": 39,
+          "page_end": 39,
+          "similarity_score": 0.5213464498519897
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0016:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0016",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.5206162929534912
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0066:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 25,
+          "page_end": 26,
+          "similarity_score": 0.5193634033203125
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0092:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0092",
+          "page_start": 37,
+          "page_end": 38,
+          "similarity_score": 0.518906831741333
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0009:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0009",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.5177914500236511
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0037:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0037",
+          "page_start": 13,
+          "page_end": 13,
+          "similarity_score": 0.5168805122375488
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0075:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0075",
+          "page_start": 30,
+          "page_end": 30,
+          "similarity_score": 0.5161285400390625
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0059:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0059",
+          "page_start": 22,
+          "page_end": 23,
+          "similarity_score": 0.5160752534866333
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0093:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0093",
+          "page_start": 38,
+          "page_end": 38,
+          "similarity_score": 0.5129026174545288
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0013:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0013",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.5125314593315125
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0013"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0018"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0019"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0021"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0012"
+        }
+      ],
+      "category": "conceptual",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0012",
+        "10commandments:chunk-0013"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0013",
+        "10commandments:chunk-0018",
+        "10commandments:chunk-0019",
+        "10commandments:chunk-0021",
+        "10commandments:chunk-0012"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    },
+    {
+      "question_id": "conceptual-05",
+      "question": "ራስን ማምለክ ከሌሎች ጣዖታት ሁሉ የበለጠ አደገኛ የሆነው ለምንድን ነው?",
+      "embed_seconds": 0.968829,
+      "search_seconds": 0.008164,
+      "unit_ranking": [
+        {
+          "rank": 1,
+          "unit_id": "10commandments:chunk-0019:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0019",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.7220508456230164
+        },
+        {
+          "rank": 2,
+          "unit_id": "10commandments:chunk-0021:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0021",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.5303134918212891
+        },
+        {
+          "rank": 3,
+          "unit_id": "10commandments:chunk-0066:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 25,
+          "page_end": 26,
+          "similarity_score": 0.5269719958305359
+        },
+        {
+          "rank": 4,
+          "unit_id": "10commandments:chunk-0010:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0010",
+          "page_start": 4,
+          "page_end": 4,
+          "similarity_score": 0.5164749026298523
+        },
+        {
+          "rank": 5,
+          "unit_id": "10commandments:chunk-0020:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0020",
+          "page_start": 7,
+          "page_end": 7,
+          "similarity_score": 0.51614910364151
+        },
+        {
+          "rank": 6,
+          "unit_id": "10commandments:chunk-0065:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.5127936601638794
+        },
+        {
+          "rank": 7,
+          "unit_id": "10commandments:chunk-0018:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0018",
+          "page_start": 6,
+          "page_end": 7,
+          "similarity_score": 0.49841272830963135
+        },
+        {
+          "rank": 8,
+          "unit_id": "10commandments:chunk-0050:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0050",
+          "page_start": 18,
+          "page_end": 18,
+          "similarity_score": 0.49388426542282104
+        },
+        {
+          "rank": 9,
+          "unit_id": "10commandments:chunk-0066:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0066",
+          "page_start": 26,
+          "page_end": 26,
+          "similarity_score": 0.4886695146560669
+        },
+        {
+          "rank": 10,
+          "unit_id": "10commandments:chunk-0048:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0048",
+          "page_start": 17,
+          "page_end": 17,
+          "similarity_score": 0.48743319511413574
+        },
+        {
+          "rank": 11,
+          "unit_id": "10commandments:chunk-0091:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0091",
+          "page_start": 37,
+          "page_end": 37,
+          "similarity_score": 0.4852348566055298
+        },
+        {
+          "rank": 12,
+          "unit_id": "10commandments:chunk-0104:unit-03",
+          "parent_chunk_id": "10commandments:chunk-0104",
+          "page_start": 42,
+          "page_end": 42,
+          "similarity_score": 0.47883081436157227
+        },
+        {
+          "rank": 13,
+          "unit_id": "10commandments:chunk-0059:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0059",
+          "page_start": 22,
+          "page_end": 23,
+          "similarity_score": 0.4787050485610962
+        },
+        {
+          "rank": 14,
+          "unit_id": "10commandments:chunk-0065:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0065",
+          "page_start": 25,
+          "page_end": 25,
+          "similarity_score": 0.47682785987854004
+        },
+        {
+          "rank": 15,
+          "unit_id": "10commandments:chunk-0016:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0016",
+          "page_start": 6,
+          "page_end": 6,
+          "similarity_score": 0.47532379627227783
+        },
+        {
+          "rank": 16,
+          "unit_id": "10commandments:chunk-0012:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0012",
+          "page_start": 5,
+          "page_end": 5,
+          "similarity_score": 0.4749075174331665
+        },
+        {
+          "rank": 17,
+          "unit_id": "10commandments:chunk-0068:unit-02",
+          "parent_chunk_id": "10commandments:chunk-0068",
+          "page_start": 27,
+          "page_end": 27,
+          "similarity_score": 0.47420191764831543
+        },
+        {
+          "rank": 18,
+          "unit_id": "10commandments:chunk-0067:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0067",
+          "page_start": 26,
+          "page_end": 26,
+          "similarity_score": 0.47419607639312744
+        },
+        {
+          "rank": 19,
+          "unit_id": "10commandments:chunk-0111:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0111",
+          "page_start": 46,
+          "page_end": 46,
+          "similarity_score": 0.4708890914916992
+        },
+        {
+          "rank": 20,
+          "unit_id": "10commandments:chunk-0061:unit-01",
+          "parent_chunk_id": "10commandments:chunk-0061",
+          "page_start": 23,
+          "page_end": 23,
+          "similarity_score": 0.4688606858253479
+        }
+      ],
+      "parent_ranking": [
+        {
+          "rank": 1,
+          "parent_chunk_id": "10commandments:chunk-0019"
+        },
+        {
+          "rank": 2,
+          "parent_chunk_id": "10commandments:chunk-0021"
+        },
+        {
+          "rank": 3,
+          "parent_chunk_id": "10commandments:chunk-0066"
+        },
+        {
+          "rank": 4,
+          "parent_chunk_id": "10commandments:chunk-0010"
+        },
+        {
+          "rank": 5,
+          "parent_chunk_id": "10commandments:chunk-0020"
+        }
+      ],
+      "category": "conceptual",
+      "metric_eligible": true,
+      "exclusion_reason": null,
+      "relevant_chunk_ids": [
+        "10commandments:chunk-0019"
+      ],
+      "parent_ids": [
+        "10commandments:chunk-0019",
+        "10commandments:chunk-0021",
+        "10commandments:chunk-0066",
+        "10commandments:chunk-0010",
+        "10commandments:chunk-0020"
+      ],
+      "first_relevant_parent_rank": 1,
+      "top_1": true,
+      "top_3": true,
+      "top_5": true
+    }
+  ],
   "resources": {
+    "model_directory": "C:\\Users\\estifanos besfat\\.cache\\huggingface\\tewahedo-bge-m3",
+    "model_storage_gb": 2.136,
+    "vector_store_storage_gb": 0.003,
+    "model_load_seconds": 110.199,
+    "embedding_seconds": 958.816,
+    "embedded_this_run": 182,
+    "reused_existing_vectors": false,
+    "scoring_mean_query_embed_seconds": 0.618295,
+    "scoring_mean_search_seconds": 0.049849,
+    "repeat_mean_query_embed_seconds": 0.446476,
+    "repeat_mean_search_seconds": 0.006581,
+    "repeat_model_reloaded": false,
+    "peak_working_set_gb": 1.239,
+    "peak_pagefile_gb": 3.152,
     "system_memory_start": {
       "total_physical_gb": 7.804,
-      "available_physical_gb": 0.697,
-      "memory_load_percent": 91,
-      "available_pagefile_gb": 5.733
+      "available_physical_gb": 0.318,
+      "memory_load_percent": 95,
+      "available_pagefile_gb": 4.174
     },
-    "marks": {
-      "before_download": {
-        "elapsed_seconds": 0.039,
-        "system": {
-          "total_physical_gb": 7.804,
-          "available_physical_gb": 0.684,
-          "memory_load_percent": 91,
-          "available_pagefile_gb": 5.723
-        },
-        "process": {
-          "working_set_gb": 0.039,
-          "peak_working_set_gb": 0.039,
-          "pagefile_gb": 0.123,
-          "peak_pagefile_gb": 0.123
-        }
+    "after_model_load": {
+      "elapsed_seconds": 835.141,
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.5,
+        "memory_load_percent": 93,
+        "available_pagefile_gb": 0.719
+      },
+      "process": {
+        "working_set_gb": 0.626,
+        "peak_working_set_gb": 0.673,
+        "pagefile_gb": 3.023,
+        "peak_pagefile_gb": 3.068
       }
     },
-    "process_memory_end": {
-      "working_set_gb": 0.026,
-      "peak_working_set_gb": 0.054,
-      "pagefile_gb": 0.142,
-      "peak_pagefile_gb": 0.143
+    "after_embedding": {
+      "elapsed_seconds": 1801.935,
+      "system": {
+        "total_physical_gb": 7.804,
+        "available_physical_gb": 0.762,
+        "memory_load_percent": 90,
+        "available_pagefile_gb": 1.239
+      },
+      "process": {
+        "working_set_gb": 1.216,
+        "peak_working_set_gb": 1.239,
+        "pagefile_gb": 3.116,
+        "peak_pagefile_gb": 3.152
+      }
     }
+  },
+  "limitations": [
+    "Sparse weights and ColBERT multi-vector retrieval were not used.",
+    "Queries and passages were embedded without an instruction prefix. encode received prompt=\"\" so a library default prompt could not add one.",
+    "Vectors are L2-normalized and ranked by the existing Chroma cosine distance. The reported score is 1 minus that distance, the same conversion used for E5.",
+    "Top 20 units are collapsed to the first 5 unique parent chunks. Either approved relevant parent counts as a hit. direct-01 remains excluded.",
+    "Chunking, OCR, unit text, question wording, ground-truth labels, and the E5 store were not changed to improve the score.",
+    "Chroma HNSW is an approximate nearest-neighbor index. E5 used the same index type and cosine space.",
+    "batch_size 1 limits activation memory. Each text is still embedded independently.",
+    "This run embedded 182 missing units. Reused existing vectors: False.",
+    "The loaded library prompts were empty, matching the model card's no-instruction setting.",
+    "The published BGE-M3 snapshot uses pytorch_model.bin (2,271,145,830 bytes), not model.safetensors. The download needed ranged resume across dropped Hugging Face connections.",
+    "The 7.8 GB machine ran the model by paging: after load the process pagefile was about 3.0 GB while the working set stayed under 1.3 GB. Available pagefile fell to 0.719 GB."
+  ],
+  "score": {
+    "eligible": 14,
+    "hits": {
+      "1": 12,
+      "3": 14,
+      "5": 14
+    },
+    "misses_at_5": []
   }
 }

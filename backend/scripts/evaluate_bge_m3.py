@@ -274,6 +274,7 @@ def shutil_disk_free(path: Path) -> int:
 
 def download_file(session, url: str, destination: Path, expected_size: int | None) -> int:
     destination.parent.mkdir(parents=True, exist_ok=True)
+    expected_text = f"{gb(expected_size)} GB" if expected_size else "unknown"
     attempts = 0
     while attempts < 30:
         attempts += 1
@@ -284,12 +285,16 @@ def download_file(session, url: str, destination: Path, expected_size: int | Non
             destination.unlink()
             have = 0
         headers = {"Range": f"bytes={have}-"} if have else {}
+        print(
+            f"resume {destination.name} have={gb(have)} GB expected={expected_text}",
+            flush=True,
+        )
         try:
             with session.get(
                 url,
                 headers=headers,
                 stream=True,
-                timeout=(20, 180),
+                timeout=(30, 300),
                 allow_redirects=True,
             ) as response:
                 response.raise_for_status()
