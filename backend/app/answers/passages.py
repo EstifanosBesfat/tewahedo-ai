@@ -38,6 +38,11 @@ class ParentCorpus:
     def text(self, parent_chunk_id_value: str) -> str:
         return str(self._chunk(parent_chunk_id_value)["text"])
 
+    def record(self, parent_chunk_id_value: str) -> Mapping[str, object]:
+        """Return the stored parent chunk without changing its text."""
+
+        return self._chunk(parent_chunk_id_value)
+
     def passage(
         self,
         rank: int,

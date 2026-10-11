@@ -1,0 +1,170 @@
+{
+  "schema_version": "1",
+  "reviews": [
+    {
+      "question_id": "direct-01",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "direct-02",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "direct-03",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "direct-04",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "direct-05",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "paraphrased-01",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "paraphrased-02",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "paraphrased-03",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "paraphrased-04",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "paraphrased-05",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "conceptual-01",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "conceptual-02",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "conceptual-03",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "conceptual-04",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    },
+    {
+      "question_id": "conceptual-05",
+      "status": "pending",
+      "answerable": null,
+      "selected_parent_chunk_ids": [],
+      "qualifications_or_contradictions": "",
+      "proposed_answer": "",
+      "proposed_answer_has_unsupported_part": null,
+      "reviewer_notes": "",
+      "reviewer": null
+    }
+  ]
+}

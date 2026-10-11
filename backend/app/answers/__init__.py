@@ -8,6 +8,11 @@ stays tied to those passages.
 from app.answers.citations import automatic_checks, resolve_citations
 from app.answers.dataset import build_answer_dataset, render_answer_report
 from app.answers.passages import ParentCorpus, passages_from_search_results
+from app.answers.review import (
+    ReviewSubmission,
+    apply_answer_reviews,
+    build_review_worksheet,
+)
 from app.answers.providers import (
     AnswerProvider,
     ConfiguredAnswerProvider,
@@ -28,9 +33,12 @@ __all__ = [
     "ExtractiveAnswerProvider",
     "GeneratedAnswer",
     "ParentCorpus",
+    "ReviewSubmission",
     "SourcePassage",
+    "apply_answer_reviews",
     "automatic_checks",
     "build_answer_dataset",
+    "build_review_worksheet",
     "passages_from_search_results",
     "render_answer_report",
     "resolve_citations",
