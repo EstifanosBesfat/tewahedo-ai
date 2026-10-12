@@ -5,3 +5,5 @@ __pycache__/
 venv/
 backend/.tessdata/
 backend/data/vectorstore/
+.env
+**/.env

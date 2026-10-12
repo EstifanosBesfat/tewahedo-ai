@@ -1,0 +1,110 @@
+{
+  "schema_version": "1",
+  "description": "Groq was not called.",
+  "provider": "groq",
+  "model_name": null,
+  "retrieval": "not run",
+  "question_count": 4,
+  "records": [
+    {
+      "question_id": "direct-01",
+      "question": "የመጀመሪያው ትእዛዝ ምንድን ነው?",
+      "category": "direct",
+      "generation_status": "not_run",
+      "error_code": "missing_api_key",
+      "error_message": "Set GROQ_API_KEY in backend/.env.",
+      "latency_seconds": null,
+      "language": "am",
+      "abstained": null,
+      "answer_text": "",
+      "answer_contains_amharic": false,
+      "citations": [],
+      "citations_match_retrieved_passages": null,
+      "source_passages": [],
+      "human_review": {
+        "status": "pending",
+        "answerability": null,
+        "factual_support": null,
+        "important_qualifications_omitted": null,
+        "contains_unsupported_claims": null,
+        "reviewer_notes": "",
+        "reviewer": null
+      }
+    },
+    {
+      "question_id": "direct-02",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "category": "direct",
+      "generation_status": "not_run",
+      "error_code": "missing_api_key",
+      "error_message": "Set GROQ_API_KEY in backend/.env.",
+      "latency_seconds": null,
+      "language": "am",
+      "abstained": null,
+      "answer_text": "",
+      "answer_contains_amharic": false,
+      "citations": [],
+      "citations_match_retrieved_passages": null,
+      "source_passages": [],
+      "human_review": {
+        "status": "pending",
+        "answerability": null,
+        "factual_support": null,
+        "important_qualifications_omitted": null,
+        "contains_unsupported_claims": null,
+        "reviewer_notes": "",
+        "reviewer": null
+      }
+    },
+    {
+      "question_id": "direct-05",
+      "question": "በባልንጀራ ላይ ሐሰት ምስክር ስለመሆን ትእዛዙ ምን ይላል?",
+      "category": "direct",
+      "generation_status": "not_run",
+      "error_code": "missing_api_key",
+      "error_message": "Set GROQ_API_KEY in backend/.env.",
+      "latency_seconds": null,
+      "language": "am",
+      "abstained": null,
+      "answer_text": "",
+      "answer_contains_amharic": false,
+      "citations": [],
+      "citations_match_retrieved_passages": null,
+      "source_passages": [],
+      "human_review": {
+        "status": "pending",
+        "answerability": null,
+        "factual_support": null,
+        "important_qualifications_omitted": null,
+        "contains_unsupported_claims": null,
+        "reviewer_notes": "",
+        "reviewer": null
+      }
+    },
+    {
+      "question_id": "paraphrased-01",
+      "question": "ሰው ገንዘብንና እግዚአብሔርን በአንድ ጊዜ ለምን ማገልገል አይችልም?",
+      "category": "paraphrased",
+      "generation_status": "not_run",
+      "error_code": "missing_api_key",
+      "error_message": "Set GROQ_API_KEY in backend/.env.",
+      "latency_seconds": null,
+      "language": "am",
+      "abstained": null,
+      "answer_text": "",
+      "answer_contains_amharic": false,
+      "citations": [],
+      "citations_match_retrieved_passages": null,
+      "source_passages": [],
+      "human_review": {
+        "status": "pending",
+        "answerability": null,
+        "factual_support": null,
+        "important_qualifications_omitted": null,
+        "contains_unsupported_claims": null,
+        "reviewer_notes": "",
+        "reviewer": null
+      }
+    }
+  ]
+}
