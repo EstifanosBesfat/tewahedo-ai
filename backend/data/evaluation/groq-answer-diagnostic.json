@@ -1,0 +1,35 @@
+{
+  "schema_version": "1",
+  "description": "One controlled Groq diagnostic question.",
+  "provider": "groq",
+  "model_name": "openai/gpt-oss-120b",
+  "retrieval": "live BGE-M3 parent passages",
+  "question_count": 1,
+  "records": [
+    {
+      "question_id": "direct-02",
+      "question": "ሰንበትን የማክበር ትእዛዝ መቼ ተሰጠ?",
+      "category": "direct",
+      "generation_status": "api_error",
+      "error_code": "token_budget",
+      "error_message": "The request exceeds the configured model's token budget.",
+      "latency_seconds": 9.876,
+      "language": "am",
+      "abstained": null,
+      "answer_text": "",
+      "answer_contains_amharic": false,
+      "citations": [],
+      "citations_match_retrieved_passages": null,
+      "source_passages": [],
+      "human_review": {
+        "status": "pending",
+        "answerability": null,
+        "factual_support": null,
+        "important_qualifications_omitted": null,
+        "contains_unsupported_claims": null,
+        "reviewer_notes": "",
+        "reviewer": null
+      }
+    }
+  ]
+}

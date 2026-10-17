@@ -12,6 +12,7 @@ from app.answers.groq import (
     GroqAnswerProvider,
     GroqConfigError,
     groq_provider_from_env,
+    request_token_estimate,
     user_prompt,
 )
 from app.answers.groq_sample import (
@@ -34,9 +35,22 @@ class FakeCompletions:
 
     def create(self, **kwargs: object) -> "FakeCompletion":
         self.owner.calls.append(kwargs)
+        if self.owner.script:
+            item = self.owner.script.pop(0)
+            if isinstance(item, BaseException):
+                raise item
+            return FakeCompletion(
+                str(item),
+                finish_reason=self.owner.finish_reason,
+                reasoning=self.owner.reasoning,
+            )
         if self.owner.error is not None:
             raise self.owner.error
-        return FakeCompletion(self.owner.content)
+        return FakeCompletion(
+            self.owner.content,
+            finish_reason=self.owner.finish_reason,
+            reasoning=self.owner.reasoning,
+        )
 
 
 class FakeChat:
@@ -45,26 +59,48 @@ class FakeChat:
 
 
 class FakeClient:
-    def __init__(self, content: str, error: BaseException | None = None) -> None:
+    def __init__(
+        self,
+        content: str,
+        error: BaseException | None = None,
+        script: list[object] | None = None,
+        finish_reason: str = "stop",
+        reasoning: str | None = None,
+    ) -> None:
         self.content = content
         self.error = error
+        self.script = list(script or [])
+        self.finish_reason = finish_reason
+        self.reasoning = reasoning
         self.calls: list[dict[str, object]] = []
         self.chat = FakeChat(self)
 
 
 class FakeCompletion:
-    def __init__(self, content: str) -> None:
-        self.choices = [FakeChoice(content)]
+    def __init__(
+        self,
+        content: object,
+        finish_reason: str = "stop",
+        reasoning: str | None = None,
+    ) -> None:
+        self.choices = [FakeChoice(content, finish_reason, reasoning)]
 
 
 class FakeChoice:
-    def __init__(self, content: str) -> None:
-        self.message = FakeMessage(content)
+    def __init__(
+        self,
+        content: object,
+        finish_reason: str = "stop",
+        reasoning: str | None = None,
+    ) -> None:
+        self.finish_reason = finish_reason
+        self.message = FakeMessage(content, reasoning)
 
 
 class FakeMessage:
-    def __init__(self, content: str) -> None:
+    def __init__(self, content: object, reasoning: str | None = None) -> None:
         self.content = content
+        self.reasoning = reasoning
 
 
 class StatusError(Exception):
@@ -179,8 +215,126 @@ def test_mocked_completion_copies_citation_metadata_and_hides_pages_from_the_pro
     assert answer.citations[0].page_start == 11
     assert answer.citations[0].page_end == 11
     assert answer.citations[0].excerpt == passage.text
+    assert client.calls[0]["max_completion_tokens"] == 512
+    assert client.calls[0]["temperature"] == 0.5
+    assert "reasoning_effort" not in client.calls[0]
+    assert "ሰንበትን" in prompt
+    assert any("\u1200" <= char <= "\u137f" for char in answer.answer_text)
+    assert "answer_text must be nonempty" in prompt
     assert FAKE_KEY not in prompt
     assert FAKE_KEY not in answer.answer_text
+
+
+def _ranked(rank: int, text: str) -> SourcePassage:
+    return _passage().model_copy(
+        update={
+            "rank": rank,
+            "parent_chunk_id": f"10commandments:chunk-{rank}",
+            "text": text,
+        }
+    )
+
+
+def test_prompt_uses_the_top_three_passages() -> None:
+    passages = [_ranked(rank, f"ምንጭ {rank} ሰንበት ተሰጠ") for rank in range(1, 6)]
+    client = FakeClient(
+        _model_json(cited_parent_chunk_ids=["10commandments:chunk-1"])
+    )
+    provider = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="openai/gpt-oss-120b",
+        client=client,
+    )
+
+    answer = provider.generate(_request(passages))
+    prompt = str(client.calls[0]["messages"])
+
+    assert provider.last_prompt_passage_ids == [
+        "10commandments:chunk-1",
+        "10commandments:chunk-2",
+        "10commandments:chunk-3",
+    ]
+    assert "10commandments:chunk-4" not in prompt
+    assert "10commandments:chunk-5" not in prompt
+    assert passages[0].text in prompt
+    assert answer.citations[0].parent_chunk_id == "10commandments:chunk-1"
+    assert answer.citations[0].page_start == 11
+    assert answer.citations[0].document_id == "10commandments"
+    selected = passages[:3]
+    assert provider.last_token_estimate == request_token_estimate(
+        _request(passages),
+        selected,
+    )
+    assert provider.last_token_estimate != sum(len(passage.text) for passage in selected)
+
+
+def test_budget_drops_whole_passages_and_rejects_a_dropped_citation() -> None:
+    passages = [_ranked(rank, f"አጭር ምንጭ {rank}") for rank in range(1, 4)]
+    request = _request(passages)
+    two_passage_cost = request_token_estimate(request, passages[:2])
+    three_passage_cost = request_token_estimate(request, passages)
+    client = FakeClient(
+        _model_json(cited_parent_chunk_ids=["10commandments:chunk-3"])
+    )
+    provider = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=client,
+        token_budget=two_passage_cost,
+    )
+
+    answer = provider.generate(request)
+    prompt = str(client.calls[0]["messages"])
+
+    assert three_passage_cost > two_passage_cost
+    assert provider.last_prompt_passage_ids == [
+        "10commandments:chunk-1",
+        "10commandments:chunk-2",
+    ]
+    assert passages[0].text in prompt
+    assert passages[1].text in prompt
+    assert passages[2].text not in prompt
+    assert answer.abstained is True
+    assert answer.abstention_code == "rejected_citations"
+    assert answer.citations == []
+    assert "10commandments:chunk-3" in answer.rejected_citation_ids
+
+
+def test_an_oversized_passage_is_not_truncated_or_sent() -> None:
+    huge = _ranked(1, "ሀ" * 4000)
+    request = _request([huge])
+    client = FakeClient(_model_json())
+    provider = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=client,
+        token_budget=request_token_estimate(request, [huge]) - 1,
+    )
+
+    answer = provider.generate(request)
+
+    assert client.calls == []
+    assert answer.abstained is True
+    assert answer.abstention_code == "missing_evidence"
+    assert answer.citations == []
+    assert "ሀሀ" not in answer.answer_text
+    assert answer.abstention_reason == "No whole retrieved passage fits the token budget."
+
+
+def test_gpt_oss_request_limits_reasoning_without_changing_the_model() -> None:
+    client = FakeClient(_model_json())
+    provider = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="openai/gpt-oss-120b",
+        client=client,
+    )
+
+    provider.generate(_request())
+
+    assert client.calls[0]["model"] == "openai/gpt-oss-120b"
+    assert client.calls[0]["reasoning_effort"] == "low"
+    assert client.calls[0]["include_reasoning"] is False
+    assert client.calls[0]["max_completion_tokens"] == 512
 
 
 def test_api_errors_do_not_expose_the_key_or_change_model() -> None:
@@ -192,6 +346,11 @@ def test_api_errors_do_not_expose_the_key_or_change_model() -> None:
         (type("APIConnectionError", (Exception,), {})(secret_message), "network"),
         (type("NotFoundError", (Exception,), {})(secret_message), "model_unavailable"),
         (StatusError(400, secret_message), "model_unavailable"),
+        (StatusError(401, secret_message), "authentication"),
+        (StatusError(413, secret_message), "token_budget"),
+        (StatusError(422, secret_message), "invalid_request"),
+        (StatusError(500, secret_message), "server_error"),
+        (type("InternalServerError", (Exception,), {"status_code": 503})(secret_message), "server_error"),
     ]
     for error, code in cases:
         provider = GroqAnswerProvider(
@@ -204,6 +363,121 @@ def test_api_errors_do_not_expose_the_key_or_change_model() -> None:
         assert caught.value.code == code
         assert FAKE_KEY not in str(caught.value)
         assert "another-model" not in str(caught.value)
+
+
+def test_empty_malformed_and_reasoning_responses_are_failures() -> None:
+    empty = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=FakeClient(""),
+    )
+    missing = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=FakeClient("{}", script=[]),
+    )
+    missing._client.chat.completions.create = _raise_missing_choices  # type: ignore[method-assign]
+    length = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=FakeClient("", finish_reason="length"),
+    )
+    reasoning = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=FakeClient(
+            "",
+            reasoning="ሰንበትን የማክበር ትእዛዝ ከሕግ አስቀድሞ ተሰጠ",
+        ),
+    )
+    parts = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="example-model",
+        client=FakeClient(_model_json()),
+    )
+    parts._client.content = [  # type: ignore[attr-defined]
+        {"type": "reasoning", "text": "do not show"},
+        {"type": "text", "text": _model_json()},
+    ]
+
+    with pytest.raises(GroqAnswerError) as empty_error:
+        empty.generate(_request())
+    with pytest.raises(GroqAnswerError) as missing_error:
+        missing.generate(_request())
+    with pytest.raises(GroqAnswerError) as length_error:
+        length.generate(_request())
+    with pytest.raises(GroqAnswerError) as reasoning_error:
+        reasoning.generate(_request())
+    answer = parts.generate(_request())
+
+    assert empty_error.value.code == "invalid_response"
+    assert "without answer text" in str(empty_error.value)
+    assert missing_error.value.code == "invalid_response"
+    assert "token limit" in str(length_error.value)
+    assert reasoning_error.value.code == "invalid_response"
+    assert "ሰንበት" not in str(reasoning_error.value)
+    assert answer.abstained is False
+    assert any("\u1200" <= char <= "\u137f" for char in answer.answer_text)
+
+
+def _raise_missing_choices(**_kwargs: object) -> object:
+    return type("NoChoices", (), {"choices": []})()
+
+
+def test_retry_respects_retry_after_and_does_not_retry_authentication() -> None:
+    waits: list[float] = []
+
+    class Limited(Exception):
+        def __init__(self) -> None:
+            super().__init__(f"slow {FAKE_KEY}")
+            self.status_code = 429
+            self.response = type("Response", (), {"headers": {"retry-after": "1"}})()
+            self.body = {"error": {"code": "rate_limit_exceeded", "message": FAKE_KEY}}
+
+    limited = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="openai/gpt-oss-120b",
+        client=FakeClient("", script=[Limited(), _model_json()]),
+        sleeper=waits.append,
+    )
+    rejected = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="openai/gpt-oss-120b",
+        client=FakeClient("", error=StatusError(401, FAKE_KEY)),
+        sleeper=waits.append,
+    )
+    distant = GroqAnswerProvider(
+        api_key=FAKE_KEY,
+        model_name="openai/gpt-oss-120b",
+        client=FakeClient(
+            "",
+            error=type(
+                "RateLimitError",
+                (Exception,),
+                {
+                    "status_code": 429,
+                    "response": type("Response", (), {"headers": {"retry-after": "90"}})(),
+                },
+            )(),
+        ),
+        sleeper=waits.append,
+    )
+
+    answer = limited.generate(_request())
+    with pytest.raises(GroqAnswerError) as auth_error:
+        rejected.generate(_request())
+    with pytest.raises(GroqAnswerError) as wait_error:
+        distant.generate(_request())
+
+    assert answer.model_name == "openai/gpt-oss-120b"
+    assert waits == [1.0]
+    assert len(limited._client.calls) == 2  # type: ignore[attr-defined]
+    assert auth_error.value.code == "authentication"
+    assert len(rejected._client.calls) == 1  # type: ignore[attr-defined]
+    assert wait_error.value.code == "rate_limit"
+    assert "90" in str(wait_error.value)
+    assert FAKE_KEY not in str(wait_error.value)
+    assert len(distant._client.calls) == 1  # type: ignore[attr-defined]
 
 
 def test_unknown_chunk_id_abstains_without_keeping_the_invented_citation() -> None:
